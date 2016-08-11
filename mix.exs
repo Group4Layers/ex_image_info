@@ -19,22 +19,10 @@ defmodule ExImageInfo.Mixfile do
     ]
   end
 
-  # Configuration for the OTP application
-  #
-  # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    []
   end
 
-  # Dependencies can be Hex packages:
-  #
-  #   {:mydep, "~> 0.3.0"}
-  #
-  # Or git/path repositories:
-  #
-  #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
-  #
-  # Type "mix help deps" for more examples and options
   defp deps do
     [
       {:excoveralls, "~> 0.5", only: :test},
@@ -67,7 +55,10 @@ defmodule ExImageInfo.Mixfile do
       ],
       maintainers: ["rNoz <rnoz.commits@gmail.com>"],
       licenses: ["MIT"],
-      links: %{"Github" => "https://github.com/rNoz/ex_image_info"}
+      links: %{
+        "GitHub" => "https://github.com/rNoz/ex_image_info",
+        "Docs" => "https://rnoz.github.io/ex_image_info",
+      }
     ]
   end
 end

@@ -101,7 +101,7 @@ defmodule ExImageInfo do
   @doc """
   Detects the image format that seems to be the given binary (*guessed* version of `ExImageInfo.seems?/2`).
 
-  Returns the atom (valid [formats](#formats)) if it matches, `nil` otherwise.
+  Returns the atom (valid [formats](#module-formats)) if it matches, `nil` otherwise.
 
   ## Examples
 

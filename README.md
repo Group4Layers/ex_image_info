@@ -2,6 +2,8 @@
 
 # ExImageInfo 
 
+[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/rNoz/ex_image_info/master/LICENSE.md) [![ExCoveralls](https://img.shields.io/badge/coverage-97.6%-green.svg?style=flat-square)](https://github.com/parroty/excoveralls) ![Tests](https://img.shields.io/badge/tests-34/34-green.svg?style=flat-square) 
+
 ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions, detected mime-type and overall validity for a set of image formats.
 
 ## Table of Contents
@@ -283,13 +285,13 @@ rNoz <rnoz.commits@gmail.com>.
 
 See [CONTRIBUTORS](contributors.html) for more information.
 
-*GitHub readers: [CONTRIBUTORS.md](CONTRIBUTORS.md).*
+*GitHub readers (repo, no docs): [CONTRIBUTORS.md](CONTRIBUTORS.md).*
 
 ## ChangeLog
 
 See [CHANGELOG](changelog.html) for more information.
 
-*GitHub readers: [CHANGELOG.md](CHANGELOG.md).*
+*GitHub readers (repo, no docs): [CHANGELOG.md](CHANGELOG.md).*
 
 ## License
 
@@ -297,4 +299,4 @@ ExImageInfo source code is released under the MIT License.
 
 See [LICENSE](license.html) for more information.
 
-*GitHub readers: [LICENSE.md](LICENSE.md).*
+*GitHub readers (repo, no docs): [LICENSE.md](LICENSE.md).*
