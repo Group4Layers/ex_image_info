@@ -114,7 +114,7 @@ iex(1)>
 
 `89 50 4E 47 0D 0A 1A 0A` are the first 8 bytes in the `PNG` signature (`PNG\\r\\n0x1A\\n`).
 
-```
+```elixir
 iex(1)> ExImageInfo.seems? <<0x89504E470D0A1A0A::size(64)>>, :png
 true
 
