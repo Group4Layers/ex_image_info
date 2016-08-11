@@ -117,7 +117,8 @@ iex(1)>
 ```
 iex(1)> ExImageInfo.seems? <<0x89504E470D0A1A0A::size(64)>>, :png
 true
-iex(2)> ExImageInfo.seems? <<0x89504E470D0A1A0A::size(64)>>; :webp
+
+iex(2)> ExImageInfo.seems? <<0x89504E470D0A1A0A::size(64)>>, :webp
 false
 ```
 
@@ -206,6 +207,7 @@ iex(2)> webp_full_binary |> ExImageInfo.type
 ```elixir
 iex(1)> ExImageInfo.info <<0x89504E470D0A1A0A::size(64)>>, :png
 nil
+
 iex(2)> ExImageInfo.info <<"RIFF", 0::size(32), "WEBPVP8L", 0::size(32), 0x2F7AC07100358683B68D::size(80)>>, :webp
 {"image/webp", 123, 456, "webpVP8L"}
 ```

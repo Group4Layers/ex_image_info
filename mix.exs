@@ -1,8 +1,6 @@
 defmodule ExImageInfo.Mixfile do
   use Mix.Project
 
-  # TODO: follow this https://github.com/tchoutri/Eikon
-
   def project do
     [
       app: :ex_image_info,
@@ -66,8 +64,6 @@ defmodule ExImageInfo.Mixfile do
         "CHANGELOG.md",
         "CONTRIBUTORS.md",
         "mix.exs",
-        "priv",
-        "test"
       ],
       maintainers: ["rNoz <rnoz.commits@gmail.com>"],
       licenses: ["MIT"],

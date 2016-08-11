@@ -16,3 +16,6 @@ pre-publish: words
 
 words:
 	bash support/words.sh
+
+wip:
+	bash support/wip.sh

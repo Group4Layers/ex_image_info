@@ -148,10 +148,10 @@ defmodule ExImageInfo do
   Usually it is used as:
 
       ExImageInfo.type File.read!("path/to/image.gif"), :gif
-      {"image/gif", "GIF87a"}
+      # {"image/gif", "GIF87a"}
 
       maybe_png_binary |> ExImageInfo.type :png
-      nil
+      # nil
   """
   @spec type(binary, format :: atom) :: {mimetype :: String.t, variant :: String.t} | nil
   def type(binary, format)
@@ -213,10 +213,10 @@ defmodule ExImageInfo do
   Usually it is used as:
 
       ExImageInfo.info File.read!("path/to/image.gif"), :gif
-      {"image/gif", 1920, 1080, "GIF87a"}
+      # {"image/gif", 1920, 1080, "GIF87a"}
 
       maybe_png_binary |> ExImageInfo.info :png
-      nil
+      # nil
   """
   @spec info(binary, format :: atom) :: {mimetype :: String.t, width :: Integer.t, height :: Integer.t, variant :: String.t} | nil
   def info(binary, format)
