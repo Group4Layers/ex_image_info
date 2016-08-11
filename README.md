@@ -6,7 +6,7 @@
 
 ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions, detected mime-type and overall validity for a set of image formats.
 
-[GitHub repo](https://github.com/rNoz/ex_image_info) [Docs](https://rnoz.github.io/ex_image_info) [Hex.pm Docs](https://hexdocs.pm/ex_image_info)
+### [GitHub repo](https://github.com/rNoz/ex_image_info) &nbsp;&nbsp; [Docs](https://rnoz.github.io/ex_image_info) &nbsp;&nbsp; [Hex.pm package](https://hex.pm/packages/ex_image_info)
 
 ## Table of Contents
 
