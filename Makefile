@@ -19,3 +19,6 @@ words:
 
 wip:
 	bash support/wip.sh
+
+badge:
+	bash support/badge.sh

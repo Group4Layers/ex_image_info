@@ -45,12 +45,12 @@ defmodule ExImageInfo.Mixfile do
 
   defp package do
     [
+      name: :ex_image_info,
+      # just the minimum for prod
       files: [
         "lib",
         "README.md",
         "LICENSE.md",
-        "CHANGELOG.md",
-        "CONTRIBUTORS.md",
         "mix.exs",
       ],
       maintainers: ["rNoz <rnoz.commits@gmail.com>"],

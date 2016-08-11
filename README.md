@@ -2,7 +2,7 @@
 
 # ExImageInfo 
 
-[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/rNoz/ex_image_info/master/LICENSE.md) [![ExCoveralls](https://img.shields.io/badge/coverage-97.6%-green.svg?style=flat-square)](https://github.com/parroty/excoveralls) ![Tests](https://img.shields.io/badge/tests-34/34-green.svg?style=flat-square) 
+[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/rNoz/ex_image_info/master/LICENSE.md) [![ExCoveralls](https://raw.githubusercontent.com/rNoz/ex_image_info/master/assets/coverage.svg)](https://github.com/parroty/excoveralls) ![Tests](https://raw.githubusercontent.com/rNoz/ex_image_info/master/assets/tests.svg)
 
 ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions, detected mime-type and overall validity for a set of image formats.
 
