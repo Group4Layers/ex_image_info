@@ -15,7 +15,7 @@ defmodule ExImageInfo.Types.JPEG do
 
 
   # Public API
-  def seems?(<< @signature, rest::binary >>), do: true
+  def seems?(<< @signature, _rest::binary >>), do: true
   def seems?(_), do: false
 
   def info(<< @signature, _::size(16), rest::binary >>), do: parse_jpeg(rest)

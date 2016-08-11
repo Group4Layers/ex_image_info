@@ -9,7 +9,7 @@ defmodule ExImageInfo.Types.PNG do
   @signature <<"PNG\r\n", 0x1A, "\n">>
   @signature_ihdr <<"IHDR">>
 
-  def seems?(<< _::bytes-size(1), @signature, rest::binary >>), do: true
+  def seems?(<< _::bytes-size(1), @signature, _rest::binary >>), do: true
   def seems?(_), do: false
 
   def info(<< _::bytes-size(1), @signature, _::size(32), @signature_ihdr, width::size(32), height::size(32), _rest::binary >>), do: {@mime, width, height, @ftype}

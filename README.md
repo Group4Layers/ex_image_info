@@ -6,6 +6,8 @@
 
 ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions, detected mime-type and overall validity for a set of image formats.
 
+[GitHub repo](https://github.com/rNoz/ex_image_info) [Docs](https://rnoz.github.io/ex_image_info) [Hex.pm Docs](https://hexdocs.pm/ex_image_info)
+
 ## Table of Contents
 
 1. [Description](#description)
@@ -74,18 +76,17 @@ Each mime-type can be linked to at least one variant type:
 The variant type is created just to provide a bit more of information
 for every image format (if applicable).
 
-
 ## Installation
 
 Add `ex_image_info` to your list of dependencies in `mix.exs`.
 
-From hex:
+From Hex:
 
 ```elixir
   def deps do
     [ 
       # ...
-      {:ex_image_info, "~> 0.1.0"},
+      {:ex_image_info, "~> 0.1.1"},
     ]
   end
 ```
@@ -99,6 +100,13 @@ Or GitHub:
       {:ex_image_info, github: "rNoz/ex_image_info"},
     ]
   end
+```
+
+Then, use it:
+
+```elixir
+require ExImageInfo
+# ExImageInfo.seems? ...
 ```
 
 ## Examples

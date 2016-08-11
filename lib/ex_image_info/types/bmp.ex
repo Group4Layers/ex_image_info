@@ -8,13 +8,13 @@ defmodule ExImageInfo.Types.BMP do
 
   @signature <<"BM">>
 
-  def seems?(<< @signature, rest::binary >>), do: true
+  def seems?(<< @signature, _rest::binary >>), do: true
   def seems?(_), do: false
 
-  def info(<< @signature, _::bytes-size(16), width::little-size(16), _::bytes-size(2), height::little-size(16), rest::binary >>), do: {@mime, width, height, @ftype}
+  def info(<< @signature, _::bytes-size(16), width::little-size(16), _::bytes-size(2), height::little-size(16), _rest::binary >>), do: {@mime, width, height, @ftype}
   def info(_), do: nil
 
-  def type(<< @signature, rest::binary >>), do: {@mime, @ftype}
+  def type(<< @signature, _rest::binary >>), do: {@mime, @ftype}
   def type(_), do: nil
 
 end

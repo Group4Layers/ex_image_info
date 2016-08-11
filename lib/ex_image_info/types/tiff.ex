@@ -17,8 +17,8 @@ defmodule ExImageInfo.Types.TIFF do
 
   # Public API
 
-  def seems?(<< @signature_ii, rest::binary >>), do: true
-  def seems?(<< @signature_mm, rest::binary >>), do: true
+  def seems?(<< @signature_ii, _rest::binary >>), do: true
+  def seems?(<< @signature_mm, _rest::binary >>), do: true
   def seems?(_), do: false
 
   def info(<< @signature_ii, rest::binary >>), do: parse_tiff(false, rest, 4 + byte_size rest)
@@ -64,7 +64,7 @@ defmodule ExImageInfo.Types.TIFF do
   end
   def parse_tiff_nexttags(_rest), do: <<>>
 
-  def parse_tiff_tags(b_e, <<>>, tags) do
+  def parse_tiff_tags(_b_e, <<>>, tags) do
     tags
   end
 
@@ -75,7 +75,7 @@ defmodule ExImageInfo.Types.TIFF do
     parse_tiff_tags(b_e, code, type, length, low, high, rest, buff, tags)
   end
 
-  def parse_tiff_tags(b_e, code, type, length, low, high, << rest::binary >>, buff, tags) do
+  def parse_tiff_tags(b_e, code, type, length, low, high, << _rest::binary >>, buff, tags) do
     if code == 0 do
       tags
     else
