@@ -12,7 +12,7 @@ defmodule ExImageInfo.Types.WEBP do
   @signature_riff <<"RIFF">>
   @signature_webp <<"WEBP">>
   @signature_vp8 <<"VP8">>
-  @signature_vp8l <<"VP8L">>
+  # @signature_vp8l <<"VP8L">>
 
   def seems?(<< @signature_riff, _skip::bytes-size(4), @signature_webp, @signature_vp8, _rest::binary >>), do: true
   def seems?(_), do: false

@@ -45,13 +45,16 @@ supported by the library.
 Supported formats (image type to be parsed as):
 - `:bmp`
 - `:gif`
+- `:ico` (new in `v0.2.0`)
 - `:jpeg`
+- `:jp2` (new in `v0.2.0`)
 - `:png`
+- `:pnm` (new in `v0.2.0`)
 - `:psd`
 - `:tiff`
 - `:webp`
 
-### Mime-types and Variants
+## Mime-types and Variants
 
 The image variant type is an invented string to identify the
 type of format recognized by this library (more specific than the
@@ -59,22 +62,36 @@ mime-type).
 
 Each mime-type can be linked to at least one variant type:
 
-| mime-type    | variant type | description        |
-| ------------ | ------------ | ------------------ |
-| `image/bmp`  | `BMP`        |                    |
-| `image/gif`  | `GIF87a`     | 87a gif spec       |
-| `image/gif`  | `GIF89a`     | 89a gif spec       |
-| `image/jpeg` | `baseJPEG`   | baseline JPEG      |
-| `image/jpeg` | `progJPEG`   | progressive JPEG   |
-| `image/png`  | `PNG`        |                    |
-| `image/psd`  | `PSD`        |                    |
-| `image/tiff` | `TIFFII`     | II variant         |
-| `image/tiff` | `TIFFMM`     | MM variant         |
-| `image/webp` | `webpVP8`    | lossy              |
-| `image/webp` | `webpVP8L`   | lossless           |
+| mime-type                 | variant type | description        |
+| ------------------------- | ------------ | ------------------ |
+| `image/bmp`               | `BMP`        |                    |
+| `image/gif`               | `GIF87a`     | 87a gif spec       |
+| `image/gif`               | `GIF89a`     | 89a gif spec       |
+| `image/x-icon`            | `ICO`        |                    |
+| `image/jpeg`              | `baseJPEG`   | baseline JPEG      |
+| `image/jpeg`              | `progJPEG`   | progressive JPEG   |
+| `image/jp2`               | `JP2`        | JPEG2000           |
+| `image/png`               | `PNG`        |                    |
+| `image/x-portable-anymap` | `PNMpbm`     | Portable BitMap    |
+| `image/x-portable-anymap` | `PNMpgm`     | Portable GrayMap   |
+| `image/x-portable-anymap` | `PNMppm`     | Portable PixMap    |
+| `image/psd`               | `PSD`        |                    |
+| `image/tiff`              | `TIFFII`     | II variant         |
+| `image/tiff`              | `TIFFMM`     | MM variant         |
+| `image/webp`              | `webpVP8`    | lossy              |
+| `image/webp`              | `webpVP8L`   | lossless           |
 
 The variant type is created just to provide a bit more of information
 for every image format (if applicable).
+
+*Note*: `:ico` returns the dimensions of the largest image contained (not the first found).
+
+The guessing functions try to detect the format of the binary by testing every available type based on its global usage (popularity, [usage of image file formats](https://w3techs.com/technologies/overview/image_format/all), but still keeping the `:png` as the first one):
+- `:png`, `:jpeg`, `:gif`, `:bmp`, `:ico`, `:tiff`, `:webp`, `:psd`, `:jp2`, `:pnm`
+
+**Warnings:**
+
+- Use with caution the formats *ico*, *jp2* and the family *pnm*. They are implemented without following other libraries (just reading the specs - sometimes working with old drafts like *jp2*). You can support this library by providing more tests and image *fixtures* or requesting other variants to be tested.
 
 ## Installation
 
@@ -86,7 +103,7 @@ From Hex:
   def deps do
     [ 
       # ...
-      {:ex_image_info, "~> 0.1.1"},
+      {:ex_image_info, "~> 0.2.0"},
     ]
   end
 ```

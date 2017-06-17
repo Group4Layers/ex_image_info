@@ -10,8 +10,8 @@ defmodule ExImageInfo.Types.JPEG do
 
   # TODO: why it does not work bytes-size(3) ?
   @signature << 0xFFD8::size(16) >>
-  @signature_base << 0xC0 >>
-  @signature_prog << 0xC2 >>
+  # @signature_base << 0xC0 >>
+  # @signature_prog << 0xC2 >>
 
 
   # Public API

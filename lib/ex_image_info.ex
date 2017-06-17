@@ -1,8 +1,8 @@
 defmodule ExImageInfo do
-  alias ExImageInfo.Types.{PNG,GIF,JPEG,BMP,TIFF,WEBP,PSD}
+  alias ExImageInfo.Types.{PNG,GIF,JPEG,BMP,TIFF,WEBP,PSD,JP2,PNM,ICO}
 
   @moduledoc """
-  ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions, detected mime-type and overall validity for a set of image formats. Main module to parse a binary and get if it seems to be an image (validity), the mime-type (and variant detected) and the dimensions of the image, based on a specific image format.
+  ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. Main module to parse a binary and get if it seems to be an image (validity), the mime-type (and variant detected) and the dimensions of the image, based on a specific image format.
 
   It has convention functions to guess the type of an image
   by trying the formats supported by the library.
@@ -23,8 +23,11 @@ defmodule ExImageInfo do
   Supported formats (image type to be parsed as):
   - `:bmp`
   - `:gif`
+  - `:ico` (new in `v0.2.0`)
   - `:jpeg`
+  - `:jp2` (new in `v0.2.0`)
   - `:png`
+  - `:pnm` (new in `v0.2.0`)
   - `:psd`
   - `:tiff`
   - `:webp`
@@ -37,28 +40,45 @@ defmodule ExImageInfo do
 
   Each mime-type can be linked to at least one variant type:
 
-  | mime-type    | variant type | description        |
-  | ------------ | ------------ | ------------------ |
-  | `image/bmp`  | `BMP`        |                    |
-  | `image/gif`  | `GIF87a`     | 87a gif spec       |
-  | `image/gif`  | `GIF89a`     | 89a gif spec       |
-  | `image/jpeg` | `baseJPEG`   | baseline JPEG      |
-  | `image/jpeg` | `progJPEG`   | progressive JPEG   |
-  | `image/png`  | `PNG`        |                    |
-  | `image/psd`  | `PSD`        |                    |
-  | `image/tiff` | `TIFFII`     | II variant         |
-  | `image/tiff` | `TIFFMM`     | MM variant         |
-  | `image/webp` | `webpVP8`    | lossy              |
-  | `image/webp` | `webpVP8L`   | lossless           |
+  | mime-type                 | variant type | description        |
+  | ------------------------- | ------------ | ------------------ |
+  | `image/bmp`               | `BMP`        |                    |
+  | `image/gif`               | `GIF87a`     | 87a gif spec       |
+  | `image/gif`               | `GIF89a`     | 89a gif spec       |
+  | `image/x-icon`            | `ICO`        |                    |
+  | `image/jpeg`              | `baseJPEG`   | baseline JPEG      |
+  | `image/jpeg`              | `progJPEG`   | progressive JPEG   |
+  | `image/jp2`               | `JP2`        | JPEG2000           |
+  | `image/png`               | `PNG`        |                    |
+  | `image/x-portable-anymap` | `PNMpbm`     | Portable BitMap    |
+  | `image/x-portable-anymap` | `PNMpgm`     | Portable GrayMap   |
+  | `image/x-portable-anymap` | `PNMppm`     | Portable PixMap    |
+  | `image/psd`               | `PSD`        |                    |
+  | `image/tiff`              | `TIFFII`     | II variant         |
+  | `image/tiff`              | `TIFFMM`     | MM variant         |
+  | `image/webp`              | `webpVP8`    | lossy              |
+  | `image/webp`              | `webpVP8L`   | lossless           |
 
   The variant type is created just to provide a bit more of information
   for every image format (if applicable).
+
+  *Note*: `:ico` returns the dimensions of the largest image contained (not the first found).
+
+  The guessing functions try to detect the format of the binary by testing every available type based on its global usage (popularity, [usage of image file formats](https://w3techs.com/technologies/overview/image_format/all), but still keeping the `:png` as the first one):
+  - `:png`, `:jpeg`, `:gif`, `:bmp`, `:ico`, `:tiff`, `:webp`, `:psd`, `:jp2`, `:pnm`
   """
 
-  @types [:png, :gif, :jpeg, :bmp, :tiff, :webp, :psd]
+  # Guessing function ordered by global usage
+  # https://w3techs.com/technologies/overview/image_format/all
+  # but still keeping :png as the first
+  @types [:png, :jpeg, :gif, :bmp, :ico, :tiff, :webp, :psd, :jp2, :pnm]
 
   # public API
 
+  # @spec hash(binary, format :: atom) :: String.t | nil
+  # def hash(binary, format)
+  # def hash(binary, :png), do: PNG.hash(binary)
+  # def hash(_, _), do: nil
 
   @doc """
   Detects if the given binary seems to be in the given image format.
@@ -95,6 +115,9 @@ defmodule ExImageInfo do
   def seems?(binary, :tiff), do: TIFF.seems?(binary)
   def seems?(binary, :webp), do: WEBP.seems?(binary)
   def seems?(binary, :psd), do: PSD.seems?(binary)
+  def seems?(binary, :jp2), do: JP2.seems?(binary)
+  def seems?(binary, :pnm), do: PNM.seems?(binary)
+  def seems?(binary, :ico), do: ICO.seems?(binary)
   # def seems?(binary, :svg), do: SVG.seems?(binary)
   def seems?(_, _), do: nil
 
@@ -162,6 +185,9 @@ defmodule ExImageInfo do
   def type(binary, :tiff), do: TIFF.type(binary)
   def type(binary, :webp), do: WEBP.type(binary)
   def type(binary, :psd), do: PSD.type(binary)
+  def type(binary, :jp2), do: JP2.type(binary)
+  def type(binary, :pnm), do: PNM.type(binary)
+  def type(binary, :ico), do: ICO.type(binary)
   # def type(binary, :svg, binary), do: SVG.type(binary)
   def type(_, _), do: nil
 
@@ -227,6 +253,9 @@ defmodule ExImageInfo do
   def info(binary, :tiff), do: TIFF.info(binary)
   def info(binary, :webp), do: WEBP.info(binary)
   def info(binary, :psd), do: PSD.info(binary)
+  def info(binary, :jp2), do: JP2.info(binary)
+  def info(binary, :pnm), do: PNM.info(binary)
+  def info(binary, :ico), do: ICO.info(binary)
   # def info(binary, :svg), do: SVG.info(binary)
   def info(_, _), do: nil
 
