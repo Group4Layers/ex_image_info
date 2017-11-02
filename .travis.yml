@@ -21,3 +21,6 @@ install:
 
 script:
   - mix test
+
+after_success:
+  - mix coveralls.travis
