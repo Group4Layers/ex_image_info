@@ -1,4 +1,5 @@
 defmodule ExImageInfo.Types.PSD do
+
   @moduledoc false
 
   @behaviour ExImageInfo.Detector
@@ -7,6 +8,8 @@ defmodule ExImageInfo.Types.PSD do
   @ftype "PSD"
 
   @signature <<"8BPS">>
+
+  ## Public API
 
   def seems?(<< @signature, _::binary >>), do: true
   def seems?(_), do: false

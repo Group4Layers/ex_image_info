@@ -1,10 +1,12 @@
 # README
 
-# ExImageInfo 
+# ExImageInfo
 
-[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/rNoz/ex_image_info/master/LICENSE.md) [![ExCoveralls](https://cdn.rawgit.com/rNoz/ex_image_info/7ecd9481/assets/coverage.svg)](https://github.com/parroty/excoveralls) ![Tests](https://cdn.rawgit.com/rNoz/ex_image_info/7ecd9481/assets/tests.svg)
+[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/rNoz/ex_image_info/master/LICENSE.md) <a class="no-underline" href="https://github.com/rNoz/ex_image_info"><img src="https://img.shields.io/badge/coverage-98.3%25-green.svg" alt="Coverage"></a> <a class="no-underline" href="https://github.com/rNoz/ex_image_info"><img src="https://img.shields.io/badge/tests-54%2F54-green.svg" alt="Tests"></a>
 
 ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions, detected mime-type and overall validity for a set of image formats.
+
+Online tools: [![Build Status](https://travis-ci.org/rNoz/ex_image_info.svg?branch=master)](https://travis-ci.org/rNoz/ex_image_info) [![Coverage Status](https://coveralls.io/repos/github/rNoz/ex_image_info/badge.svg?branch=master)](https://coveralls.io/github/rNoz/ex_image_info?branch=master)
 
 ### [GitHub repo](https://github.com/rNoz/ex_image_info) &nbsp;&nbsp; [Docs](https://rnoz.github.io/ex_image_info) &nbsp;&nbsp; [Hex.pm package](https://hex.pm/packages/ex_image_info)
 
@@ -13,6 +15,7 @@ ExImageInfo is an Elixir library to parse images (binaries) and get the dimensio
 1. [Description](#description)
 1. [Installation](#installation)
 1. [Examples](#examples)
+1. [Benchmarks](#benchmarks)
 1. [Design decisions](#design-decisions)
 1. [Acknowledgments](#acknowledgments)
 1. [Author](#author)
@@ -101,9 +104,9 @@ From Hex:
 
 ```elixir
   def deps do
-    [ 
+    [
       # ...
-      {:ex_image_info, "~> 0.2.0"},
+      {:ex_image_info, "~> 0.2.1"},
     ]
   end
 ```
@@ -112,7 +115,7 @@ Or GitHub:
 
 ```elixir
   def deps do
-    [ 
+    [
       # ...
       {:ex_image_info, github: "rNoz/ex_image_info"},
     ]
@@ -134,7 +137,7 @@ The following examples are run with the latest version of the library under the 
 Erlang/OTP 19 [erts-8.0.2] [source] [64-bit] [smp:8:8] [async-threads:10] [hipe] [kernel-poll:false]
 
 Interactive Elixir (1.3.2) - press Ctrl+C to exit (type h() ENTER for help)
-iex(1)> 
+iex(1)>
 ```
 
 ### Feature `seems?`
@@ -250,7 +253,7 @@ iex(1)> ExImageInfo.info File.read!("path/to/image.gif"), :gif
 iex(2)> maybe_png_binary |> ExImageInfo.info :png
 nil
 ```
-  
+
 ```elixir
 iex(1)> ExImageInfo.info <<0x38425053::size(32)>>
 nil
@@ -268,6 +271,14 @@ iex(1)> ExImageInfo.info File.read!("path/to/image.unknown")
 iex(2)> webp_full_binary |> ExImageInfo.info
 {"image/webp", 20, 100, "webpVP8"}
 ```
+
+## Benchmarks
+
+Group4Layers developed the fastest elixir library to obtain the dimensions of the images (binary data parsed). Also, it excels supporting the maximum number of image formats. All without dependencies.
+
+![ExImageInfo Benchmarks](assets/ex_image_info_benchmarks.png)
+
+(The image wouldn't be included in the package).
 
 ## Design decisions
 
@@ -304,7 +315,7 @@ Thanks to them.
 
 ## Author
 
-rNoz <rnoz.commits@gmail.com>.
+rNoz <rnoz.commits@gmail.com> (Group4Layers®).
 
 ## Contributors
 

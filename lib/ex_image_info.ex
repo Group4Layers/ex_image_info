@@ -1,5 +1,6 @@
 defmodule ExImageInfo do
-  alias ExImageInfo.Types.{PNG,GIF,JPEG,BMP,TIFF,WEBP,PSD,JP2,PNM,ICO}
+
+  alias ExImageInfo.Types.{PNG, GIF, JPEG, BMP, TIFF, WEBP, PSD, JP2, PNM, ICO}
 
   @moduledoc """
   ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. Main module to parse a binary and get if it seems to be an image (validity), the mime-type (and variant detected) and the dimensions of the image, based on a specific image format.
@@ -73,12 +74,7 @@ defmodule ExImageInfo do
   # but still keeping :png as the first
   @types [:png, :jpeg, :gif, :bmp, :ico, :tiff, :webp, :psd, :jp2, :pnm]
 
-  # public API
-
-  # @spec hash(binary, format :: atom) :: String.t | nil
-  # def hash(binary, format)
-  # def hash(binary, :png), do: PNG.hash(binary)
-  # def hash(_, _), do: nil
+  ## Public API
 
   @doc """
   Detects if the given binary seems to be in the given image format.
@@ -118,7 +114,6 @@ defmodule ExImageInfo do
   def seems?(binary, :jp2), do: JP2.seems?(binary)
   def seems?(binary, :pnm), do: PNM.seems?(binary)
   def seems?(binary, :ico), do: ICO.seems?(binary)
-  # def seems?(binary, :svg), do: SVG.seems?(binary)
   def seems?(_, _), do: nil
 
   @doc """
@@ -188,7 +183,6 @@ defmodule ExImageInfo do
   def type(binary, :jp2), do: JP2.type(binary)
   def type(binary, :pnm), do: PNM.type(binary)
   def type(binary, :ico), do: ICO.type(binary)
-  # def type(binary, :svg, binary), do: SVG.type(binary)
   def type(_, _), do: nil
 
   @doc """
@@ -244,7 +238,8 @@ defmodule ExImageInfo do
       maybe_png_binary |> ExImageInfo.info :png
       # nil
   """
-  @spec info(binary, format :: atom) :: {mimetype :: String.t, width :: Integer.t, height :: Integer.t, variant :: String.t} | nil
+  @spec info(binary, format :: atom) ::
+    {mimetype :: String.t, width :: Integer.t, height :: Integer.t, variant :: String.t} | nil
   def info(binary, format)
   def info(binary, :png), do: PNG.info(binary)
   def info(binary, :gif), do: GIF.info(binary)
@@ -256,7 +251,6 @@ defmodule ExImageInfo do
   def info(binary, :jp2), do: JP2.info(binary)
   def info(binary, :pnm), do: PNM.info(binary)
   def info(binary, :ico), do: ICO.info(binary)
-  # def info(binary, :svg), do: SVG.info(binary)
   def info(_, _), do: nil
 
   @doc """
@@ -284,18 +278,15 @@ defmodule ExImageInfo do
   @spec info(binary) :: {mimetype :: String.t, width :: Integer.t, height :: Integer.t, variant :: String.t} | nil
   def info(binary), do: try_info(binary, @types)
 
+  ## Private
 
-
-  # private
-
+  @doc false
   defp try_seems?(_binary, []), do: nil
   defp try_seems?(binary, [type | types]) do
-    cond do
-      seems?(binary, type) -> type
-      true -> try_seems?(binary, types)
-    end
+    if seems?(binary, type), do: type, else: try_seems?(binary, types)
   end
 
+  @doc false
   defp try_type(_binary, []), do: nil
   defp try_type(binary, [type | types]) do
     case type(binary, type) do
@@ -304,6 +295,7 @@ defmodule ExImageInfo do
     end
   end
 
+  @doc false
   defp try_info(_binary, []), do: nil
   defp try_info(binary, [type | types]) do
     case info(binary, type) do

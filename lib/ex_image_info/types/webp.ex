@@ -1,4 +1,5 @@
 defmodule ExImageInfo.Types.WEBP do
+
   @moduledoc false
 
   @behaviour ExImageInfo.Detector
@@ -6,13 +7,14 @@ defmodule ExImageInfo.Types.WEBP do
   require Bitwise
 
   @mime "image/webp"
-  @ftypeVP8 "webpVP8"
-  @ftypeVP8L "webpVP8L" # lossless
+  @ftype_vp8 "webpVP8"
+  @ftype_vp8l "webpVP8L"
 
   @signature_riff <<"RIFF">>
   @signature_webp <<"WEBP">>
   @signature_vp8 <<"VP8">>
-  # @signature_vp8l <<"VP8L">>
+
+  ## Public API
 
   def seems?(<< @signature_riff, _skip::bytes-size(4), @signature_webp, @signature_vp8, _rest::binary >>), do: true
   def seems?(_), do: false
@@ -27,19 +29,22 @@ defmodule ExImageInfo.Types.WEBP do
   end
   def info(_), do: nil
 
+  def type(<< @signature_riff, _skip::bytes-size(4), @signature_webp, @signature_vp8, lossy::bytes-size(1), _rest::binary >>) do
+    if lossy == "L", do: {@mime, @ftype_vp8l}, else: {@mime, @ftype_vp8}
+  end
+  def type(_), do: nil
+
+  ## Private
+
   defp parse_lossy(_first, << _skip::bytes-size(5), w::little-size(16), h::little-size(16), _rest::binary >>) do
-    {@mime, Bitwise.band(w, 0x3fff), Bitwise.band(h, 0x3fff), @ftypeVP8}
+    {@mime, Bitwise.band(w, 0x3fff), Bitwise.band(h, 0x3fff), @ftype_vp8}
   end
 
   defp parse_lossless(_first, << one::size(8), two::size(8), three::size(8), four::size(8), _rest::binary >> = _buf) do
     w = 1 + Bitwise.bor(Bitwise.<<<(Bitwise.band(two, 0x3f), 8), one)
-    h = 1 + Bitwise.bor(Bitwise.bor(Bitwise.<<<(Bitwise.band(four, 0xf), 10), Bitwise.<<<(three, 2)), Bitwise.>>>(Bitwise.band(two, 0xC0), 6))
-    {@mime, w, h, @ftypeVP8L}
+    h = 1 + Bitwise.bor(Bitwise.bor(Bitwise.<<<(Bitwise.band(four, 0xf), 10), Bitwise.<<<(three, 2)),
+                        Bitwise.>>>(Bitwise.band(two, 0xC0), 6))
+    {@mime, w, h, @ftype_vp8l}
   end
-
-  def type(<< @signature_riff, _skip::bytes-size(4), @signature_webp, @signature_vp8, lossy::bytes-size(1), _rest::binary >>) do
-    if lossy == "L", do: {@mime, @ftypeVP8L}, else: {@mime, @ftypeVP8}
-  end
-  def type(_), do: nil
 
 end

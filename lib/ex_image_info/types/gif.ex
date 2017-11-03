@@ -1,4 +1,5 @@
 defmodule ExImageInfo.Types.GIF do
+
   @moduledoc false
 
   @behaviour ExImageInfo.Detector

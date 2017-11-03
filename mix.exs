@@ -5,7 +5,7 @@ defmodule ExImageInfo.Mixfile do
     [
       app: :ex_image_info,
       description: "ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats.",
-      version: "0.2.0",
+      version: "0.2.1",
       elixir: "~> 1.3",
       name: 'ExImageInfo',
       package: package(),
@@ -14,6 +14,8 @@ defmodule ExImageInfo.Mixfile do
       aliases: aliases(),
       deps: deps(),
       docs: docs(),
+      source_url: "https://github.com/rNoz/ex_image_info",
+      homepage_url: "https://www.group4layers.com",
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.html": :test],
     ]
@@ -26,20 +28,22 @@ defmodule ExImageInfo.Mixfile do
   defp deps do
     [
       {:excoveralls, "~> 0.5", only: :test},
-      {:ex_doc, "~> 0.12", only: :dev},
+      {:ex_doc, "~> 0.18", only: :dev},
       {:inch_ex, "~> 0.5", only: [:dev, :test]},
+      {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
     ]
   end
 
   defp aliases do
     [
-      "test_wip": ["test --only wip"]
+      "test_wip": ["test --only wip"],
     ]
   end
 
   defp docs do
     [
-      extras: ["README.md", "LICENSE.md", "CHANGELOG.md", "CONTRIBUTORS.md"]
+      extras: ["README.md", "LICENSE.md", "CHANGELOG.md", "CONTRIBUTORS.md"],
+      assets: "assets/"
     ]
   end
 
@@ -58,6 +62,7 @@ defmodule ExImageInfo.Mixfile do
       links: %{
         "GitHub" => "https://github.com/rNoz/ex_image_info",
         "Docs" => "https://rnoz.github.io/ex_image_info",
+        "Organization" => "https://www.group4layers.com",
       }
     ]
   end

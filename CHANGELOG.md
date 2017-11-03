@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## v0.2.1 (2017-11-03)
+
+**Enhancements:**
+
+- Code is improved following credo, solving:
+  - 5 software design suggestions (mainly not important `TODO`s).
+  - 34 code readability issues.
+  - 2 refactoring opportunities.
+  - 2 consistency issues.
+- Clean code: removed superfluous comments and refactored def to defp when applicable.
+
+**News:**
+
+- Benchmarks are performed. An image with charts is included to compare famous elixir libraries. ExImageInfo always outperforms.
+- Online tools applied (TravisCI and Coveralls). Badges included.
+- New "patch" version to include the changes.
+
 ## v0.2.0 (2017-06-17)
 
 **Warnings:**

@@ -1,4 +1,5 @@
 defmodule ExImageInfo.Types.ICO do
+
   @moduledoc false
 
   @behaviour ExImageInfo.Detector
@@ -9,7 +10,8 @@ defmodule ExImageInfo.Types.ICO do
 
   @signature << 0::size(16), 0x01, 0x00 >> # 0x0100 -> little endian -> 1 (.ICO), 2 (.CUR)
 
-  # Public API
+  ## Public API
+
   def seems?(<< @signature, _rest::binary >>), do: true
   def seems?(_), do: false
 
@@ -21,12 +23,12 @@ defmodule ExImageInfo.Types.ICO do
   end
   def info(_), do: nil
 
-
   def type(<< @signature, _rest::binary >>), do: {@mime, @ftype}
   def type(_), do: nil
 
-  # Private
-  defp parse(binary, num), do: parse(binary, num, {0,0})
+  ## Private
+
+  defp parse(binary, num), do: parse(binary, num, {0, 0})
   defp parse(<< w::size(8), h::size(8), _head::bytes-size(14), rest::binary >>, num, {wp, hp} = acc) do
     w = if w == 0, do: 256, else: w
     h = if h == 0, do: 256, else: h

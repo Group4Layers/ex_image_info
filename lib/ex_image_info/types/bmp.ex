@@ -1,4 +1,5 @@
 defmodule ExImageInfo.Types.BMP do
+
   @moduledoc false
 
   @behaviour ExImageInfo.Detector
@@ -7,6 +8,8 @@ defmodule ExImageInfo.Types.BMP do
   @ftype "BMP"
 
   @signature <<"BM">>
+
+  ## Public API
 
   def seems?(<< @signature, _rest::binary >>), do: true
   def seems?(_), do: false

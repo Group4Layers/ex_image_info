@@ -1,4 +1,5 @@
 defmodule ExImageInfo.Types.PNG do
+
   @moduledoc false
 
   @behaviour ExImageInfo.Detector
@@ -8,6 +9,8 @@ defmodule ExImageInfo.Types.PNG do
 
   @signature <<"PNG\r\n", 0x1A, "\n">>
   @signature_ihdr <<"IHDR">>
+
+  ## Public API
 
   def seems?(<< _::bytes-size(1), @signature, _rest::binary >>), do: true
   def seems?(_), do: false

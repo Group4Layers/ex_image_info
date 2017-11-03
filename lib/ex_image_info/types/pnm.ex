@@ -1,4 +1,5 @@
 defmodule ExImageInfo.Types.PNM do
+
   @moduledoc false
 
   @behaviour ExImageInfo.Detector
@@ -7,44 +8,32 @@ defmodule ExImageInfo.Types.PNM do
   # promote to 3 mime types? (x-portable-bitmap, x-portable-graymap, x-portable-pixmap)
   @mime "image/x-portable-anymap"
 
-  @ftypePBM "PNMpbm"
-  @ftypePGM "PNMpgm"
-  @ftypePPM "PNMppm"
+  @ftype_pbm "PNMpbm"
+  @ftype_pgm "PNMpgm"
+  @ftype_ppm "PNMppm"
 
   @signature << "P" >>
 
-  # 0x23 = 35 = #
   @sharp 0x23
   @nl 0x0a
   @space 0x20
 
-  # Public API
+  ## Public API
+
   def seems?(<< @signature, char::size(8), split, _rest::binary >>) when split in [@nl, @space, @sharp] do
     if signature_pnm(char), do: true, else: false
   end
   def seems?(_), do: false
 
   def info(<< @signature, char::size(8), split, rest::binary >>) when split in [@nl, @space, @sharp] do
-    # Binary only
-    # with type <- signature_pnm(char),
-    #      {pos, _} <- :binary.match(rest, "\n"),
-    #        line <- :binary.part(rest, {0, pos}),
-    #        [_, w, h] <- Regex.run(~r/(\d+) (\d+)/, line) do
-    #   {@mime, String.to_integer(w), String.to_integer(h), type}
-    # else
-    #     val -> IO.inspect val
-    #   _ -> nil
-    # end
     with type <- signature_pnm(char),
          {w, h} <- parse(rest, nil) do
       {@mime, String.to_integer(w), String.to_integer(h), type}
     else
       _ -> nil
     end
-
   end
   def info(_), do: nil
-
 
   def type(<< @signature, char::size(8), split, _rest::binary >>) when split in [@nl, @space, @sharp] do
     case signature_pnm(char) do
@@ -54,20 +43,20 @@ defmodule ExImageInfo.Types.PNM do
   end
   def type(_), do: nil
 
-  # Private
+  ## Private
 
   defp signature_pnm(char) do
     case char do
-      x when x in [?1, ?4] -> @ftypePBM
-      x when x in [?2, ?5] -> @ftypePGM
-      x when x in [?3, ?6] -> @ftypePPM
+      x when x in [?1, ?4] -> @ftype_pbm
+      x when x in [?2, ?5] -> @ftype_pgm
+      x when x in [?3, ?6] -> @ftype_ppm
       _ -> nil
     end
   end
 
   defp parse(rest, pre) do
     with [line, next] <- :binary.split(rest, "\n"), # no global
-    valid <- :binary.split(line, "#") |> hd, # comments
+    valid <- hd(:binary.split(line, "#")), # comments
     ret <- Regex.run(~r/^\s*(\d+)(?:[\s]|)(?:(\d+)(?:[\s]|))?/, valid) do
       case ret do
         [_, w, h] ->
@@ -88,4 +77,5 @@ defmodule ExImageInfo.Types.PNM do
       _ -> nil
     end
   end
+
 end
