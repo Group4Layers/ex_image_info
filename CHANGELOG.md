@@ -5,7 +5,7 @@
 **Enhancements:**
 
 - Code is improved following credo, solving:
-  - 5 software design suggestions (mainly not important `TODO`s).
+  - 5 software design suggestions.
   - 34 code readability issues.
   - 2 refactoring opportunities.
   - 2 consistency issues.
