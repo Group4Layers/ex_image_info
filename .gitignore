@@ -1,8 +1,5 @@
 # -*- mode: conf; -*-
 
-/support
-/docs
-
 # Created by https://www.gitignore.io/api/elixir
 
 ### Elixir ###
@@ -87,3 +84,11 @@ company-statistics-cache.el
 anaconda-mode/
 
 # End of https://www.gitignore.io/api/emacs
+
+## Repo custom rules
+
+/support
+/docs
+
+# for gh-pages
+!dist/
