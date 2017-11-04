@@ -1,3 +1,3 @@
 # CONTRIBUTORS
 
-rNoz <rnoz.commits@gmail.com>
+nozalr <nozalr@group4layers.com>

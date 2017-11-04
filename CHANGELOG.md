@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v0.2.2 (2017-11-04)
+
+**News:**
+
+- Docs are in the official repo, not in gh-pages branch.
+- Added inch-ci and ebertapp static analysis online tools (0 issues).
+- Repository promoted to the Group4Layers organization.
+- New "patch" version to include the changes.
+
 ## v0.2.1 (2017-11-03)
 
 **Enhancements:**
@@ -15,6 +24,8 @@
 
 - Benchmarks are performed. An image with charts is included to compare famous elixir libraries. ExImageInfo always outperforms.
 - Online tools applied (TravisCI and Coveralls). Badges included.
+- Added ebertapp static analysis online tool.
+- Repository promoted to Group4Layers organization.
 - New "patch" version to include the changes.
 
 ## v0.2.0 (2017-06-17)

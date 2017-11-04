@@ -2,13 +2,13 @@
 
 # ExImageInfo
 
-[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/rNoz/ex_image_info/master/LICENSE.md) <a class="no-underline" href="https://github.com/rNoz/ex_image_info"><img src="https://img.shields.io/badge/coverage-98.3%25-green.svg" alt="Coverage"></a> <a class="no-underline" href="https://github.com/rNoz/ex_image_info"><img src="https://img.shields.io/badge/tests-54%2F54-green.svg" alt="Tests"></a>
+[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/Group4Layers/ex_image_info/master/LICENSE.md) <a class="no-underline" href="https://github.com/Group4Layers/ex_image_info"><img src="https://img.shields.io/badge/coverage-98.3%25-green.svg" alt="Coverage"></a> <a class="no-underline" href="https://github.com/Group4Layers/ex_image_info"><img src="https://img.shields.io/badge/tests-54%2F54-green.svg" alt="Tests"></a>
 
 ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.
 
-Online tools: [![Build Status](https://travis-ci.org/rNoz/ex_image_info.svg?branch=master)](https://travis-ci.org/rNoz/ex_image_info) [![Coverage Status](https://coveralls.io/repos/github/rNoz/ex_image_info/badge.svg?branch=master)](https://coveralls.io/github/rNoz/ex_image_info?branch=master)
+Online tools: [![Build Status](https://travis-ci.org/Group4Layers/ex_image_info.svg?branch=master)](https://travis-ci.org/Group4Layers/ex_image_info) [![Coverage Status](https://coveralls.io/repos/github/Group4Layers/ex_image_info/badge.svg?branch=master)](https://coveralls.io/github/Group4Layers/ex_image_info?branch=master) [![Ebert](https://ebertapp.io/github/Group4Layers/ex_image_info.svg)](https://ebertapp.io/github/Group4Layers/ex_image_info) [![Inline docs](http://inch-ci.org/github/Group4Layers/ex_image_info.svg)](http://inch-ci.org/github/Group4Layers/ex_image_info)
 
-### [GitHub repo](https://github.com/rNoz/ex_image_info) &nbsp;&nbsp; [Docs](https://rnoz.github.io/ex_image_info) &nbsp;&nbsp; [Hex.pm package](https://hex.pm/packages/ex_image_info)
+### [GitHub repo](https://github.com/Group4Layers/ex_image_info) &nbsp;&nbsp; [Docs](https://group4layers.github.io/ex_image_info) &nbsp;&nbsp; [Hex.pm package](https://hex.pm/packages/ex_image_info)
 
 ## Table of Contents
 
@@ -117,7 +117,7 @@ Or GitHub:
   def deps do
     [
       # ...
-      {:ex_image_info, github: "rNoz/ex_image_info"},
+      {:ex_image_info, github: "Group4Layers/ex_image_info"},
     ]
   end
 ```
@@ -315,7 +315,7 @@ Thanks to them.
 
 ## Author
 
-rNoz <rnoz.commits@gmail.com> (Group4Layers®).
+nozalr <nozalr@group4layers.com> (Group4Layers®).
 
 ## Contributors
 

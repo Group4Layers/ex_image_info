@@ -88,7 +88,7 @@ anaconda-mode/
 ## Repo custom rules
 
 /support
-/docs
+# /docs
 
 # for gh-pages
 !dist/

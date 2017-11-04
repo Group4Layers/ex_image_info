@@ -5,7 +5,7 @@ defmodule ExImageInfo.Mixfile do
     [
       app: :ex_image_info,
       description: "ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.",
-      version: "0.2.1",
+      version: "0.2.2",
       elixir: "~> 1.3",
       name: 'ExImageInfo',
       package: package(),
@@ -14,7 +14,7 @@ defmodule ExImageInfo.Mixfile do
       aliases: aliases(),
       deps: deps(),
       docs: docs(),
-      source_url: "https://github.com/rNoz/ex_image_info",
+      source_url: "https://github.com/Group4Layers/ex_image_info",
       homepage_url: "https://www.group4layers.com",
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.html": :test],
@@ -37,6 +37,7 @@ defmodule ExImageInfo.Mixfile do
   defp aliases do
     [
       "test_wip": ["test --only wip"],
+      "docs": ["docs", &copy_doc_to_docs/1]
     ]
   end
 
@@ -45,6 +46,12 @@ defmodule ExImageInfo.Mixfile do
       extras: ["README.md", "LICENSE.md", "CHANGELOG.md", "CONTRIBUTORS.md"],
       assets: "assets/"
     ]
+  end
+
+  defp copy_doc_to_docs(_) do
+    # to be used in GitHub Pages (and keep doc for hexpm package)
+    File.rm_rf!("docs")
+    File.cp_r!("doc", "docs")
   end
 
   defp package do
@@ -57,11 +64,11 @@ defmodule ExImageInfo.Mixfile do
         "LICENSE.md",
         "mix.exs",
       ],
-      maintainers: ["rNoz <rnoz.commits@gmail.com>"],
+      maintainers: ["nozalr <nozalr@group4layers.com>"],
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/rNoz/ex_image_info",
-        "Docs" => "https://rnoz.github.io/ex_image_info",
+        "GitHub" => "https://github.com/Group4Layers/ex_image_info",
+        "Docs" => "https://group4layers.github.io/ex_image_info",
         "Organization" => "https://www.group4layers.com",
       }
     ]

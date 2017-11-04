@@ -1,0 +1,624 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.18.1">
+    <title>ExImageInfo – ExImageInfo v0.2.2</title>
+    <link rel="stylesheet" href="dist/app-c922dbe7ef.css" />
+    
+    <script src="dist/sidebar_items-c1554d5fa2.js"></script>
+    
+    
+    
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+
+    <div class="main">
+<button class="sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<section class="sidebar">
+
+  
+  <a href="https://www.group4layers.com" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        ExImageInfo
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.2.2
+      </h2>
+    </div>
+    
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">ExImageInfo v0.2.2</small>
+        ExImageInfo
+        
+          <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+        
+      </h1>
+
+      
+        <section id="moduledoc">
+          <p>ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. Main module to parse a binary and get if it seems to be an image (validity), the mime-type (and variant detected) and the dimensions of the image, based on a specific image format.</p>
+<p>It has convention functions to guess the type of an image
+by trying the formats supported by the library.</p>
+<h2 id="module-main-features" class="section-heading">
+  <a href="#module-main-features" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Main features
+</h2>
+
+<ul>
+<li>Check the validity of binary by providing a specific image format*.
+</li>
+<li>Guess the validity of an image*.
+</li>
+<li>Get the mime-type and variant type by providing a specific format.
+</li>
+<li>Guess the mime-type and variant type of an image.
+</li>
+<li>Get the dimensions of an image by providing a specific format.
+</li>
+<li>Guess the dimensions of an image.
+</li>
+</ul>
+<p>*Note: both cases as a general overview (partially checked).</p>
+<h2 id="module-formats" class="section-heading">
+  <a href="#module-formats" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Formats
+</h2>
+
+<p>Supported formats (image type to be parsed as):</p>
+<ul>
+<li><code class="inline">:bmp</code>
+</li>
+<li><code class="inline">:gif</code>
+</li>
+<li><code class="inline">:ico</code> (new in <code class="inline">v0.2.0</code>)
+</li>
+<li><code class="inline">:jpeg</code>
+</li>
+<li><code class="inline">:jp2</code> (new in <code class="inline">v0.2.0</code>)
+</li>
+<li><code class="inline">:png</code>
+</li>
+<li><code class="inline">:pnm</code> (new in <code class="inline">v0.2.0</code>)
+</li>
+<li><code class="inline">:psd</code>
+</li>
+<li><code class="inline">:tiff</code>
+</li>
+<li><code class="inline">:webp</code>
+</li>
+</ul>
+<h2 id="module-mime-types-and-variants" class="section-heading">
+  <a href="#module-mime-types-and-variants" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Mime-types and Variants
+</h2>
+
+<p>The image variant type is an invented string to identify the
+type of format recognized by this library (more specific than the
+mime-type).</p>
+<p>Each mime-type can be linked to at least one variant type:</p>
+<table>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left">mime-type</th><th style="text-align: left">variant type</th><th style="text-align: left">description</th>
+</tr>
+</thead>
+<tr>
+<td style="text-align: left"><code class="inline">image/bmp</code></td><td style="text-align: left"><code class="inline">BMP</code></td><td style="text-align: left"></td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/gif</code></td><td style="text-align: left"><code class="inline">GIF87a</code></td><td style="text-align: left">87a gif spec</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/gif</code></td><td style="text-align: left"><code class="inline">GIF89a</code></td><td style="text-align: left">89a gif spec</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/x-icon</code></td><td style="text-align: left"><code class="inline">ICO</code></td><td style="text-align: left"></td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/jpeg</code></td><td style="text-align: left"><code class="inline">baseJPEG</code></td><td style="text-align: left">baseline JPEG</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/jpeg</code></td><td style="text-align: left"><code class="inline">progJPEG</code></td><td style="text-align: left">progressive JPEG</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/jp2</code></td><td style="text-align: left"><code class="inline">JP2</code></td><td style="text-align: left">JPEG2000</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/png</code></td><td style="text-align: left"><code class="inline">PNG</code></td><td style="text-align: left"></td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left"><code class="inline">PNMpbm</code></td><td style="text-align: left">Portable BitMap</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left"><code class="inline">PNMpgm</code></td><td style="text-align: left">Portable GrayMap</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left"><code class="inline">PNMppm</code></td><td style="text-align: left">Portable PixMap</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/psd</code></td><td style="text-align: left"><code class="inline">PSD</code></td><td style="text-align: left"></td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/tiff</code></td><td style="text-align: left"><code class="inline">TIFFII</code></td><td style="text-align: left">II variant</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/tiff</code></td><td style="text-align: left"><code class="inline">TIFFMM</code></td><td style="text-align: left">MM variant</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/webp</code></td><td style="text-align: left"><code class="inline">webpVP8</code></td><td style="text-align: left">lossy</td>
+</tr>
+<tr>
+<td style="text-align: left"><code class="inline">image/webp</code></td><td style="text-align: left"><code class="inline">webpVP8L</code></td><td style="text-align: left">lossless</td>
+</tr>
+</table>
+<p>The variant type is created just to provide a bit more of information
+for every image format (if applicable).</p>
+<p><em>Note</em>: <code class="inline">:ico</code> returns the dimensions of the largest image contained (not the first found).</p>
+<p>The guessing functions try to detect the format of the binary by testing every available type based on its global usage (popularity, <a href="https://w3techs.com/technologies/overview/image_format/all">usage of image file formats</a>, but still keeping the <code class="inline">:png</code> as the first one):</p>
+<ul>
+<li><code class="inline">:png</code>, <code class="inline">:jpeg</code>, <code class="inline">:gif</code>, <code class="inline">:bmp</code>, <code class="inline">:ico</code>, <code class="inline">:tiff</code>, <code class="inline">:webp</code>, <code class="inline">:psd</code>, <code class="inline">:jp2</code>, <code class="inline">:pnm</code>
+</li>
+</ul>
+
+        </section>
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#info/1">info(binary)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Gets the mime-type, variant-type and dimensions (width, height) for the given image binary (<em>guessed</em> version of <a href="ExImageInfo.html#info/2"><code class="inline">ExImageInfo.info/2</code></a>)</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#info/2">info(binary, format)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Gets the mime-type, variant-type and dimensions (width, height) for the given image format and binary</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#seems?/1">seems?(binary)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Detects the image format that seems to be the given binary (<em>guessed</em> version of <a href="ExImageInfo.html#seems?/2"><code class="inline">ExImageInfo.seems?/2</code></a>)</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#seems?/2">seems?(binary, format)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Detects if the given binary seems to be in the given image format</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#type/1">type(binary)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Gets the mime-type and variant type for the given image binary (<em>guessed</em> version of <a href="ExImageInfo.html#type/2"><code class="inline">ExImageInfo.type/2</code></a>)</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#type/2">type(binary, format)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Gets the mime-type and variant type for the given image format and binary</p>
+</div>
+  
+</div>
+
+  </div>
+
+
+          
+
+        </section>
+      
+
+      
+
+      
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="info/1">
+  
+  
+  <div class="detail-header">
+    <a href="#info/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">info(binary)</span>
+    
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L279" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>info(binary()) ::
+  {mimetype :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), width :: <a href="https://hexdocs.pm/elixir/Integer.html#t:t/0">Integer.t</a>(), height :: <a href="https://hexdocs.pm/elixir/Integer.html#t:t/0">Integer.t</a>(), variant :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()} |
+  nil</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Gets the mime-type, variant-type and dimensions (width, height) for the given image binary (<em>guessed</em> version of <a href="ExImageInfo.html#info/2"><code class="inline">ExImageInfo.info/2</code></a>).</p>
+<p>Possible <a href="#module-mime-types-and-variants">Mime-types and Variants</a> to be returned.</p>
+<p>Returns a 4-item tuple with the mime-type, width, height and the variant type when the binary matches, <code class="inline">nil</code> otherwise.</p>
+<h2 id="info/1-examples" class="section-heading">
+  <a href="#info/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="iex elixir">iex&gt; ExImageInfo.info &lt;&lt;0x38425053::size(32)&gt;&gt;
+nil
+iex&gt; ExImageInfo.info &lt;&lt;0x38425053::size(32), 0::size(80), 10::size(32), 12::size(32)&gt;&gt;
+{&quot;image/psd&quot;, 12, 10, &quot;PSD&quot;}</code></pre>
+<p>Usually it is used as:</p>
+<pre><code class="elixir">ExImageInfo.info File.read!(&quot;path/to/image.unknown&quot;)
+# {&quot;image/tiff&quot;, 128, 256, &quot;TIFFMM&quot;}
+
+webp_full_binary |&gt; ExImageInfo.info
+# {&quot;image/webp&quot;, 20, 100, &quot;webpVP8&quot;}</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="info/2">
+  
+  
+  <div class="detail-header">
+    <a href="#info/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">info(binary, format)</span>
+    
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L254" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>info(binary(), format :: atom()) ::
+  {mimetype :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), width :: <a href="https://hexdocs.pm/elixir/Integer.html#t:t/0">Integer.t</a>(), height :: <a href="https://hexdocs.pm/elixir/Integer.html#t:t/0">Integer.t</a>(), variant :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()} |
+  nil</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Gets the mime-type, variant-type and dimensions (width, height) for the given image format and binary.</p>
+<p>Possible <a href="#module-mime-types-and-variants">Mime-types and Variants</a> to be returned.</p>
+<p>Valid <a href="#module-formats">formats</a> to be used.</p>
+<p>Returns a 4-item tuple with the mime-type, width, height and the variant type when the binary matches, <code class="inline">nil</code> otherwise.</p>
+<h2 id="info/2-examples" class="section-heading">
+  <a href="#info/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<p><code class="inline">89 50 4E 47 0D 0A 1A 0A</code> are the first 8 bytes in the <code class="inline">PNG</code> signature (<code class="inline">PNG\r\n0x1A\n</code>).</p>
+<pre><code class="iex elixir">iex&gt; ExImageInfo.info &lt;&lt;0x89504E470D0A1A0A::size(64)&gt;&gt;, :png
+nil
+iex&gt; ExImageInfo.info &lt;&lt;&quot;RIFF&quot;, 0::size(32), &quot;WEBPVP8L&quot;, 0::size(32), 0x2F7AC07100358683B68D::size(80)&gt;&gt;, :webp
+{&quot;image/webp&quot;, 123, 456, &quot;webpVP8L&quot;}</code></pre>
+<p>The signature part of a png it is now enough to get the type (it check also the IHDR field, just before the width and height).</p>
+<p>Usually it is used as:</p>
+<pre><code class="elixir">ExImageInfo.info File.read!(&quot;path/to/image.gif&quot;), :gif
+# {&quot;image/gif&quot;, 1920, 1080, &quot;GIF87a&quot;}
+
+maybe_png_binary |&gt; ExImageInfo.info :png
+# nil</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="seems?/1">
+  
+  
+  <div class="detail-header">
+    <a href="#seems?/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">seems?(binary)</span>
+    
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L144" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>seems?(binary()) :: atom() | nil</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Detects the image format that seems to be the given binary (<em>guessed</em> version of <a href="ExImageInfo.html#seems?/2"><code class="inline">ExImageInfo.seems?/2</code></a>).</p>
+<p>Returns the valid <a href="#module-formats">format</a> (atom) if it matches, <code class="inline">nil</code> otherwise.</p>
+<h2 id="seems?/1-examples" class="section-heading">
+  <a href="#seems?/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<p><code class="inline">38 42 50 53</code> are the first 4 bytes in the <code class="inline">PSD</code> signature (<code class="inline">8BPS</code>).</p>
+<pre><code class="iex elixir">iex&gt; ExImageInfo.seems? &lt;&lt;0x38425053::size(32)&gt;&gt;
+:psd
+iex&gt; ExImageInfo.seems? &lt;&lt;0x384250::size(24)&gt;&gt;
+nil</code></pre>
+<p><a href="ExImageInfo.html#seems?/2"><code class="inline">ExImageInfo.seems?/2</code></a> and <a href="ExImageInfo.html#seems?/1"><code class="inline">ExImageInfo.seems?/1</code></a> does not necessarily needs a real image (as it is shown in the previous example) because it just checks the signature of every file format.</p>
+<p>Usually it is used as:</p>
+<pre><code class="elixir">ExImageInfo.seems? File.read!(&quot;path/to/image.unknown&quot;)
+# :tiff
+
+webp_full_binary |&gt; ExImageInfo.seems?
+# :webp</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="seems?/2">
+  
+  
+  <div class="detail-header">
+    <a href="#seems?/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">seems?(binary, format)</span>
+    
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L117" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>seems?(binary(), format :: atom()) :: boolean() | nil</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Detects if the given binary seems to be in the given image format.</p>
+<p>Valid <a href="#module-formats">formats</a> to be used.</p>
+<p>Returns <code class="inline">true</code> if seems to be, <code class="inline">false</code> otherwise.</p>
+<h2 id="seems?/2-examples" class="section-heading">
+  <a href="#seems?/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<p><code class="inline">89 50 4E 47 0D 0A 1A 0A</code> are the first 8 bytes in the <code class="inline">PNG</code> signature (<code class="inline">PNG\r\n0x1A\n</code>).</p>
+<pre><code class="iex elixir">iex&gt; ExImageInfo.seems? &lt;&lt;0x89504E470D0A1A0A::size(64)&gt;&gt;, :png
+true
+iex&gt; ExImageInfo.seems? &lt;&lt;0x89504E470D0A1A0A::size(64)&gt;&gt;, :webp
+false</code></pre>
+<p><a href="ExImageInfo.html#seems?/2"><code class="inline">ExImageInfo.seems?/2</code></a> and <a href="ExImageInfo.html#seems?/1"><code class="inline">ExImageInfo.seems?/1</code></a> does not necessarily needs a real image (as it is shown in the previous example) because it just checks the signature of every file format.</p>
+<p>Usually it is used as:</p>
+<pre><code class="elixir">ExImageInfo.seems? File.read!(&quot;path/to/image.gif&quot;), :gif
+# true
+
+maybe_png_binary |&gt; ExImageInfo.seems? :png
+# false</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="type/1">
+  
+  
+  <div class="detail-header">
+    <a href="#type/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">type(binary)</span>
+    
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L211" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>type(binary()) ::
+  {mimetype :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), variant :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()} |
+  nil</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Gets the mime-type and variant type for the given image binary (<em>guessed</em> version of <a href="ExImageInfo.html#type/2"><code class="inline">ExImageInfo.type/2</code></a>).</p>
+<p>Possible <a href="#module-mime-types-and-variants">Mime-types and Variants</a> to be returned.</p>
+<p>Returns a 2-item tuple with the mime-type and the variant type when the binary matches, <code class="inline">nil</code> otherwise.</p>
+<h2 id="type/1-examples" class="section-heading">
+  <a href="#type/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="iex elixir">iex&gt; ExImageInfo.type &lt;&lt;0x38425053::size(32)&gt;&gt;
+{&quot;image/psd&quot;, &quot;PSD&quot;}
+iex&gt; ExImageInfo.type &lt;&lt;0x384250::size(24)&gt;&gt;
+nil</code></pre>
+<p>Usually it is used as:</p>
+<pre><code class="elixir">ExImageInfo.type File.read!(&quot;path/to/image.unknown&quot;)
+# {&quot;image/tiff&quot;, &quot;TIFFMM&quot;}
+
+webp_full_binary |&gt; ExImageInfo.type
+# {&quot;image/webp&quot;, &quot;webpVP8&quot;}</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="type/2">
+  
+  
+  <div class="detail-header">
+    <a href="#type/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">type(binary, format)</span>
+    
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L186" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>type(binary(), format :: atom()) ::
+  {mimetype :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), variant :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()} |
+  nil</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Gets the mime-type and variant type for the given image format and binary.</p>
+<p>Possible <a href="#module-mime-types-and-variants">Mime-types and Variants</a> to be returned.</p>
+<p>Valid <a href="#module-formats">formats</a> to be used.</p>
+<p>Returns a 2-item tuple with the mime-type and the variant type when the binary matches, <code class="inline">nil</code> otherwise.</p>
+<h2 id="type/2-examples" class="section-heading">
+  <a href="#type/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<p><code class="inline">89 50 4E 47 0D 0A 1A 0A</code> are the first 8 bytes in the <code class="inline">PNG</code> signature (<code class="inline">PNG\r\n0x1A\n</code>).</p>
+<pre><code class="iex elixir">iex&gt; ExImageInfo.type &lt;&lt;0x89504E470D0A1A0A::size(64)&gt;&gt;, :png
+nil
+iex&gt; ExImageInfo.type &lt;&lt;&quot;RIFF&quot;, 0::size(32), &quot;WEBPVP8L&quot;, 0::size(32), 0x2F7AC07100358683B68D::size(80)&gt;&gt;, :webp
+{&quot;image/webp&quot;, &quot;webpVP8L&quot;}</code></pre>
+<p>The signature part of a png it is now enough to get the type (it check also the IHDR field, just before the width and height).</p>
+<p>Usually it is used as:</p>
+<pre><code class="elixir">ExImageInfo.type File.read!(&quot;path/to/image.gif&quot;), :gif
+# {&quot;image/gif&quot;, &quot;GIF87a&quot;}
+
+maybe_png_binary |&gt; ExImageInfo.type :png
+# nil</code></pre>
+
+  </section>
+</div>
+
+        </section>
+      
+
+      
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.18.1),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-778c9ef903.js"></script>
+  
+  
+  
+  
+  </body>
+</html>
+

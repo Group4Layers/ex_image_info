@@ -2,7 +2,7 @@
 
 MIT License
 
-Copyright (c) 2016 - 2017 rNoz <rnoz.commits@gmail.com> (Group4Layers®)
+Copyright (c) 2016   nozalr <nozalr@group4layers.com> (Group4Layers®)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
