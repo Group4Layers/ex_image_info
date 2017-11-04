@@ -92,3 +92,4 @@ anaconda-mode/
 
 # for gh-pages
 !dist/
+/docs/all.json
