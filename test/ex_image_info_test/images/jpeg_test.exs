@@ -31,4 +31,12 @@ defmodule ExImageInfoTest.Images.JPEGTest do
     assert info(images["jpegProg"]) == {"image/jpeg", 130, 42, "progJPEG"}
   end
 
+  test "force - alias jpg (baseline, progressive) disk image - #seems? #type #info", images do
+    assert seems?(images["jpegBase"], :jpg) == true
+    assert seems?(images["jpegProg"], :jpg) == true
+    assert type(images["jpegBase"], :jpg) == {"image/jpeg", "baseJPEG"}
+    assert type(images["jpegProg"], :jpg) == {"image/jpeg", "progJPEG"}
+    assert info(images["jpegBase"], :jpg) == {"image/jpeg", 130, 42, "baseJPEG"}
+    assert info(images["jpegProg"], :jpg) == {"image/jpeg", 130, 42, "progJPEG"}
+  end
 end

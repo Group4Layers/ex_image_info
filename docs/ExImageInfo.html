@@ -5,10 +5,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.18.1">
-    <title>ExImageInfo – ExImageInfo v0.2.2</title>
+    <title>ExImageInfo – ExImageInfo v0.2.3</title>
     <link rel="stylesheet" href="dist/app-c922dbe7ef.css" />
     
-    <script src="dist/sidebar_items-c1554d5fa2.js"></script>
+    <script src="dist/sidebar_items-ea008fa2d0.js"></script>
     
     
     
@@ -31,7 +31,7 @@
         ExImageInfo
       </h1>
       <h2 class="sidebar-projectVersion">
-        v0.2.2
+        v0.2.3
       </h2>
     </div>
     
@@ -65,7 +65,7 @@
 
 
       <h1>
-        <small class="visible-xs">ExImageInfo v0.2.2</small>
+        <small class="visible-xs">ExImageInfo v0.2.3</small>
         ExImageInfo
         
           <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L1" title="View Source" class="view-source" rel="help">
@@ -114,6 +114,8 @@ by trying the formats supported by the library.</p>
 <li><code class="inline">:ico</code> (new in <code class="inline">v0.2.0</code>)
 </li>
 <li><code class="inline">:jpeg</code>
+</li>
+<li><code class="inline">:jpg</code> (alias of <code class="inline">jpeg</code> in <code class="inline">v0.2.3</code>)
 </li>
 <li><code class="inline">:jp2</code> (new in <code class="inline">v0.2.0</code>)
 </li>
@@ -309,7 +311,7 @@ for every image format (if applicable).</p>
     </a>
     <span class="signature">info(binary)</span>
     
-      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L279" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L283" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -357,7 +359,7 @@ webp_full_binary |&gt; ExImageInfo.info
     </a>
     <span class="signature">info(binary, format)</span>
     
-      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L254" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L258" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -408,7 +410,7 @@ maybe_png_binary |&gt; ExImageInfo.info :png
     </a>
     <span class="signature">seems?(binary)</span>
     
-      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L144" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L146" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -455,7 +457,7 @@ webp_full_binary |&gt; ExImageInfo.seems?
     </a>
     <span class="signature">seems?(binary, format)</span>
     
-      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L117" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L119" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -503,7 +505,7 @@ maybe_png_binary |&gt; ExImageInfo.seems? :png
     </a>
     <span class="signature">type(binary)</span>
     
-      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L211" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L214" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -551,7 +553,7 @@ webp_full_binary |&gt; ExImageInfo.type
     </a>
     <span class="signature">type(binary, format)</span>
     
-      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L186" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/master/lib/ex_image_info.ex#L189" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>

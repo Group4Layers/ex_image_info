@@ -26,6 +26,7 @@ defmodule ExImageInfo do
   - `:gif`
   - `:ico` (new in `v0.2.0`)
   - `:jpeg`
+  - `:jpg` (alias of `jpeg` in `v0.2.3`)
   - `:jp2` (new in `v0.2.0`)
   - `:png`
   - `:pnm` (new in `v0.2.0`)
@@ -92,7 +93,7 @@ defmodule ExImageInfo do
       iex> ExImageInfo.seems? <<0x89504E470D0A1A0A::size(64)>>, :webp
       false
 
- `ExImageInfo.seems?/2` and `ExImageInfo.seems?/1` does not necessarily needs a real image (as it is shown in the previous example) because it just checks the signature of every file format.
+  `ExImageInfo.seems?/2` and `ExImageInfo.seems?/1` does not necessarily needs a real image (as it is shown in the previous example) because it just checks the signature of every file format.
 
   Usually it is used as:
 
@@ -107,6 +108,7 @@ defmodule ExImageInfo do
   def seems?(binary, :png), do: PNG.seems?(binary)
   def seems?(binary, :gif), do: GIF.seems?(binary)
   def seems?(binary, :jpeg), do: JPEG.seems?(binary)
+  def seems?(binary, :jpg), do: JPEG.seems?(binary)
   def seems?(binary, :bmp), do: BMP.seems?(binary)
   def seems?(binary, :tiff), do: TIFF.seems?(binary)
   def seems?(binary, :webp), do: WEBP.seems?(binary)
@@ -176,6 +178,7 @@ defmodule ExImageInfo do
   def type(binary, :png), do: PNG.type(binary)
   def type(binary, :gif), do: GIF.type(binary)
   def type(binary, :jpeg), do: JPEG.type(binary)
+  def type(binary, :jpg), do: JPEG.type(binary)
   def type(binary, :bmp), do: BMP.type(binary)
   def type(binary, :tiff), do: TIFF.type(binary)
   def type(binary, :webp), do: WEBP.type(binary)
@@ -244,6 +247,7 @@ defmodule ExImageInfo do
   def info(binary, :png), do: PNG.info(binary)
   def info(binary, :gif), do: GIF.info(binary)
   def info(binary, :jpeg), do: JPEG.info(binary)
+  def info(binary, :jpg), do: JPEG.info(binary)
   def info(binary, :bmp), do: BMP.info(binary)
   def info(binary, :tiff), do: TIFF.info(binary)
   def info(binary, :webp), do: WEBP.info(binary)

@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.2.3 (2018-05-21)
+
+**Enhancements:**
+
+- By request of a GitHub user: added the type *jpg* as an alias of *jpeg*.
+
 ## v0.2.2 (2017-11-04)
 
 **News:**

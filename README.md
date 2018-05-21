@@ -50,6 +50,7 @@ Supported formats (image type to be parsed as):
 - `:gif`
 - `:ico` (new in `v0.2.0`)
 - `:jpeg`
+- `:jpg` (alias of `jpeg` in `v0.2.3`)
 - `:jp2` (new in `v0.2.0`)
 - `:png`
 - `:pnm` (new in `v0.2.0`)
@@ -106,7 +107,7 @@ From Hex:
   def deps do
     [
       # ...
-      {:ex_image_info, "~> 0.2.1"},
+      {:ex_image_info, "~> 0.2.3"},
     ]
   end
 ```
