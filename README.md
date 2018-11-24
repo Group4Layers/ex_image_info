@@ -2,7 +2,7 @@
 
 # ExImageInfo
 
-[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/Group4Layers/ex_image_info/master/LICENSE.md) <a class="no-underline" href="https://github.com/Group4Layers/ex_image_info"><img src="https://img.shields.io/badge/coverage-98.3%25-green.svg" alt="Coverage"></a> <a class="no-underline" href="https://github.com/Group4Layers/ex_image_info"><img src="https://img.shields.io/badge/tests-54%2F54-green.svg" alt="Tests"></a>
+[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/Group4Layers/ex_image_info/master/LICENSE.md) <a class="no-underline" href="https://github.com/Group4Layers/ex_image_info"><img src="https://img.shields.io/badge/coverage-98.4%25-green.svg" alt="Coverage"></a> <a class="no-underline" href="https://github.com/Group4Layers/ex_image_info"><img src="https://img.shields.io/badge/tests-54%2F54-green.svg" alt="Tests"></a>
 
 ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.
 
@@ -56,7 +56,7 @@ Supported formats (image type to be parsed as):
 - `:pnm` (new in `v0.2.0`)
 - `:psd`
 - `:tiff`
-- `:webp`
+- `:webp` (VP8X animated in `v0.2.4`)
 
 ## Mime-types and Variants
 
@@ -84,6 +84,7 @@ Each mime-type can be linked to at least one variant type:
 | `image/tiff`              | `TIFFMM`     | MM variant         |
 | `image/webp`              | `webpVP8`    | lossy              |
 | `image/webp`              | `webpVP8L`   | lossless           |
+| `image/webp`              | `webpVP8X`   | animated           |
 
 The variant type is created just to provide a bit more of information
 for every image format (if applicable).
@@ -107,7 +108,7 @@ From Hex:
   def deps do
     [
       # ...
-      {:ex_image_info, "~> 0.2.3"},
+      {:ex_image_info, "~> 0.2.4"},
     ]
   end
 ```

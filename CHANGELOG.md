@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v0.2.4 (2018-11-24)
+
+**Enhancements**
+
+- By request of a GitHub user: support for another variant of webp
+- Studied and integrated the webpVP8X format (bitstream animated)
+- Added 2 new tests for animated photos: gif and webp vp8x
+
 ## v0.2.3 (2018-05-21)
 
 **Enhancements:**

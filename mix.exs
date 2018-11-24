@@ -5,7 +5,7 @@ defmodule ExImageInfo.Mixfile do
     [
       app: :ex_image_info,
       description: "ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.",
-      version: "0.2.3",
+      version: "0.2.4",
       elixir: "~> 1.3",
       name: 'ExImageInfo',
       package: package(),
@@ -17,7 +17,7 @@ defmodule ExImageInfo.Mixfile do
       source_url: "https://github.com/Group4Layers/ex_image_info",
       homepage_url: "https://www.group4layers.com",
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.html": :test],
+      preferred_cli_env: [coveralls: :test, "coveralls.detail": :test, "coveralls.html": :test],
     ]
   end
 
@@ -28,7 +28,7 @@ defmodule ExImageInfo.Mixfile do
   defp deps do
     [
       {:excoveralls, "~> 0.5", only: :test},
-      {:ex_doc, "~> 0.18", only: :dev},
+      {:ex_doc, "~> 0.19", only: :dev},
       {:inch_ex, "~> 0.5", only: [:dev, :test]},
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
     ]
@@ -36,8 +36,8 @@ defmodule ExImageInfo.Mixfile do
 
   defp aliases do
     [
-      "test_wip": ["test --only wip"],
-      "docs": ["docs", &copy_doc_to_docs/1]
+      test_wip: ["test --only wip"],
+      docs: ["docs", &copy_doc_to_docs/1]
     ]
   end
 

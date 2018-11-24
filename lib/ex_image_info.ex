@@ -32,7 +32,7 @@ defmodule ExImageInfo do
   - `:pnm` (new in `v0.2.0`)
   - `:psd`
   - `:tiff`
-  - `:webp`
+  - `:webp` (VP8X animated in `v0.2.4`)
 
   ## Mime-types and Variants
 
@@ -60,6 +60,7 @@ defmodule ExImageInfo do
   | `image/tiff`              | `TIFFMM`     | MM variant         |
   | `image/webp`              | `webpVP8`    | lossy              |
   | `image/webp`              | `webpVP8L`   | lossless           |
+  | `image/webp`              | `webpVP8X`   | animated           |
 
   The variant type is created just to provide a bit more of information
   for every image format (if applicable).
