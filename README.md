@@ -6,7 +6,7 @@
 
 ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.
 
-Online tools: [![Build Status](https://travis-ci.org/Group4Layers/ex_image_info.svg?branch=master)](https://travis-ci.org/Group4Layers/ex_image_info) [![Coverage Status](https://coveralls.io/repos/github/Group4Layers/ex_image_info/badge.svg?branch=master)](https://coveralls.io/github/Group4Layers/ex_image_info?branch=master) [![Ebert](https://ebertapp.io/github/Group4Layers/ex_image_info.svg)](https://ebertapp.io/github/Group4Layers/ex_image_info) [![Inline docs](http://inch-ci.org/github/Group4Layers/ex_image_info.svg)](http://inch-ci.org/github/Group4Layers/ex_image_info)
+Online tools: [![Build Status](https://travis-ci.org/Group4Layers/ex_image_info.svg?branch=master)](https://travis-ci.org/Group4Layers/ex_image_info) [![Coverage Status](https://coveralls.io/repos/github/Group4Layers/ex_image_info/badge.svg?branch=master)](https://coveralls.io/github/Group4Layers/ex_image_info?branch=master) [![SourceLevel](https://app.sourcelevel.io/github/Group4Layers/-/ex_image_info.svg)](https://app.sourcelevel.io/github/Group4Layers/-/ex_image_info) [![Inline docs](http://inch-ci.org/github/Group4Layers/ex_image_info.svg)](http://inch-ci.org/github/Group4Layers/ex_image_info)
 
 ### [GitHub repo](https://github.com/Group4Layers/ex_image_info) &nbsp;&nbsp; [Docs](https://group4layers.github.io/ex_image_info) &nbsp;&nbsp; [Hex.pm package](https://hex.pm/packages/ex_image_info)
 

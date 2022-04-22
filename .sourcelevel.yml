@@ -13,3 +13,4 @@ exclude_paths:
 - doc
 - config
 - test
+- **/*.md
