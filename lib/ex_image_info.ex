@@ -83,7 +83,8 @@ defmodule ExImageInfo do
 
   Valid [formats](#module-formats) to be used.
 
-  Returns `true` if seems to be, `false` otherwise.
+  Returns `true` if the binary seems to be the format specified, `false` if it
+  is not, and `nil` if the type is unsupported.
 
   ## Examples
 
