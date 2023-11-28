@@ -104,7 +104,7 @@ defmodule ExImageInfo do
       maybe_png_binary |> ExImageInfo.seems? :png
       # false
   """
-  @spec seems?(binary, format :: atom) :: boolean | nil
+  @spec seems?(binary, format :: atom) :: boolean
   def seems?(binary, format)
   def seems?(binary, :png), do: PNG.seems?(binary)
   def seems?(binary, :gif), do: GIF.seems?(binary)
@@ -117,7 +117,7 @@ defmodule ExImageInfo do
   def seems?(binary, :jp2), do: JP2.seems?(binary)
   def seems?(binary, :pnm), do: PNM.seems?(binary)
   def seems?(binary, :ico), do: ICO.seems?(binary)
-  def seems?(_, _), do: nil
+  def seems?(_, _), do: false
 
   @doc """
   Detects the image format that seems to be the given binary (*guessed* version of `ExImageInfo.seems?/2`).
