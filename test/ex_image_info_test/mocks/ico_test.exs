@@ -33,7 +33,6 @@ defmodule ExImageInfoTest.Mocks.ICOTest do
     {:ok, images}
   end
 
-  # @tag :wip
   test "force - ico binary mock - #seems? #type #info", images do
     assert seems?(images["ico"], :ico) == true
     assert seems?(images["ico-256"], :ico) == true
@@ -43,7 +42,6 @@ defmodule ExImageInfoTest.Mocks.ICOTest do
     assert info(images["ico-256"], :ico) == {"image/x-icon", 256, 256, "ICO"}
   end
 
-  # @tag :wip
   test "guess - ico binary mock - #seems? #type #info", images do
     assert seems?(images["ico"]) == :ico
     assert seems?(images["ico-256"]) == :ico
@@ -53,5 +51,4 @@ defmodule ExImageInfoTest.Mocks.ICOTest do
     # It picks the largest image in the .ICO (in this mock, the second)
     assert info(images["ico-256"]) == {"image/x-icon", 256, 256, "ICO"}
   end
-
 end

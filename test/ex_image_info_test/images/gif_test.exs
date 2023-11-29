@@ -23,7 +23,6 @@ defmodule ExImageInfoTest.Images.GIFTest do
   end
 
   test "guess - gif (gif87a, gif89a) disk image - #seems? #type #info", images do
-    # IO.inspect images["gif89a"], base: :hex
     assert seems?(images["gif87a"]) == :gif
     assert seems?(images["gif89a"]) == :gif
     assert type(images["gif87a"]) == {"image/gif", "GIF87a"}

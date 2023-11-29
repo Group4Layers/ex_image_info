@@ -11,7 +11,6 @@ defmodule ExImageInfoTest.Images.JPEGTest do
     {:ok, images}
   end
 
-  # @tag :wip
   test "force - jpeg (baseline, progressive) disk image - #seems? #type #info", images do
     assert seems?(images["jpegBase"], :jpeg) == true
     assert seems?(images["jpegProg"], :jpeg) == true
@@ -21,7 +20,6 @@ defmodule ExImageInfoTest.Images.JPEGTest do
     assert info(images["jpegProg"], :jpeg) == {"image/jpeg", 130, 42, "progJPEG"}
   end
 
-  # @tag :wip
   test "guess - jpeg (baseline, progressive) disk image - #seems? #type #info", images do
     assert seems?(images["jpegBase"]) == :jpeg
     assert seems?(images["jpegProg"]) == :jpeg

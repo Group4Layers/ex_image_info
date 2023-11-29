@@ -1,7 +1,6 @@
 defmodule ExImageInfoTest.Mocks.JP2Test do
   use ExUnit.Case, async: true
   import ExImageInfo
-  # doctest ExImageInfo.Detector
 
   setup_all do
     images = %{
@@ -29,5 +28,4 @@ defmodule ExImageInfoTest.Mocks.JP2Test do
     assert type(images["jp2"]) == {"image/jp2", "JP2"}
     assert info(images["jp2"]) == {"image/jp2", 134, 457, "JP2"}
   end
-
 end

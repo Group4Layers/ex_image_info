@@ -68,7 +68,5 @@ defmodule ExImageInfoTest.Mocks.WEBPTest do
     assert type(images["webpVP8L"], :webp) == {"image/webp", "webpVP8L"}
     assert info(images["webpVP8"], :webp) == {"image/webp", 134, 457, "webpVP8"}
     assert info(images["webpVP8L"], :webp) == {"image/webp", 123, 456, "webpVP8L"}
-    # {"image/webp", 0, 0, "webpRIFF"}
   end
-
 end

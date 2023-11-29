@@ -1,7 +1,6 @@
 defmodule ExImageInfoTest.Mocks.PSDTest do
   use ExUnit.Case, async: true
   import ExImageInfo
-  # doctest ExImageInfo.Detector
 
   setup_all do
     images = %{
@@ -19,5 +18,4 @@ defmodule ExImageInfoTest.Mocks.PSDTest do
     assert type(images["psd"], :psd) == {"image/psd", "PSD"}
     assert info(images["psd"], :psd) == {"image/psd", 134, 457, "PSD"}
   end
-
 end

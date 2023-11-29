@@ -14,7 +14,6 @@ defmodule ExImageInfoTest.Images.PNMTest do
     {:ok, images}
   end
 
-  # @tag :wip
   test "force - pnm (pbm - bitmap) disk image (+ plain) - #seems? #type #info", images do
     assert seems?(images["pbm"], :pnm) == true
     assert seems?(images["pbm-plain"], :pnm) == true
@@ -24,7 +23,6 @@ defmodule ExImageInfoTest.Images.PNMTest do
     assert info(images["pbm-plain"], :pnm) == {"image/x-portable-anymap", 3, 11, "PNMpbm"}
   end
 
-  # @tag :wip
   test "force - pnm (pgm - graymap) disk image (+ plain) - #seems? #type #info", images do
     assert seems?(images["pgm"], :pnm) == true
     assert seems?(images["pgm-plain"], :pnm) == true
@@ -34,7 +32,6 @@ defmodule ExImageInfoTest.Images.PNMTest do
     assert info(images["pgm-plain"], :pnm) == {"image/x-portable-anymap", 3, 11, "PNMpgm"}
   end
 
-  # @tag :wip
   test "force - pnm (ppm - pixmap) disk image (+ plain) - #seems? #type #info", images do
     assert seems?(images["ppm"], :pnm) == true
     assert seems?(images["ppm-plain"], :pnm) == true
@@ -44,7 +41,6 @@ defmodule ExImageInfoTest.Images.PNMTest do
     assert info(images["ppm-plain"], :pnm) == {"image/x-portable-anymap", 2, 5, "PNMppm"}
   end
 
-  # @tag :wip
   test "guess - pnm (pbm - bitmap) disk image (+ plain) - #seems? #type #info", images do
     assert seems?(images["pbm"]) == :pnm
     assert seems?(images["pbm-plain"]) == :pnm
@@ -54,7 +50,6 @@ defmodule ExImageInfoTest.Images.PNMTest do
     assert info(images["pbm-plain"]) == {"image/x-portable-anymap", 3, 11, "PNMpbm"}
   end
 
-  # @tag :wip
   test "guess - pnm (pgm - graymap) disk image (+ plain) - #seems? #type #info", images do
     assert seems?(images["pgm"]) == :pnm
     assert seems?(images["pgm-plain"]) == :pnm
@@ -64,7 +59,6 @@ defmodule ExImageInfoTest.Images.PNMTest do
     assert info(images["pgm-plain"]) == {"image/x-portable-anymap", 3, 11, "PNMpgm"}
   end
 
-  # @tag :wip
   test "guess - pnm (ppm - pixmap) disk image (+ plain) - #seems? #type #info", images do
     assert seems?(images["ppm"]) == :pnm
     assert seems?(images["ppm-plain"]) == :pnm

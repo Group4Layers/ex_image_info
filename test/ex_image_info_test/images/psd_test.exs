@@ -15,5 +15,4 @@ defmodule ExImageInfoTest.Images.PSDTest do
     assert type(images["psd"], :psd) == {"image/psd", "PSD"}
     assert info(images["psd"], :psd) == {"image/psd", 130, 42, "PSD"}
   end
-
 end
