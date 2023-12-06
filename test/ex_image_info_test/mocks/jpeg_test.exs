@@ -1,7 +1,6 @@
 defmodule ExImageInfoTest.Mocks.JPEGTest do
   use ExUnit.Case, async: true
   import ExImageInfo
-  # doctest ExImageInfo.Detector
 
   setup_all do
     images = %{
@@ -48,5 +47,4 @@ defmodule ExImageInfoTest.Mocks.JPEGTest do
     assert info(images["jpegBase"]) == {"image/jpeg", 134, 457, "baseJPEG"}
     assert info(images["jpegProg"]) == {"image/jpeg", 134, 457, "progJPEG"}
   end
-
 end

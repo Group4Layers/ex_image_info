@@ -28,5 +28,4 @@ defmodule ExImageInfoTest.Mocks.GIFTest do
     assert info(images["gif87a"]) == {"image/gif", 134, 457, "GIF87a"}
     assert info(images["gif89a"]) == {"image/gif", 123, 456, "GIF89a"}
   end
-
 end

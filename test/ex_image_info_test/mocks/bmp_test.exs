@@ -25,5 +25,4 @@ defmodule ExImageInfoTest.Mocks.BMPTest do
     assert type(images["bmp"]) == {"image/bmp", "BMP"}
     assert info(images["bmp"]) == {"image/bmp", 134, 457, "BMP"}
   end
-
 end

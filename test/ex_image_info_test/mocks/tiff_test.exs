@@ -41,5 +41,4 @@ defmodule ExImageInfoTest.Mocks.TIFFTest do
     assert type(images["tiffMM"], :tiff) == {"image/tiff", "TIFFMM"}
     assert info(images["tiffII"], :tiff) == {"image/tiff", 1, 1, "TIFFII"}
   end
-
 end

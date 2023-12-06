@@ -1,7 +1,6 @@
 defmodule ExImageInfoTest.Mocks.PNMTest do
   use ExUnit.Case, async: true
   import ExImageInfo
-  # doctest ExImageInfo.Detector
 
   setup_all do
     images = %{
@@ -52,7 +51,6 @@ defmodule ExImageInfoTest.Mocks.PNMTest do
     {:ok, images}
   end
 
-  # @tag :wip
   test "force - pnm (pbm - bitmap) binary and plain mock - #seems? #type #info", images do
     assert seems?(images["pbm"], :pnm) == true
     assert seems?(images["pbm-plain"], :pnm) == true
@@ -62,7 +60,6 @@ defmodule ExImageInfoTest.Mocks.PNMTest do
     assert info(images["pbm-plain"], :pnm) == {"image/x-portable-anymap", 134, 457, "PNMpbm"}
   end
 
-  # @tag :wip
   test "force - pnm (pgm - graymap) binary and plain mock - #seems? #type #info", images do
     assert seems?(images["pgm"], :pnm) == true
     assert seems?(images["pgm-plain"], :pnm) == true
@@ -72,7 +69,6 @@ defmodule ExImageInfoTest.Mocks.PNMTest do
     assert info(images["pgm-plain"], :pnm) == {"image/x-portable-anymap", 134, 457, "PNMpgm"}
   end
 
-  # @tag :wip
   test "force - pnm (ppm - pixmap) binary and plain mock - #seems? #type #info", images do
     assert seems?(images["ppm"], :pnm) == true
     assert seems?(images["ppm-plain"], :pnm) == true
@@ -82,7 +78,6 @@ defmodule ExImageInfoTest.Mocks.PNMTest do
     assert info(images["ppm-plain"], :pnm) == {"image/x-portable-anymap", 134, 457, "PNMppm"}
   end
 
-  # @tag :wip
   test "guess - pnm (pbm - bitmap) binary and plain mock - #seems? #type #info", images do
     assert seems?(images["pbm"]) == :pnm
     assert seems?(images["pbm-plain"]) == :pnm
@@ -92,7 +87,6 @@ defmodule ExImageInfoTest.Mocks.PNMTest do
     assert info(images["pbm-plain"]) == {"image/x-portable-anymap", 134, 457, "PNMpbm"}
   end
 
-  # @tag :wip
   test "guess - pnm (pgm - graymap) binary and plain mock - #seems? #type #info", images do
     assert seems?(images["pgm"]) == :pnm
     assert seems?(images["pgm-plain"]) == :pnm
@@ -102,7 +96,6 @@ defmodule ExImageInfoTest.Mocks.PNMTest do
     assert info(images["pgm-plain"]) == {"image/x-portable-anymap", 134, 457, "PNMpgm"}
   end
 
-  # @tag :wip
   test "guess - pnm (ppm - pixmap) binary and plain mock - #seems? #type #info", images do
     assert seems?(images["ppm"]) == :pnm
     assert seems?(images["ppm-plain"]) == :pnm

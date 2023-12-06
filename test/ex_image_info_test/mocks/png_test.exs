@@ -1,7 +1,6 @@
 defmodule ExImageInfoTest.Mocks.PNGTest do
   use ExUnit.Case, async: true
   import ExImageInfo
-  # doctest ExImageInfo.Detector
 
   setup_all do
     images = %{
@@ -30,5 +29,4 @@ defmodule ExImageInfoTest.Mocks.PNGTest do
     assert type(images["png"]) == {"image/png", "PNG"}
     assert info(images["png"]) == {"image/png", 134, 457, "PNG"}
   end
-
 end
