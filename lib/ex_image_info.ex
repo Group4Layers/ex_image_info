@@ -76,6 +76,8 @@ defmodule ExImageInfo do
   # but still keeping :png as the first
   @types [:png, :jpeg, :gif, :bmp, :ico, :tiff, :webp, :psd, :jp2, :pnm]
 
+  @type image_format :: :png | :jpeg | :gif | :bmp | :ico | :tiff | :webp | :psd | :jp2 | :pnm
+
   ## Public API
 
   @doc """
@@ -83,7 +85,8 @@ defmodule ExImageInfo do
 
   Valid [formats](#module-formats) to be used.
 
-  Returns `true` if seems to be, `false` otherwise.
+  Returns `true` if the binary seems to be the format specified, `false` if it
+  is not, and `nil` if the type is unsupported.
 
   ## Examples
 
@@ -143,7 +146,7 @@ defmodule ExImageInfo do
       webp_full_binary |> ExImageInfo.seems?
       # :webp
   """
-  @spec seems?(binary) :: atom | nil
+  @spec seems?(binary) :: image_format() | nil
   def seems?(binary), do: try_seems?(binary, @types)
 
   @doc """
