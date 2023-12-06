@@ -12,7 +12,6 @@ defmodule ExImageInfoTest.Images.GIFTest do
     {:ok, images}
   end
 
-
   test "force - gif (gif87a, gif89a) disk image - #seems? #type #info", images do
     assert seems?(images["gif87a"], :gif) == true
     assert seems?(images["gif89a"], :gif) == true

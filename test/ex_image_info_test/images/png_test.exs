@@ -10,7 +10,6 @@ defmodule ExImageInfoTest.Images.PNGTest do
     {:ok, images}
   end
 
-
   test "force - png disk image - #seems? #type #info", images do
     assert seems?(images["png"], :png) == true
     assert type(images["png"], :png) == {"image/png", "PNG"}
