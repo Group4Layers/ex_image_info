@@ -39,6 +39,7 @@ defmodule ExImageInfo.Mixfile do
       test_wip: ["test --only wip"],
       docs: ["docs", &copy_doc_to_docs/1],
       lint: [
+        "format --check-formatted",
         "deps.unlock --check-unused",
         "credo --all --strict"
       ]
