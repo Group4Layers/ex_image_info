@@ -4,13 +4,17 @@ defmodule ExImageInfoTest.Mocks.BMPTest do
 
   setup_all do
     images = %{
-      "bmp" => << "BM",
-      0::size(128), # 16 bytes offset
-      134::little-size(16),
-      0::size(16), # skip
-      457::little-size(16),
-      >>,
+      "bmp" => <<
+        "BM",
+        # 16 bytes offset
+        0::size(128),
+        134::little-size(16),
+        # skip
+        0::size(16),
+        457::little-size(16)
+      >>
     }
+
     {:ok, images}
   end
 

@@ -6,12 +6,14 @@ defmodule ExImageInfoTest.Images.TIFFTest do
     images = %{
       # Comments: GIMP options to export the original images
       "tiff" => TestHelper.read_image("valid/tiff/layers.tiff"),
-      "i-s-big-endian" => TestHelper.read_image("valid/tiff/i-s-big-endian.tiff"), # i-s: image-size
+      # i-s: image-size
+      "i-s-big-endian" => TestHelper.read_image("valid/tiff/i-s-big-endian.tiff"),
       "tiff-deflate" => TestHelper.read_image("valid/tiff/layers-deflate.tiff"),
       "tiff-jpeg" => TestHelper.read_image("valid/tiff/layers-jpeg.tiff"),
       "tiff-lzw" => TestHelper.read_image("valid/tiff/layers-lzw.tiff"),
-      "tiff-packbits" => TestHelper.read_image("valid/tiff/layers-packbits.tiff"),
+      "tiff-packbits" => TestHelper.read_image("valid/tiff/layers-packbits.tiff")
     }
+
     {:ok, images}
   end
 

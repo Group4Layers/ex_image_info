@@ -1,5 +1,4 @@
 defmodule ExImageInfo.Types.PNM do
-
   @moduledoc false
 
   @behaviour ExImageInfo.Detector
@@ -12,20 +11,23 @@ defmodule ExImageInfo.Types.PNM do
   @ftype_pgm "PNMpgm"
   @ftype_ppm "PNMppm"
 
-  @signature << "P" >>
+  @signature <<"P">>
 
   @sharp 0x23
-  @nl 0x0a
+  @nl 0x0A
   @space 0x20
 
   ## Public API
 
-  def seems?(<< @signature, char::size(8), split, _rest::binary >>) when split in [@nl, @space, @sharp] do
+  def seems?(<<@signature, char::size(8), split, _rest::binary>>)
+      when split in [@nl, @space, @sharp] do
     if signature_pnm(char), do: true, else: false
   end
+
   def seems?(_), do: false
 
-  def info(<< @signature, char::size(8), split, rest::binary >>) when split in [@nl, @space, @sharp] do
+  def info(<<@signature, char::size(8), split, rest::binary>>)
+      when split in [@nl, @space, @sharp] do
     with type <- signature_pnm(char),
          {w, h} <- parse(rest, nil) do
       {@mime, String.to_integer(w), String.to_integer(h), type}
@@ -33,14 +35,17 @@ defmodule ExImageInfo.Types.PNM do
       _ -> nil
     end
   end
+
   def info(_), do: nil
 
-  def type(<< @signature, char::size(8), split, _rest::binary >>) when split in [@nl, @space, @sharp] do
+  def type(<<@signature, char::size(8), split, _rest::binary>>)
+      when split in [@nl, @space, @sharp] do
     case signature_pnm(char) do
       nil -> nil
       type -> {@mime, type}
     end
   end
+
   def type(_), do: nil
 
   ## Private
@@ -55,9 +60,11 @@ defmodule ExImageInfo.Types.PNM do
   end
 
   defp parse(rest, pre) do
-    with [line, next] <- :binary.split(rest, "\n"), # no global
-    valid <- hd(:binary.split(line, "#")), # comments
-    ret <- Regex.run(~r/^\s*(\d+)(?:[\s]|)(?:(\d+)(?:[\s]|))?/, valid) do
+    # no global
+    with [line, next] <- :binary.split(rest, "\n"),
+         # comments
+         valid <- hd(:binary.split(line, "#")),
+         ret <- Regex.run(~r/^\s*(\d+)(?:[\s]|)(?:(\d+)(?:[\s]|))?/, valid) do
       case ret do
         [_, w, h] ->
           if pre != nil do
@@ -65,17 +72,19 @@ defmodule ExImageInfo.Types.PNM do
           else
             {w, h}
           end
+
         [_, w] ->
           if pre != nil do
             {pre, w}
           else
             parse(next, w)
           end
-        _ -> parse(next, pre)
+
+        _ ->
+          parse(next, pre)
       end
     else
       _ -> nil
     end
   end
-
 end

@@ -5,8 +5,9 @@ defmodule ExImageInfoTest.Images.PNGTest do
   setup_all do
     images = %{
       # Comments: GIMP options to export the original images
-      "png" => TestHelper.read_image("valid/png/layers.png"),
+      "png" => TestHelper.read_image("valid/png/layers.png")
     }
+
     {:ok, images}
   end
 
@@ -21,5 +22,4 @@ defmodule ExImageInfoTest.Images.PNGTest do
     assert type(images["png"]) == {"image/png", "PNG"}
     assert info(images["png"]) == {"image/png", 130, 42, "PNG"}
   end
-
 end

@@ -7,8 +7,9 @@ defmodule ExImageInfoTest.Images.WEBPTest do
       # Comments: GIMP options to export the original images
       "webpVP8" => TestHelper.read_image("valid/webp/layers-lossy.webp"),
       "webpVP8L" => TestHelper.read_image("valid/webp/layers-lossless.webp"),
-      "webpVP8X" => TestHelper.read_image("valid/webp/layers-anim.webp"),
+      "webpVP8X" => TestHelper.read_image("valid/webp/layers-anim.webp")
     }
+
     {:ok, images}
   end
 

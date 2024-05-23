@@ -4,12 +4,15 @@ defmodule ExImageInfoTest.Mocks.PSDTest do
 
   setup_all do
     images = %{
-      "psd" => << "8BPS",
-      0::size(80), # 14 - 4 = 10 * 8
-      457::size(32),
-      134::size(32),
-      >>,
+      "psd" => <<
+        "8BPS",
+        # 14 - 4 = 10 * 8
+        0::size(80),
+        457::size(32),
+        134::size(32)
+      >>
     }
+
     {:ok, images}
   end
 
