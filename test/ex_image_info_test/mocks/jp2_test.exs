@@ -4,16 +4,41 @@ defmodule ExImageInfoTest.Mocks.JP2Test do
 
   setup_all do
     images = %{
-      "jp2" => << 0x00, 0x00, 0x00, 0x0c, 0x6a, 0x50, 0x20, 0x20,
-      0x0d, 0x0a, 0x87, 0x0a, 0x00, 0x00, 0x00, 0x14,
-      0x66, 0x74, 0x79, 0x70, 0x6A, 0x70, 0x32,
-      0x00,
-      0::size(160), # 20 * 8
-      "ihdr",
-      457::size(32), # height
-      134::size(32), # width
-      >>,
+      "jp2" => <<
+        0x00,
+        0x00,
+        0x00,
+        0x0C,
+        0x6A,
+        0x50,
+        0x20,
+        0x20,
+        0x0D,
+        0x0A,
+        0x87,
+        0x0A,
+        0x00,
+        0x00,
+        0x00,
+        0x14,
+        0x66,
+        0x74,
+        0x79,
+        0x70,
+        0x6A,
+        0x70,
+        0x32,
+        0x00,
+        # 20 * 8
+        0::size(160),
+        "ihdr",
+        # height
+        457::size(32),
+        # width
+        134::size(32)
+      >>
     }
+
     {:ok, images}
   end
 

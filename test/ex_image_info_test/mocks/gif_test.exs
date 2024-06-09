@@ -4,9 +4,14 @@ defmodule ExImageInfoTest.Mocks.GIFTest do
 
   setup_all do
     images = %{
-      "gif89a" => <<0x47, 0x49, 0x46, 0x38, 0x39, 0x61, 123::little-size(16), 456::little-size(16)>>,
-      "gif87a" => <<0x47, 0x49, 0x46, 0x38, 0x37, 0x61, 134::little-size(16), 457::little-size(16)>>,
+      "gif89a" =>
+        <<0x47, 0x49, 0x46, 0x38, 0x39, 0x61, 123::little-size(16),
+          456::little-size(16)>>,
+      "gif87a" =>
+        <<0x47, 0x49, 0x46, 0x38, 0x37, 0x61, 134::little-size(16),
+          457::little-size(16)>>
     }
+
     {:ok, images}
   end
 

@@ -75,7 +75,18 @@ defmodule ExImageInfo do
   # but still keeping :png as the first
   @types [:png, :jpeg, :gif, :bmp, :ico, :tiff, :webp, :psd, :jp2, :pnm]
 
-  @type image_format :: :png | :jpeg | :gif | :bmp | :ico | :tiff | :webp | :psd | :jp2 | :pnm
+  @typedoc "The supported image formats"
+  @type image_format ::
+          :png
+          | :jpeg
+          | :gif
+          | :bmp
+          | :ico
+          | :tiff
+          | :webp
+          | :psd
+          | :jp2
+          | :pnm
 
   ## Public API
 
@@ -176,7 +187,8 @@ defmodule ExImageInfo do
       maybe_png_binary |> ExImageInfo.type :png
       # nil
   """
-  @spec type(binary, format :: atom) :: {mimetype :: String.t, variant :: String.t} | nil
+  @spec type(binary, format :: atom) ::
+          {mimetype :: String.t(), variant :: String.t()} | nil
   def type(binary, format)
   def type(binary, :png), do: PNG.type(binary)
   def type(binary, :gif), do: GIF.type(binary)
@@ -213,7 +225,7 @@ defmodule ExImageInfo do
       webp_full_binary |> ExImageInfo.type
       # {"image/webp", "webpVP8"}
   """
-  @spec type(binary) :: {mimetype :: String.t, variant :: String.t} | nil
+  @spec type(binary) :: {mimetype :: String.t(), variant :: String.t()} | nil
   def type(binary), do: try_type(binary, @types)
 
   @doc """
@@ -245,7 +257,9 @@ defmodule ExImageInfo do
       # nil
   """
   @spec info(binary, format :: atom) ::
-    {mimetype :: String.t, width :: Integer.t, height :: Integer.t, variant :: String.t} | nil
+          {mimetype :: String.t(), width :: Integer.t(), height :: Integer.t(),
+           variant :: String.t()}
+          | nil
   def info(binary, format)
   def info(binary, :png), do: PNG.info(binary)
   def info(binary, :gif), do: GIF.info(binary)
@@ -282,19 +296,24 @@ defmodule ExImageInfo do
       webp_full_binary |> ExImageInfo.info
       # {"image/webp", 20, 100, "webpVP8"}
   """
-  @spec info(binary) :: {mimetype :: String.t, width :: Integer.t, height :: Integer.t, variant :: String.t} | nil
+  @spec info(binary) ::
+          {mimetype :: String.t(), width :: Integer.t(), height :: Integer.t(),
+           variant :: String.t()}
+          | nil
   def info(binary), do: try_info(binary, @types)
 
   ## Private
 
   @doc false
   defp try_seems?(_binary, []), do: nil
+
   defp try_seems?(binary, [type | types]) do
     if seems?(binary, type), do: type, else: try_seems?(binary, types)
   end
 
   @doc false
   defp try_type(_binary, []), do: nil
+
   defp try_type(binary, [type | types]) do
     case type(binary, type) do
       type_t when is_tuple(type_t) -> type_t
@@ -304,11 +323,11 @@ defmodule ExImageInfo do
 
   @doc false
   defp try_info(_binary, []), do: nil
+
   defp try_info(binary, [type | types]) do
     case info(binary, type) do
       info_t when is_tuple(info_t) -> info_t
       _ -> try_info(binary, types)
     end
   end
-
 end

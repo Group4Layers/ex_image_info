@@ -5,8 +5,9 @@ defmodule ExImageInfoTest.Images.PSDTest do
   setup_all do
     images = %{
       # Comments: GIMP options to export the original images
-      "psd" => TestHelper.read_image("valid/psd/layers.psd"),
+      "psd" => TestHelper.read_image("valid/psd/layers.psd")
     }
+
     {:ok, images}
   end
 

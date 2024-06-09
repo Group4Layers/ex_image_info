@@ -5,8 +5,9 @@ defmodule ExImageInfoTest.Images.BMPTest do
   setup_all do
     images = %{
       # Comments: GIMP options to export the original images
-      "bmp" => TestHelper.read_image("valid/bmp/layers.bmp"),
+      "bmp" => TestHelper.read_image("valid/bmp/layers.bmp")
     }
+
     {:ok, images}
   end
 
@@ -21,5 +22,4 @@ defmodule ExImageInfoTest.Images.BMPTest do
     assert type(images["bmp"]) == {"image/bmp", "BMP"}
     assert info(images["bmp"]) == {"image/bmp", 130, 42, "BMP"}
   end
-
 end

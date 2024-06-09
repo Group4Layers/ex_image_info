@@ -5,31 +5,53 @@ defmodule ExImageInfoTest.Mocks.ICOTest do
 
   setup_all do
     images = %{
-      "ico" => << 0x00, 0x00,
-      0x01, 0x00, # .ICO = 1
-      0x01, 0x00, # 1 image
-      # first image
-      0x86, # width 0 => 256
-      0x39, # height 0 => 256
-      # rest
-      0::size(112), # 14 bytes
-      0x00,
+      "ico" => <<
+        0x00,
+        0x00,
+        # .ICO = 1
+        0x01,
+        0x00,
+        # 1 image
+        0x01,
+        0x00,
+        # first image
+        # width 0 => 256
+        0x86,
+        # height 0 => 256
+        0x39,
+        # rest
+        # 14 bytes
+        0::size(112),
+        0x00
       >>,
-      "ico-256" => << 0x00, 0x00,
-      0x01, 0x00, # .ICO = 1
-      0x02, 0x00, # 2 images, but only "parsed" the first one
-      # first image
-      0x86, # width
-      0x39, # height
-      0::size(112), # 14 bytes
-      # second image
-      0x0, # width 0 => 256
-      0x0, # height 0 => 256
-      0::size(112), # 14 bytes
-      # rest
-      0x00,
-      >>,
+      "ico-256" => <<
+        0x00,
+        0x00,
+        # .ICO = 1
+        0x01,
+        0x00,
+        # 2 images, but only "parsed" the first one
+        0x02,
+        0x00,
+        # first image
+        # width
+        0x86,
+        # height
+        0x39,
+        # 14 bytes
+        0::size(112),
+        # second image
+        # width 0 => 256
+        0x0,
+        # height 0 => 256
+        0x0,
+        # 14 bytes
+        0::size(112),
+        # rest
+        0x00
+      >>
     }
+
     {:ok, images}
   end
 

@@ -5,10 +5,12 @@ defmodule ExImageInfoTest.Images.GIFTest do
   setup_all do
     images = %{
       # Comments: GIMP options to export the original images
-      "gif87a" => TestHelper.read_image("valid/gif/layers-87a.gif"), # interlace
+      # interlace
+      "gif87a" => TestHelper.read_image("valid/gif/layers-87a.gif"),
       "gif89a" => TestHelper.read_image("valid/gif/layers.gif"),
-      "gif-anim" => TestHelper.read_image("valid/gif/layers-anim.gif"),
+      "gif-anim" => TestHelper.read_image("valid/gif/layers-anim.gif")
     }
+
     {:ok, images}
   end
 

@@ -5,8 +5,9 @@ defmodule ExImageInfoTest.Images.ICOTest do
   setup_all do
     images = %{
       "ico" => TestHelper.read_image("valid/ico/wikipedia.ico"),
-      "ico-256" => TestHelper.read_image("valid/ico/w.ico"),
+      "ico-256" => TestHelper.read_image("valid/ico/w.ico")
     }
+
     {:ok, images}
   end
 
@@ -27,5 +28,4 @@ defmodule ExImageInfoTest.Images.ICOTest do
     assert info(images["ico"]) == {"image/x-icon", 48, 48, "ICO"}
     assert info(images["ico-256"]) == {"image/x-icon", 256, 256, "ICO"}
   end
-
 end

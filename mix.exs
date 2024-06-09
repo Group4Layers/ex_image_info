@@ -4,20 +4,25 @@ defmodule ExImageInfo.Mixfile do
   def project do
     [
       app: :ex_image_info,
-      description: "ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.",
+      description:
+        "ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.",
       version: File.read!("VERSION") |> String.trim(),
       elixir: "~> 1.3",
-      name: 'ExImageInfo',
+      name: "ExImageInfo",
       package: package(),
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
       docs: docs(),
       source_url: "https://github.com/Group4Layers/ex_image_info",
       homepage_url: "https://www.group4layers.com",
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: [coveralls: :test, "coveralls.detail": :test, "coveralls.html": :test],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
@@ -30,7 +35,7 @@ defmodule ExImageInfo.Mixfile do
       {:excoveralls, "~> 0.18", only: :test},
       {:ex_doc, "~> 0.30", only: :dev},
       {:inch_ex, "~> 2.0", only: [:dev, :test]},
-      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end
 
@@ -39,6 +44,7 @@ defmodule ExImageInfo.Mixfile do
       test_wip: ["test --only wip"],
       docs: ["docs", &copy_doc_to_docs/1],
       lint: [
+        "format --check-formatted",
         "deps.unlock --check-unused",
         "credo --all --strict"
       ]
@@ -68,14 +74,14 @@ defmodule ExImageInfo.Mixfile do
         "README.md",
         "VERSION",
         "LICENSE.md",
-        "mix.exs",
+        "mix.exs"
       ],
       maintainers: ["nozalr <nozalr@group4layers.com>"],
       licenses: ["MIT"],
       links: %{
         "GitHub" => "https://github.com/Group4Layers/ex_image_info",
         "Docs" => "https://group4layers.github.io/ex_image_info",
-        "Organization" => "https://www.group4layers.com",
+        "Organization" => "https://www.group4layers.com"
       }
     ]
   end
