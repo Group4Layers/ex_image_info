@@ -1,5 +1,6 @@
 defmodule ExImageInfoTest.Mocks.PNMTest do
   use ExUnit.Case, async: true
+
   import ExImageInfo
 
   setup_all do
