@@ -28,7 +28,7 @@ defmodule ExImageInfo.Types.PNM do
 
   def info(<<@signature, char::size(8), split, rest::binary>>)
       when split in [@nl, @space, @sharp] do
-    with type <- signature_pnm(char),
+    with type when not is_nil(type) <- signature_pnm(char),
          {w, h} <- parse(rest, nil) do
       {@mime, String.to_integer(w), String.to_integer(h), type}
     else
@@ -61,30 +61,34 @@ defmodule ExImageInfo.Types.PNM do
 
   defp parse(rest, pre) do
     # no global
-    with [line, next] <- :binary.split(rest, "\n"),
-         # comments
-         valid <- hd(:binary.split(line, "#")),
-         ret <- Regex.run(~r/^\s*(\d+)(?:[\s]|)(?:(\d+)(?:[\s]|))?/, valid) do
-      case ret do
-        [_, w, h] ->
-          if pre != nil do
-            {pre, w}
-          else
-            {w, h}
-          end
+    case :binary.split(rest, "\n") do
+      [line, next] ->
+        # comments
+        valid = hd(:binary.split(line, "#"))
+        ret = Regex.run(~r/^\s*(\d+)(?:[\s]|)(?:(\d+)(?:[\s]|))?/, valid)
 
-        [_, w] ->
-          if pre != nil do
-            {pre, w}
-          else
-            parse(next, w)
-          end
+        case ret do
+          [_, w, h] ->
+            if pre == nil do
+              {w, h}
+            else
+              {pre, w}
+            end
 
-        _ ->
-          parse(next, pre)
-      end
-    else
-      _ -> nil
+          [_, w] ->
+            # credo:disable-for-next-line Credo.Check.Refactor.Nesting
+            if pre == nil do
+              parse(next, w)
+            else
+              {pre, w}
+            end
+
+          _ ->
+            parse(next, pre)
+        end
+
+      _ ->
+        nil
     end
   end
 end

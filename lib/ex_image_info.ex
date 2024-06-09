@@ -1,6 +1,4 @@
 defmodule ExImageInfo do
-  alias ExImageInfo.Types.{BMP, GIF, ICO, JP2, JPEG, PNG, PNM, PSD, TIFF, WEBP}
-
   @moduledoc """
   ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. Main module to parse a binary and get if it seems to be an image (validity), the mime-type (and variant detected) and the dimensions of the image, based on a specific image format.
 
@@ -69,6 +67,16 @@ defmodule ExImageInfo do
   The guessing functions try to detect the format of the binary by testing every available type based on its global usage (popularity, [usage of image file formats](https://w3techs.com/technologies/overview/image_format/all), but still keeping the `:png` as the first one):
   - `:png`, `:jpeg`, `:gif`, `:bmp`, `:ico`, `:tiff`, `:webp`, `:psd`, `:jp2`, `:pnm`
   """
+  alias ExImageInfo.Types.BMP
+  alias ExImageInfo.Types.GIF
+  alias ExImageInfo.Types.ICO
+  alias ExImageInfo.Types.JP2
+  alias ExImageInfo.Types.JPEG
+  alias ExImageInfo.Types.PNG
+  alias ExImageInfo.Types.PNM
+  alias ExImageInfo.Types.PSD
+  alias ExImageInfo.Types.TIFF
+  alias ExImageInfo.Types.WEBP
 
   # Guessing function ordered by global usage
   # https://w3techs.com/technologies/overview/image_format/all

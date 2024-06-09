@@ -59,7 +59,7 @@ defmodule ExImageInfo.Types.TIFF do
         ftype = if b_e == false, do: @ftype_ii, else: @ftype_mm
         w = Map.get(tags, 256)
         h = Map.get(tags, 257)
-        if w != nil and h != nil, do: {@mime, w, h, ftype}, else: nil
+        if w != nil and h != nil, do: {@mime, w, h, ftype}
 
       _ ->
         nil

@@ -1,5 +1,6 @@
 defmodule ExImageInfoTest.Mocks.ICOTest do
   use ExUnit.Case, async: true
+
   import ExImageInfo
   # doctest ExImageInfo.Detector
 
