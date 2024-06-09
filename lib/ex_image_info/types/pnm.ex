@@ -76,6 +76,7 @@ defmodule ExImageInfo.Types.PNM do
             end
 
           [_, w] ->
+            # credo:disable-for-next-line Credo.Check.Refactor.Nesting
             if pre == nil do
               parse(next, w)
             else
