@@ -57,6 +57,9 @@ Supported formats (image type to be parsed as):
 - `:psd`
 - `:tiff`
 - `:webp` (VP8X animated in `v0.2.4`)
+- `:avif`
+- `:heic`
+- `:heif`
 
 ## Mime-types and Variants
 
@@ -68,9 +71,14 @@ Each mime-type can be linked to at least one variant type:
 
 | mime-type                 | variant type | description        |
 | ------------------------- | ------------ | ------------------ |
+| `image/avif`              | `AVIF`       |                    |
 | `image/bmp`               | `BMP`        |                    |
 | `image/gif`               | `GIF87a`     | 87a gif spec       |
 | `image/gif`               | `GIF89a`     | 89a gif spec       |
+| `image/heic`              | `HEIC`       |                    |
+| `image/heic-sequence`     | `HEICS`      |                    |
+| `image/heif`              | `HEIF`       |                    |
+| `image/heif-sequence`     | `HEIFS`      |                    |
 | `image/x-icon`            | `ICO`        |                    |
 | `image/jpeg`              | `baseJPEG`   | baseline JPEG      |
 | `image/jpeg`              | `progJPEG`   | progressive JPEG   |
@@ -89,10 +97,10 @@ Each mime-type can be linked to at least one variant type:
 The variant type is created just to provide a bit more of information
 for every image format (if applicable).
 
-*Note*: `:ico` returns the dimensions of the largest image contained (not the first found).
+*Note*: `:avif`, `:heic`, `:heif` and `:ico` return the dimensions of the largest image contained (not the first found).
 
 The guessing functions try to detect the format of the binary by testing every available type based on its global usage (popularity, [usage of image file formats](https://w3techs.com/technologies/overview/image_format/all), but still keeping the `:png` as the first one):
-- `:png`, `:jpeg`, `:gif`, `:bmp`, `:ico`, `:tiff`, `:webp`, `:psd`, `:jp2`, `:pnm`
+- `:png`, `:jpeg`, `:gif`, `:bmp`, `:ico`, `:tiff`, `:webp`, `:psd`, `:jp2`, `:pnm`, `:avif`, `:heic`, `:heif`
 
 **Warnings:**
 
