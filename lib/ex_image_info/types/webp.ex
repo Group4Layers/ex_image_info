@@ -32,7 +32,7 @@ defmodule ExImageInfo.Types.WEBP do
     <<_skip::bytes-size(2), sign::bytes-size(3), _::binary>> = next
 
     cond do
-      lossy == " " and first != 0x2F -> parse_lossy(first, next)
+      lossy == " " -> parse_lossy(first, next)
       lossy == "L" and sign != <<0x9D012A::size(24)>> -> parse_lossless(first, next)
       lossy == "X" -> parse_vp8xbitstream(next)
       true -> nil
