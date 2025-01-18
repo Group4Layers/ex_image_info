@@ -1,5 +1,6 @@
 defmodule ExImageInfoTest.Mocks.PNMTest do
   use ExUnit.Case, async: true
+
   import ExImageInfo
 
   setup_all do
@@ -55,6 +56,12 @@ defmodule ExImageInfoTest.Mocks.PNMTest do
       """,
       "ppm-plain" => """
       P3
+        134# comments
+         # more comments
+       457 5 0 2 3
+      """,
+      "ppm-wrong" => """
+      P
         134# comments
          # more comments
        457 5 0 2 3
@@ -128,5 +135,16 @@ defmodule ExImageInfoTest.Mocks.PNMTest do
     assert type(images["ppm-plain"]) == {"image/x-portable-anymap", "PNMppm"}
     assert info(images["ppm"]) == {"image/x-portable-anymap", 134, 457, "PNMppm"}
     assert info(images["ppm-plain"]) == {"image/x-portable-anymap", 134, 457, "PNMppm"}
+  end
+
+  test "ppm wrong plain mock (force and guess) - #seems? #type #info",
+       images do
+    assert seems?(images["ppm-wrong"], :pnm) == false
+    assert type(images["ppm-wrong"], :pnm) == nil
+    assert info(images["ppm-wrong"], :pnm) == nil
+
+    assert seems?(images["ppm-wrong"]) == nil
+    assert type(images["ppm-wrong"]) == nil
+    assert info(images["ppm-wrong"]) == nil
   end
 end

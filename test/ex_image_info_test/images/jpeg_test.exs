@@ -1,5 +1,6 @@
 defmodule ExImageInfoTest.Images.JPEGTest do
   use ExUnit.Case, async: true
+
   import ExImageInfo
 
   setup_all do

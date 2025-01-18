@@ -1,5 +1,6 @@
 defmodule ExImageInfoTest.Images.ICOTest do
   use ExUnit.Case, async: true
+
   import ExImageInfo
 
   setup_all do
