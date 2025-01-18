@@ -36,7 +36,7 @@ defmodule ExImageInfo.Mixfile do
       {:ex_doc, "~> 0.30", only: :dev},
       {:inch_ex, "~> 2.0", only: [:dev, :test]},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:styler, "~> 1.0.0-rc.0", only: [:dev, :test], runtime: false}
+      {:styler, "~> 1.3", only: [:dev, :test], runtime: false}
     ]
   end
 
