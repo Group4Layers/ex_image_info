@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: ["ubuntu-20.04"]
-        elixir: ["1.15"]
+        elixir: ["1.15", "1.18"]
         otp: ["26"]
     steps:
       - uses: actions/checkout@v3
@@ -61,5 +61,5 @@ jobs:
           restore-keys: ${{ matrix.os }}-otp_${{ matrix.otp }}-elixir_${{ matrix.elixir }}-mix_
       - run: mix deps.get --only test
       - run: mix deps.compile
-      - run: mix compile
+      - run: mix compile --warnings-as-errors
       - run: mix test
