@@ -1,12 +1,13 @@
-name: "Build 1.13/24"
+# ' ' suffix for the badge status
+name: "Build 1.13/24 "
 
 on:
   push:
     branches:
-      - 'master'
+      - '*'
   pull_request:
     branches:
-      - 'master'
+      - '*'
 
 jobs:
   elixir_otp_latest:
