@@ -1,0 +1,16 @@
+name: "Build 1.13/24"
+
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+
+jobs:
+  elixir_otp_latest:
+    uses: ./.github/workflows/build_reusable.yml
+    with:
+      elixir-version: 1.13
+      otp-version: 24

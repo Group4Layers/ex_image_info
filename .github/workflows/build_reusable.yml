@@ -1,0 +1,30 @@
+name: Build CI Reusable
+
+on:
+  workflow_call:
+    inputs:
+      elixir-version:
+        required: true
+        type: string
+      otp-version:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          elixir-version: ${{ inputs.elixir-version }}
+          otp-version: ${{ inputs.otp-version }}
+
+      - name: Install dependencies
+        run: mix deps.get
+
+      - name: Run compilation with warnings as errors
+        run: mix compile --warnings-as-errors
