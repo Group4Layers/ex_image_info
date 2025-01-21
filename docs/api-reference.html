@@ -4,99 +4,199 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.19.1">
-    <title>API Reference – ExImageInfo v0.2.4</title>
-    <link rel="stylesheet" href="dist/app-240d7fc7e5.css" />
-    <script src="dist/sidebar_items-d2ff24ea4e.js"></script>
-    
+    <meta name="generator" content="ExDoc v0.36.1">
+    <meta name="project" content="ExImageInfo v0.2.6">
+
+
+    <title>API Reference — ExImageInfo v0.2.6</title>
+    <link rel="stylesheet" href="dist/html-elixir-QYVRUQZX.css" />
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-K7URE6B4.js"></script>
+    <script src="dist/sidebar_items-A9682721.js"></script>
+    <script src="docs_config.js"></script>
+    <script async src="dist/html-HJ5ACJPS.js"></script>
+
   </head>
-  <body data-type="extras">
-    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
-<div class="main">
-<button class="sidebar-button sidebar-toggle">
-  <span class="icon-menu" aria-hidden="true"></span>
-  <span class="sr-only">Toggle Sidebar</span>
-</button>
-<button class="sidebar-button night-mode-toggle">
-  <span class="icon-theme" aria-hidden="true"></span>
-  <span class="sr-only">Toggle Theme</span>
-</button>
-<section class="sidebar">
+  <body class="sidebar-closed">
+    <script>
 
-  <a href="https://www.group4layers.com" class="sidebar-projectLink">
-    <div class="sidebar-projectDetails">
-      <h1 class="sidebar-projectName">
-ExImageInfo      </h1>
-      <h2 class="sidebar-projectVersion">
-        v0.2.4
-      </h2>
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="https://www.group4layers.com" class="sidebar-projectName" translate="no">
+ExImageInfo
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.2.6
+        </div>
+      </div>
     </div>
-  </a>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
 
-  <form class="sidebar-search" action="search.html">
-    <button type="submit" class="search-button">
-      <span class="icon-search" aria-hidden="true"></span>
-    </button>
-    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
-  </form>
-
-  <ul class="sidebar-listNav">
-    <li><a id="extras-list" href="#full-list">Pages</a></li>
-
-      <li><a id="modules-list" href="#full-list">Modules</a></li>
-
-
-  </ul>
-  <div class="gradient"></div>
-  <ul id="full-list" class="sidebar-fullList"></ul>
-</section>
-
-<section class="content">
-  <div class="content-outer">
-    <div id="content" class="content-inner">
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
 
 
-<h1>
-  <small class="visible-xs">ExImageInfo v0.2.4</small>
-  API Reference
-</h1>
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-extra" id="main" data-type="extras">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of ExImageInfo</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
+          </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <h1>
+
+      <a href="https://github.com/Group4Layers/ex_image_info" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+
+    <span>API Reference <small class="app-vsn">ExImageInfo v0.2.6</small></span>
+  </h1>
+
 
   <section class="details-list">
     <h2 id="modules" class="section-heading">
-  <a href="#modules" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Modules
+  <a href="#modules" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Modules</span>
 </h2>
 
     <div class="summary">
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="ExImageInfo.html">ExImageInfo</a>
+    <a href="ExImageInfo.html" translate="no">ExImageInfo</a>
+
   </div>
-    <div class="summary-synopsis"><p>ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. Main module to parse a binary and get if it seems to be an image (validity), the mime-type (and variant detected) and the dimensions of the image, based on a specific image format</p>
+
+    <div class="summary-synopsis"><p>ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. Main module to parse a binary and get if it seems to be an image (validity), the mime-type (and variant detected) and the dimensions of the image, based on a specific image format.</p></div>
+
 </div>
-</div>
+
     </div>
   </section>
 
 
-      <footer class="footer">
-        <p>
-          <span class="line">
-            Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.1),
-          </span>
-          <span class="line">
-            designed by
-            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
-            </span>
-        </p>
-      </footer>
-    </div>
-  </div>
-</section>
 </div>
-  <script src="dist/app-a0c90688fa.js"></script>
-  
+
+<div class="bottom-actions" id="bottom-actions">
+  <div class="bottom-actions-item">
+
+  </div>
+  <div class="bottom-actions-item">
+
+      <a href="readme.html" class="bottom-actions-button" rel="next">
+        <span class="subheader">
+          Next Page →
+        </span>
+        <span class="title">
+README
+        </span>
+      </a>
+
+  </div>
+</div>
+    <footer class="footer">
+      <p>
+
+          <span class="line">
+            <a href="https://hex.pm/packages/ex_image_info/0.2.6" class="footer-hex-package">Hex Package</a>
+
+            <a href="https://preview.hex.pm/preview/ex_image_info/0.2.6">Hex Preview</a>
+
+          </span>
+
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
+
+            <a href="ExImageInfo.epub" title="ePub version">
+              Download ePub version
+            </a>
+
+        </span>
+      </p>
+
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.36.1) for the
+
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+      </p>
+
+    </footer>
+  </div>
+</main>
+</div>
+
   </body>
 </html>
-

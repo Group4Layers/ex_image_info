@@ -32,8 +32,8 @@ defmodule ExImageInfo.Types.WEBP do
     <<_skip::bytes-size(2), sign::bytes-size(3), _::binary>> = next
 
     cond do
-      lossy == " " and first != 0x2F -> parse_lossy(first, next)
-      lossy == "L" and sign != <<0x9D012A::size(24)>> -> parse_lossless(first, next)
+      lossy == " " and first != <<0x2F>> -> parse_lossy(next)
+      lossy == "L" and sign != <<0x9D012A::size(24)>> -> parse_lossless(next)
       lossy == "X" -> parse_vp8xbitstream(next)
       true -> nil
     end
@@ -58,14 +58,12 @@ defmodule ExImageInfo.Types.WEBP do
   ## Private
 
   defp parse_lossy(
-         _first,
          <<_skip::bytes-size(5), w::little-size(16), h::little-size(16), _rest::binary>>
        ) do
     {@mime, Bitwise.band(w, 0x3FFF), Bitwise.band(h, 0x3FFF), @ftype_vp8}
   end
 
   defp parse_lossless(
-         _first,
          <<one::size(8), two::size(8), three::size(8), four::size(8), _rest::binary>> =
            _buf
        ) do

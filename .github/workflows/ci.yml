@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: ["ubuntu-20.04"]
-        elixir: ["1.15"]
+        elixir: ["1.15", "1.18"]
         otp: ["26"]
     steps:
       - uses: actions/checkout@v3
@@ -41,11 +41,13 @@ jobs:
       fail-fast: false
       matrix:
         os: ["ubuntu-20.04"]
-        elixir: ["1.15", "1.14", "1.13"]
+        elixir: ["1.18", "1.16", "1.15", "1.14", "1.13"]
         otp: ["26", "25", "24"]
         exclude:
           - elixir: "1.13"
             otp: "26"
+          - elixir: "1.18"
+            otp: "24"
     steps:
       - uses: actions/checkout@v3
       - uses: erlef/setup-beam@v1
@@ -59,5 +61,5 @@ jobs:
           restore-keys: ${{ matrix.os }}-otp_${{ matrix.otp }}-elixir_${{ matrix.elixir }}-mix_
       - run: mix deps.get --only test
       - run: mix deps.compile
-      - run: mix compile
+      - run: mix compile --warnings-as-errors
       - run: mix test

@@ -4,465 +4,391 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.19.1">
-    <title>README – ExImageInfo v0.2.4</title>
-    <link rel="stylesheet" href="dist/app-240d7fc7e5.css" />
-    <script src="dist/sidebar_items-d2ff24ea4e.js"></script>
-    
+    <meta name="generator" content="ExDoc v0.36.1">
+    <meta name="project" content="ExImageInfo v0.2.6">
+
+
+    <title>README — ExImageInfo v0.2.6</title>
+    <link rel="stylesheet" href="dist/html-elixir-QYVRUQZX.css" />
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-K7URE6B4.js"></script>
+    <script src="dist/sidebar_items-A9682721.js"></script>
+    <script src="docs_config.js"></script>
+    <script async src="dist/html-HJ5ACJPS.js"></script>
+
   </head>
-  <body data-type="extras">
-    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
-<div class="main">
-<button class="sidebar-button sidebar-toggle">
-  <span class="icon-menu" aria-hidden="true"></span>
-  <span class="sr-only">Toggle Sidebar</span>
-</button>
-<button class="sidebar-button night-mode-toggle">
-  <span class="icon-theme" aria-hidden="true"></span>
-  <span class="sr-only">Toggle Theme</span>
-</button>
-<section class="sidebar">
+  <body class="sidebar-closed">
+    <script>
 
-  <a href="https://www.group4layers.com" class="sidebar-projectLink">
-    <div class="sidebar-projectDetails">
-      <h1 class="sidebar-projectName">
-ExImageInfo      </h1>
-      <h2 class="sidebar-projectVersion">
-        v0.2.4
-      </h2>
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="https://www.group4layers.com" class="sidebar-projectName" translate="no">
+ExImageInfo
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.2.6
+        </div>
+      </div>
     </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-extra" id="main" data-type="extras">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of ExImageInfo</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
+          </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <h1>
+
+      <a href="https://github.com/Group4Layers/ex_image_info/blob/main/README.md#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+
+    <span>README</span>
+  </h1>
+
+<h1>ExImageInfo</h1><p><a href="http://elixir-lang.org"><img src="https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square" alt="Elixir"/></a> <a href="https://raw.githubusercontent.com/Group4Layers/ex_image_info/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"/></a> &lt;a class=&quot;no-underline&quot; href=&quot;<a href="https://github.com/Group4Layers/ex_image_info%22">https://github.com/Group4Layers/ex_image_info&quot;</a>&gt;&lt;img src=&quot;<a href="https://img.shields.io/badge/coverage-98.4%25-green.svg%22">https://img.shields.io/badge/coverage-98.4%25-green.svg&quot;</a> alt=&quot;Coverage&quot;&gt;&lt;/a&gt; &lt;a class=&quot;no-underline&quot; href=&quot;<a href="https://github.com/Group4Layers/ex_image_info%22">https://github.com/Group4Layers/ex_image_info&quot;</a>&gt;&lt;img src=&quot;<a href="https://img.shields.io/badge/tests-58%2F58-green.svg%22">https://img.shields.io/badge/tests-58%2F58-green.svg&quot;</a> alt=&quot;Tests&quot;&gt;&lt;/a&gt;</p><p>ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.</p><p>Status: <a href="https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_latest.yml"><img src="https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_latest.yml/badge.svg" alt="Elixir 1.18 / OTP 26"/></a> <a href="https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_recent.yml"><img src="https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_recent.yml/badge.svg" alt="Elixir 1.16 / OTP 25"/></a> <a href="https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_old.yml"><img src="https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_old.yml/badge.svg" alt="Elixir 1.13 / OTP 24"/></a> <a href="https://coveralls.io/github/Group4Layers/ex_image_info?branch=master"><img src="https://coveralls.io/repos/github/Group4Layers/ex_image_info/badge.svg?branch=master" alt="Coverage Status"/></a> <a href="http://inch-ci.org/github/Group4Layers/ex_image_info"><img src="http://inch-ci.org/github/Group4Layers/ex_image_info.svg" alt="Inline docs"/></a></p><h3 id="github-repo-nbsp-nbsp-docs-nbsp-nbsp-hex-pm-package" class="section-heading">
+  <a href="#github-repo-nbsp-nbsp-docs-nbsp-nbsp-hex-pm-package" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
   </a>
-
-  <form class="sidebar-search" action="search.html">
-    <button type="submit" class="search-button">
-      <span class="icon-search" aria-hidden="true"></span>
-    </button>
-    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
-  </form>
-
-  <ul class="sidebar-listNav">
-    <li><a id="extras-list" href="#full-list">Pages</a></li>
-
-      <li><a id="modules-list" href="#full-list">Modules</a></li>
-
-
-  </ul>
-  <div class="gradient"></div>
-  <ul id="full-list" class="sidebar-fullList"></ul>
-</section>
-
-<section class="content">
-  <div class="content-outer">
-    <div id="content" class="content-inner">
-
-
-<h1>README</h1>
-<h1>ExImageInfo</h1>
-<p><a href="http://elixir-lang.org"><img src="https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square" alt="Elixir"/></a> <a href="https://raw.githubusercontent.com/Group4Layers/ex_image_info/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"/></a> <a class="no-underline" href="https://github.com/Group4Layers/ex_image_info"><img src="https://img.shields.io/badge/coverage-98.4%25-green.svg" alt="Coverage"></a> <a class="no-underline" href="https://github.com/Group4Layers/ex_image_info"><img src="https://img.shields.io/badge/tests-54%2F54-green.svg" alt="Tests"></a></p>
-<p>ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.</p>
-<p>Online tools: <a href="https://travis-ci.org/Group4Layers/ex_image_info"><img src="https://travis-ci.org/Group4Layers/ex_image_info.svg?branch=master" alt="Build Status"/></a> <a href="https://coveralls.io/github/Group4Layers/ex_image_info?branch=master"><img src="https://coveralls.io/repos/github/Group4Layers/ex_image_info/badge.svg?branch=master" alt="Coverage Status"/></a> <a href="https://ebertapp.io/github/Group4Layers/ex_image_info"><img src="https://ebertapp.io/github/Group4Layers/ex_image_info.svg" alt="Ebert"/></a> <a href="http://inch-ci.org/github/Group4Layers/ex_image_info"><img src="http://inch-ci.org/github/Group4Layers/ex_image_info.svg" alt="Inline docs"/></a></p>
-<h3 id="github-repo-docs-hex-pm-package" class="section-heading">
-  <a href="#github-repo-docs-hex-pm-package" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  <a href="https://github.com/Group4Layers/ex_image_info">GitHub repo</a> &nbsp;&nbsp; <a href="https://group4layers.github.io/ex_image_info">Docs</a> &nbsp;&nbsp; <a href="https://hex.pm/packages/ex_image_info">Hex.pm package</a>
+  <span class="text"><a href="https://github.com/Group4Layers/ex_image_info">GitHub repo</a> &amp;nbsp;&amp;nbsp; <a href="https://group4layers.github.io/ex_image_info">Docs</a> &amp;nbsp;&amp;nbsp; <a href="https://hex.pm/packages/ex_image_info">Hex.pm package</a></span>
 </h3>
-
 <h2 id="table-of-contents" class="section-heading">
-  <a href="#table-of-contents" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Table of Contents
+  <a href="#table-of-contents" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Table of Contents</span>
 </h2>
-
-<ol>
-<li><a href="#description">Description</a>
-</li>
-<li><a href="#installation">Installation</a>
-</li>
-<li><a href="#examples">Examples</a>
-</li>
-<li><a href="#benchmarks">Benchmarks</a>
-</li>
-<li><a href="#design-decisions">Design decisions</a>
-</li>
-<li><a href="#acknowledgments">Acknowledgments</a>
-</li>
-<li><a href="#author">Author</a>
-</li>
-<li><a href="#contributors">Contributors</a>
-</li>
-<li><a href="#changelog">ChangeLog</a>
-</li>
-<li><a href="#license">License</a>
-</li>
-</ol>
-<h2 id="description" class="section-heading">
-  <a href="#description" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Description
+<ol><li><a href="#description">Description</a></li><li><a href="#installation">Installation</a></li><li><a href="#examples">Examples</a></li><li><a href="#benchmarks">Benchmarks</a></li><li><a href="#design-decisions">Design decisions</a></li><li><a href="#acknowledgments">Acknowledgments</a></li><li><a href="#author">Author</a></li><li><a href="#contributors">Contributors</a></li><li><a href="#changelog">ChangeLog</a></li><li><a href="#license">License</a></li></ol><h2 id="description" class="section-heading">
+  <a href="#description" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Description</span>
 </h2>
-
 <p>Main module that checks and gets if a binary seems to be an image (specific
 format), the mime-type (and variant detected) and the dimensions of the image
-(based on the type).</p>
-<p>It has convention functions to guess the type of an image by trying the formats
-supported by the library.</p>
-<h3 id="main-features" class="section-heading">
-  <a href="#main-features" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Main features
+(based on the type).</p><p>It has convention functions to guess the type of an image by trying the formats
+supported by the library.</p><h3 id="main-features" class="section-heading">
+  <a href="#main-features" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Main features</span>
 </h3>
-
-<ul>
-<li>Check the validity of binary by providing a specific image format*.
-</li>
-<li>Guess the validity of an image*.
-</li>
-<li>Get the mime-type and variant type by providing a specific format.
-</li>
-<li>Guess the mime-type and variant type of an image.
-</li>
-<li>Get the dimensions of an image by providing a specific format.
-</li>
-<li>Guess the dimensions of an image.
-</li>
-</ul>
-<p>*Note: both cases as a general overview (partially checked).</p>
-<h3 id="formats" class="section-heading">
-  <a href="#formats" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Formats
+<ul><li>Check the validity of binary by providing a specific image format*.</li><li>Guess the validity of an image*.</li><li>Get the mime-type and variant type by providing a specific format.</li><li>Guess the mime-type and variant type of an image.</li><li>Get the dimensions of an image by providing a specific format.</li><li>Guess the dimensions of an image.</li></ul><p>*Note: both cases as a general overview (partially checked).</p><h3 id="formats" class="section-heading">
+  <a href="#formats" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Formats</span>
 </h3>
-
-<p>Supported formats (image type to be parsed as):</p>
-<ul>
-<li><code class="inline">:bmp</code>
-</li>
-<li><code class="inline">:gif</code>
-</li>
-<li><code class="inline">:ico</code> (new in <code class="inline">v0.2.0</code>)
-</li>
-<li><code class="inline">:jpeg</code>
-</li>
-<li><code class="inline">:jpg</code> (alias of <code class="inline">jpeg</code> in <code class="inline">v0.2.3</code>)
-</li>
-<li><code class="inline">:jp2</code> (new in <code class="inline">v0.2.0</code>)
-</li>
-<li><code class="inline">:png</code>
-</li>
-<li><code class="inline">:pnm</code> (new in <code class="inline">v0.2.0</code>)
-</li>
-<li><code class="inline">:psd</code>
-</li>
-<li><code class="inline">:tiff</code>
-</li>
-<li><code class="inline">:webp</code> (VP8X animated in <code class="inline">v0.2.4</code>)
-</li>
-</ul>
-<h2 id="mime-types-and-variants" class="section-heading">
-  <a href="#mime-types-and-variants" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Mime-types and Variants
+<p>Supported formats (image type to be parsed as):</p><ul><li><code class="inline">:bmp</code></li><li><code class="inline">:gif</code></li><li><code class="inline">:ico</code> (new in <code class="inline">v0.2.0</code>)</li><li><code class="inline">:jpeg</code></li><li><code class="inline">:jpg</code> (alias of <code class="inline">jpeg</code> in <code class="inline">v0.2.3</code>)</li><li><code class="inline">:jp2</code> (new in <code class="inline">v0.2.0</code>)</li><li><code class="inline">:png</code></li><li><code class="inline">:pnm</code> (new in <code class="inline">v0.2.0</code>)</li><li><code class="inline">:psd</code></li><li><code class="inline">:tiff</code></li><li><code class="inline">:webp</code> (VP8X animated in <code class="inline">v0.2.4</code>)</li></ul><h2 id="mime-types-and-variants" class="section-heading">
+  <a href="#mime-types-and-variants" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Mime-types and Variants</span>
 </h2>
-
 <p>The image variant type is an invented string to identify the
 type of format recognized by this library (more specific than the
-mime-type).</p>
-<p>Each mime-type can be linked to at least one variant type:</p>
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left">mime-type</th><th style="text-align: left">variant type</th><th style="text-align: left">description</th>
-</tr>
-</thead>
-<tr>
-<td style="text-align: left"><code class="inline">image/bmp</code></td><td style="text-align: left"><code class="inline">BMP</code></td><td style="text-align: left"></td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/gif</code></td><td style="text-align: left"><code class="inline">GIF87a</code></td><td style="text-align: left">87a gif spec</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/gif</code></td><td style="text-align: left"><code class="inline">GIF89a</code></td><td style="text-align: left">89a gif spec</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/x-icon</code></td><td style="text-align: left"><code class="inline">ICO</code></td><td style="text-align: left"></td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/jpeg</code></td><td style="text-align: left"><code class="inline">baseJPEG</code></td><td style="text-align: left">baseline JPEG</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/jpeg</code></td><td style="text-align: left"><code class="inline">progJPEG</code></td><td style="text-align: left">progressive JPEG</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/jp2</code></td><td style="text-align: left"><code class="inline">JP2</code></td><td style="text-align: left">JPEG2000</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/png</code></td><td style="text-align: left"><code class="inline">PNG</code></td><td style="text-align: left"></td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left"><code class="inline">PNMpbm</code></td><td style="text-align: left">Portable BitMap</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left"><code class="inline">PNMpgm</code></td><td style="text-align: left">Portable GrayMap</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left"><code class="inline">PNMppm</code></td><td style="text-align: left">Portable PixMap</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/psd</code></td><td style="text-align: left"><code class="inline">PSD</code></td><td style="text-align: left"></td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/tiff</code></td><td style="text-align: left"><code class="inline">TIFFII</code></td><td style="text-align: left">II variant</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/tiff</code></td><td style="text-align: left"><code class="inline">TIFFMM</code></td><td style="text-align: left">MM variant</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/webp</code></td><td style="text-align: left"><code class="inline">webpVP8</code></td><td style="text-align: left">lossy</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/webp</code></td><td style="text-align: left"><code class="inline">webpVP8L</code></td><td style="text-align: left">lossless</td>
-</tr>
-<tr>
-<td style="text-align: left"><code class="inline">image/webp</code></td><td style="text-align: left"><code class="inline">webpVP8X</code></td><td style="text-align: left">animated</td>
-</tr>
-</table>
-<p>The variant type is created just to provide a bit more of information
-for every image format (if applicable).</p>
-<p><em>Note</em>: <code class="inline">:ico</code> returns the dimensions of the largest image contained (not the first found).</p>
-<p>The guessing functions try to detect the format of the binary by testing every available type based on its global usage (popularity, <a href="https://w3techs.com/technologies/overview/image_format/all">usage of image file formats</a>, but still keeping the <code class="inline">:png</code> as the first one):</p>
-<ul>
-<li><code class="inline">:png</code>, <code class="inline">:jpeg</code>, <code class="inline">:gif</code>, <code class="inline">:bmp</code>, <code class="inline">:ico</code>, <code class="inline">:tiff</code>, <code class="inline">:webp</code>, <code class="inline">:psd</code>, <code class="inline">:jp2</code>, <code class="inline">:pnm</code>
-</li>
-</ul>
-<p><strong>Warnings:</strong></p>
-<ul>
-<li>Use with caution the formats <em>ico</em>, <em>jp2</em> and the family <em>pnm</em>. They are implemented without following other libraries (just reading the specs - sometimes working with old drafts like <em>jp2</em>). You can support this library by providing more tests and image <em>fixtures</em> or requesting other variants to be tested.
-</li>
-</ul>
-<h2 id="installation" class="section-heading">
-  <a href="#installation" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Installation
+mime-type).</p><p>Each mime-type can be linked to at least one variant type:</p><table><thead><tr><th style="text-align: left;">mime-type</th><th style="text-align: left;">variant type</th><th style="text-align: left;">description</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">image/bmp</code></td><td style="text-align: left;"><code class="inline">BMP</code></td><td style="text-align: left;"></td></tr><tr><td style="text-align: left;"><code class="inline">image/gif</code></td><td style="text-align: left;"><code class="inline">GIF87a</code></td><td style="text-align: left;">87a gif spec</td></tr><tr><td style="text-align: left;"><code class="inline">image/gif</code></td><td style="text-align: left;"><code class="inline">GIF89a</code></td><td style="text-align: left;">89a gif spec</td></tr><tr><td style="text-align: left;"><code class="inline">image/x-icon</code></td><td style="text-align: left;"><code class="inline">ICO</code></td><td style="text-align: left;"></td></tr><tr><td style="text-align: left;"><code class="inline">image/jpeg</code></td><td style="text-align: left;"><code class="inline">baseJPEG</code></td><td style="text-align: left;">baseline JPEG</td></tr><tr><td style="text-align: left;"><code class="inline">image/jpeg</code></td><td style="text-align: left;"><code class="inline">progJPEG</code></td><td style="text-align: left;">progressive JPEG</td></tr><tr><td style="text-align: left;"><code class="inline">image/jp2</code></td><td style="text-align: left;"><code class="inline">JP2</code></td><td style="text-align: left;">JPEG2000</td></tr><tr><td style="text-align: left;"><code class="inline">image/png</code></td><td style="text-align: left;"><code class="inline">PNG</code></td><td style="text-align: left;"></td></tr><tr><td style="text-align: left;"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left;"><code class="inline">PNMpbm</code></td><td style="text-align: left;">Portable BitMap</td></tr><tr><td style="text-align: left;"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left;"><code class="inline">PNMpgm</code></td><td style="text-align: left;">Portable GrayMap</td></tr><tr><td style="text-align: left;"><code class="inline">image/x-portable-anymap</code></td><td style="text-align: left;"><code class="inline">PNMppm</code></td><td style="text-align: left;">Portable PixMap</td></tr><tr><td style="text-align: left;"><code class="inline">image/psd</code></td><td style="text-align: left;"><code class="inline">PSD</code></td><td style="text-align: left;"></td></tr><tr><td style="text-align: left;"><code class="inline">image/tiff</code></td><td style="text-align: left;"><code class="inline">TIFFII</code></td><td style="text-align: left;">II variant</td></tr><tr><td style="text-align: left;"><code class="inline">image/tiff</code></td><td style="text-align: left;"><code class="inline">TIFFMM</code></td><td style="text-align: left;">MM variant</td></tr><tr><td style="text-align: left;"><code class="inline">image/webp</code></td><td style="text-align: left;"><code class="inline">webpVP8</code></td><td style="text-align: left;">lossy</td></tr><tr><td style="text-align: left;"><code class="inline">image/webp</code></td><td style="text-align: left;"><code class="inline">webpVP8L</code></td><td style="text-align: left;">lossless</td></tr><tr><td style="text-align: left;"><code class="inline">image/webp</code></td><td style="text-align: left;"><code class="inline">webpVP8X</code></td><td style="text-align: left;">animated</td></tr></tbody></table><p>The variant type is created just to provide a bit more of information
+for every image format (if applicable).</p><p><em>Note</em>: <code class="inline">:ico</code> returns the dimensions of the largest image contained (not the first found).</p><p>The guessing functions try to detect the format of the binary by testing every available type based on its global usage (popularity, <a href="https://w3techs.com/technologies/overview/image_format/all">usage of image file formats</a>, but still keeping the <code class="inline">:png</code> as the first one):</p><ul><li><code class="inline">:png</code>, <code class="inline">:jpeg</code>, <code class="inline">:gif</code>, <code class="inline">:bmp</code>, <code class="inline">:ico</code>, <code class="inline">:tiff</code>, <code class="inline">:webp</code>, <code class="inline">:psd</code>, <code class="inline">:jp2</code>, <code class="inline">:pnm</code></li></ul><p><strong>Warnings:</strong></p><ul><li>Use with caution the formats <em>ico</em>, <em>jp2</em> and the family <em>pnm</em>. They are implemented without following other libraries (just reading the specs - sometimes working with old drafts like <em>jp2</em>). You can support this library by providing more tests and image <em>fixtures</em> or requesting other variants to be tested.</li></ul><h2 id="installation" class="section-heading">
+  <a href="#installation" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Installation</span>
 </h2>
-
-<p>Add <code class="inline">ex_image_info</code> to your list of dependencies in <code class="inline">mix.exs</code>.</p>
-<p>From Hex:</p>
-<pre><code class="nohighlight makeup elixir"><span class="w">  </span><span class="kd">def</span><span class="w"> </span><span class="nf">deps</span><span class="w"> </span><span class="k" data-group-id="8311441255-1">do</span><span class="w">
-    </span><span class="p" data-group-id="8311441255-2">[</span><span class="w">
+<p>Add <code class="inline">ex_image_info</code> to your list of dependencies in <code class="inline">mix.exs</code>.</p><p>From Hex:</p><pre><code class="makeup elixir" translate="no"><span class="w">  </span><span class="kd">def</span><span class="w"> </span><span class="nf">deps</span><span class="w"> </span><span class="k" data-group-id="4708734976-1">do</span><span class="w">
+    </span><span class="p" data-group-id="4708734976-2">[</span><span class="w">
       </span><span class="c1"># ...</span><span class="w">
-      </span><span class="p" data-group-id="8311441255-3">{</span><span class="ss">:ex_image_info</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;~&gt; 0.2.4&quot;</span><span class="p" data-group-id="8311441255-3">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="8311441255-2">]</span><span class="w">
-  </span><span class="k" data-group-id="8311441255-1">end</span></code></pre>
-<p>Or GitHub:</p>
-<pre><code class="nohighlight makeup elixir"><span class="w">  </span><span class="kd">def</span><span class="w"> </span><span class="nf">deps</span><span class="w"> </span><span class="k" data-group-id="1239442918-1">do</span><span class="w">
-    </span><span class="p" data-group-id="1239442918-2">[</span><span class="w">
+      </span><span class="p" data-group-id="4708734976-3">{</span><span class="ss">:ex_image_info</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;~&gt; 0.2.4&quot;</span><span class="p" data-group-id="4708734976-3">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4708734976-2">]</span><span class="w">
+  </span><span class="k" data-group-id="4708734976-1">end</span></code></pre><p>Or GitHub:</p><pre><code class="makeup elixir" translate="no"><span class="w">  </span><span class="kd">def</span><span class="w"> </span><span class="nf">deps</span><span class="w"> </span><span class="k" data-group-id="9611776586-1">do</span><span class="w">
+    </span><span class="p" data-group-id="9611776586-2">[</span><span class="w">
       </span><span class="c1"># ...</span><span class="w">
-      </span><span class="p" data-group-id="1239442918-3">{</span><span class="ss">:ex_image_info</span><span class="p">,</span><span class="w"> </span><span class="ss">github</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Group4Layers/ex_image_info&quot;</span><span class="p" data-group-id="1239442918-3">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="1239442918-2">]</span><span class="w">
-  </span><span class="k" data-group-id="1239442918-1">end</span></code></pre>
-<p>Then, use it:</p>
-<pre><code class="nohighlight makeup elixir"><span class="kn">require</span><span class="w"> </span><span class="nc">ExImageInfo</span><span class="w">
-</span><span class="c1"># ExImageInfo.seems? ...</span></code></pre>
-<h2 id="examples" class="section-heading">
-  <a href="#examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Examples
+      </span><span class="p" data-group-id="9611776586-3">{</span><span class="ss">:ex_image_info</span><span class="p">,</span><span class="w"> </span><span class="ss">github</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Group4Layers/ex_image_info&quot;</span><span class="p" data-group-id="9611776586-3">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="9611776586-2">]</span><span class="w">
+  </span><span class="k" data-group-id="9611776586-1">end</span></code></pre><p>Then, use it:</p><pre><code class="makeup elixir" translate="no"><span class="kn">require</span><span class="w"> </span><span class="nc">ExImageInfo</span><span class="w">
+</span><span class="c1"># ExImageInfo.seems? ...</span></code></pre><h2 id="examples" class="section-heading">
+  <a href="#examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
 </h2>
+<p>The following examples are run with the latest version of the library under the next environment:</p><pre><code class="makeup elixir" translate="no"><span class="nc">Erlang</span><span class="o">/</span><span class="nc">OTP</span><span class="w"> </span><span class="mi">19</span><span class="w"> </span><span class="p" data-group-id="6173442705-1">[</span><span class="n">erts</span><span class="o">-</span><span class="mf">8.0</span><span class="o">.</span><span class="mi">2</span><span class="p" data-group-id="6173442705-1">]</span><span class="w"> </span><span class="p" data-group-id="6173442705-2">[</span><span class="n">source</span><span class="p" data-group-id="6173442705-2">]</span><span class="w"> </span><span class="p" data-group-id="6173442705-3">[</span><span class="mi">64</span><span class="o">-</span><span class="n">bit</span><span class="p" data-group-id="6173442705-3">]</span><span class="w"> </span><span class="p" data-group-id="6173442705-4">[</span><span class="n">smp</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">8</span><span class="p" data-group-id="6173442705-4">]</span><span class="w"> </span><span class="p" data-group-id="6173442705-5">[</span><span class="n">async</span><span class="o">-</span><span class="n">threads</span><span class="p">:</span><span class="mi">10</span><span class="p" data-group-id="6173442705-5">]</span><span class="w"> </span><span class="p" data-group-id="6173442705-6">[</span><span class="n">hipe</span><span class="p" data-group-id="6173442705-6">]</span><span class="w"> </span><span class="p" data-group-id="6173442705-7">[</span><span class="n">kernel</span><span class="o">-</span><span class="n">poll</span><span class="ss">:false</span><span class="p" data-group-id="6173442705-7">]</span><span class="w">
 
-<p>The following examples are run with the latest version of the library under the next environment:</p>
-<pre><code class="nohighlight makeup elixir"><span class="nc">Erlang</span><span class="o">/</span><span class="nc">OTP</span><span class="w"> </span><span class="mi">19</span><span class="w"> </span><span class="p" data-group-id="0218709375-1">[</span><span class="n">erts</span><span class="o">-</span><span class="mf">8.0</span><span class="o">.</span><span class="mi">2</span><span class="p" data-group-id="0218709375-1">]</span><span class="w"> </span><span class="p" data-group-id="0218709375-2">[</span><span class="n">source</span><span class="p" data-group-id="0218709375-2">]</span><span class="w"> </span><span class="p" data-group-id="0218709375-3">[</span><span class="mi">64</span><span class="o">-</span><span class="n">bit</span><span class="p" data-group-id="0218709375-3">]</span><span class="w"> </span><span class="p" data-group-id="0218709375-4">[</span><span class="n">smp</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">8</span><span class="p" data-group-id="0218709375-4">]</span><span class="w"> </span><span class="p" data-group-id="0218709375-5">[</span><span class="n">async</span><span class="o">-</span><span class="n">threads</span><span class="p">:</span><span class="mi">10</span><span class="p" data-group-id="0218709375-5">]</span><span class="w"> </span><span class="p" data-group-id="0218709375-6">[</span><span class="n">hipe</span><span class="p" data-group-id="0218709375-6">]</span><span class="w"> </span><span class="p" data-group-id="0218709375-7">[</span><span class="n">kernel</span><span class="o">-</span><span class="n">poll</span><span class="ss">:false</span><span class="p" data-group-id="0218709375-7">]</span><span class="w">
-
-</span><span class="nc">Interactive</span><span class="w"> </span><span class="nc">Elixir</span><span class="w"> </span><span class="p" data-group-id="0218709375-8">(</span><span class="mf">1.3</span><span class="o">.</span><span class="mi">2</span><span class="p" data-group-id="0218709375-8">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">press</span><span class="w"> </span><span class="nc">Ctrl</span><span class="o">+</span><span class="nc">C</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">exit</span><span class="w"> </span><span class="p" data-group-id="0218709375-9">(</span><span class="n">type</span><span class="w"> </span><span class="n">h</span><span class="p" data-group-id="0218709375-10">(</span><span class="p" data-group-id="0218709375-10">)</span><span class="w"> </span><span class="nc">ENTER</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">help</span><span class="p" data-group-id="0218709375-9">)</span><span class="w">
-</span><span class="gp unselectable">iex(1)&gt;</span></code></pre>
-<h3 id="feature-seems" class="section-heading">
-  <a href="#feature-seems" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Feature <code class="inline">seems?</code>
+</span><span class="nc">Interactive</span><span class="w"> </span><span class="nc">Elixir</span><span class="w"> </span><span class="p" data-group-id="6173442705-8">(</span><span class="mf">1.3</span><span class="o">.</span><span class="mi">2</span><span class="p" data-group-id="6173442705-8">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">press</span><span class="w"> </span><span class="nc">Ctrl</span><span class="o">+</span><span class="nc">C</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">exit</span><span class="w"> </span><span class="p" data-group-id="6173442705-9">(</span><span class="n">type</span><span class="w"> </span><span class="n">h</span><span class="p" data-group-id="6173442705-10">(</span><span class="p" data-group-id="6173442705-10">)</span><span class="w"> </span><span class="nc">ENTER</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">help</span><span class="p" data-group-id="6173442705-9">)</span><span class="w">
+</span><span class="gp unselectable">iex(1)&gt;</span></code></pre><h3 id="feature-seems" class="section-heading">
+  <a href="#feature-seems" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Feature <code class="inline">seems?</code></span>
 </h3>
-
-<p><code class="inline">89 50 4E 47 0D 0A 1A 0A</code> are the first 8 bytes in the <code class="inline">PNG</code> signature (<code class="inline">PNG\\r\\n0x1A\\n</code>).</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="p" data-group-id="2344003739-1">&lt;&lt;</span><span class="mh">0x89504E470D0A1A0A</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="2344003739-2">(</span><span class="mi">64</span><span class="p" data-group-id="2344003739-2">)</span><span class="p" data-group-id="2344003739-1">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:png</span><span class="w">
+<p><code class="inline">89 50 4E 47 0D 0A 1A 0A</code> are the first 8 bytes in the <code class="inline">PNG</code> signature (<code class="inline">PNG\\r\\n0x1A\\n</code>).</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="p" data-group-id="2267581913-1">&lt;&lt;</span><span class="mh">0x89504E470D0A1A0A</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="2267581913-2">(</span><span class="mi">64</span><span class="p" data-group-id="2267581913-2">)</span><span class="p" data-group-id="2267581913-1">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:png</span><span class="w">
 </span><span class="no">true</span><span class="w">
 
-</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="p" data-group-id="2344003739-3">&lt;&lt;</span><span class="mh">0x89504E470D0A1A0A</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="2344003739-4">(</span><span class="mi">64</span><span class="p" data-group-id="2344003739-4">)</span><span class="p" data-group-id="2344003739-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:webp</span><span class="w">
-</span><span class="no">false</span></code></pre>
-<p><a href="ExImageInfo.html#seems?/2"><code class="inline">ExImageInfo.seems?/2</code></a> and <a href="ExImageInfo.html#seems?/1"><code class="inline">ExImageInfo.seems?/1</code></a> does not necessarily needs a real image (as it is shown in the previous example) because it just checks the signature of every file format.</p>
-<p>Usually it is used as:</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="4873126447-1">(</span><span class="s">&quot;path/to/image.gif&quot;</span><span class="p" data-group-id="4873126447-1">)</span><span class="p">,</span><span class="w"> </span><span class="ss">:gif</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="p" data-group-id="2267581913-3">&lt;&lt;</span><span class="mh">0x89504E470D0A1A0A</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="2267581913-4">(</span><span class="mi">64</span><span class="p" data-group-id="2267581913-4">)</span><span class="p" data-group-id="2267581913-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:webp</span><span class="w">
+</span><span class="no">false</span></code></pre><p><a href="ExImageInfo.html#seems?/2"><code class="inline">ExImageInfo.seems?/2</code></a> and <a href="ExImageInfo.html#seems?/1"><code class="inline">ExImageInfo.seems?/1</code></a> does not necessarily needs a real image (as it is shown in the previous example) because it just checks the signature of every file format.</p><p>Usually it is used as:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="4455588262-1">(</span><span class="s">&quot;path/to/image.gif&quot;</span><span class="p" data-group-id="4455588262-1">)</span><span class="p">,</span><span class="w"> </span><span class="ss">:gif</span><span class="w">
 </span><span class="no">true</span><span class="w">
 
 </span><span class="gp unselectable">iex(2)&gt; </span><span class="n">maybe_png_binary</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="ss">:png</span><span class="w">
-</span><span class="no">false</span></code></pre>
-<p><code class="inline">38 42 50 53</code> are the first 4 bytes in the <code class="inline">PSD</code> signature (<code class="inline">8BPS</code>).</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="p" data-group-id="6054723822-1">&lt;&lt;</span><span class="mh">0x38425053</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="6054723822-2">(</span><span class="mi">32</span><span class="p" data-group-id="6054723822-2">)</span><span class="p" data-group-id="6054723822-1">&gt;&gt;</span><span class="w">
+</span><span class="no">false</span></code></pre><p><code class="inline">38 42 50 53</code> are the first 4 bytes in the <code class="inline">PSD</code> signature (<code class="inline">8BPS</code>).</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="p" data-group-id="7624975281-1">&lt;&lt;</span><span class="mh">0x38425053</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="7624975281-2">(</span><span class="mi">32</span><span class="p" data-group-id="7624975281-2">)</span><span class="p" data-group-id="7624975281-1">&gt;&gt;</span><span class="w">
 </span><span class="ss">:psd</span><span class="w">
 
-</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="p" data-group-id="6054723822-3">&lt;&lt;</span><span class="mh">0x384250</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="6054723822-4">(</span><span class="mi">24</span><span class="p" data-group-id="6054723822-4">)</span><span class="p" data-group-id="6054723822-3">&gt;&gt;</span><span class="w">
-</span><span class="no">nil</span></code></pre>
-<p><a href="ExImageInfo.html#seems?/2"><code class="inline">ExImageInfo.seems?/2</code></a> and <a href="ExImageInfo.html#seems?/1"><code class="inline">ExImageInfo.seems?/1</code></a> does not necessarily needs a real image (as it is shown in the previous example) because it just checks the signature of every file format.</p>
-<p>Usually it is used as:</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="8143208837-1">(</span><span class="s">&quot;path/to/image.unknown&quot;</span><span class="p" data-group-id="8143208837-1">)</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="p" data-group-id="7624975281-3">&lt;&lt;</span><span class="mh">0x384250</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="7624975281-4">(</span><span class="mi">24</span><span class="p" data-group-id="7624975281-4">)</span><span class="p" data-group-id="7624975281-3">&gt;&gt;</span><span class="w">
+</span><span class="no">nil</span></code></pre><p><a href="ExImageInfo.html#seems?/2"><code class="inline">ExImageInfo.seems?/2</code></a> and <a href="ExImageInfo.html#seems?/1"><code class="inline">ExImageInfo.seems?/1</code></a> does not necessarily needs a real image (as it is shown in the previous example) because it just checks the signature of every file format.</p><p>Usually it is used as:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="1800543328-1">(</span><span class="s">&quot;path/to/image.unknown&quot;</span><span class="p" data-group-id="1800543328-1">)</span><span class="w">
 </span><span class="ss">:tiff</span><span class="w">
 
 </span><span class="gp unselectable">iex(2)&gt; </span><span class="n">webp_full_binary</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">seems?</span><span class="w">
-</span><span class="ss">:webp</span></code></pre>
-<h3 id="feature-type" class="section-heading">
-  <a href="#feature-type" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Feature <code class="inline">type</code>
+</span><span class="ss">:webp</span></code></pre><h3 id="feature-type" class="section-heading">
+  <a href="#feature-type" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Feature <code class="inline">type</code></span>
 </h3>
-
-<p><code class="inline">89 50 4E 47 0D 0A 1A 0A</code> are the first 8 bytes in the <code class="inline">PNG</code> signature (<code class="inline">PNG\\r\\n0x1A\\n</code>).</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="p" data-group-id="1455552597-1">&lt;&lt;</span><span class="mh">0x89504E470D0A1A0A</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="1455552597-2">(</span><span class="mi">64</span><span class="p" data-group-id="1455552597-2">)</span><span class="p" data-group-id="1455552597-1">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:png</span><span class="w">
+<p><code class="inline">89 50 4E 47 0D 0A 1A 0A</code> are the first 8 bytes in the <code class="inline">PNG</code> signature (<code class="inline">PNG\\r\\n0x1A\\n</code>).</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="p" data-group-id="6349080411-1">&lt;&lt;</span><span class="mh">0x89504E470D0A1A0A</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="6349080411-2">(</span><span class="mi">64</span><span class="p" data-group-id="6349080411-2">)</span><span class="p" data-group-id="6349080411-1">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:png</span><span class="w">
 </span><span class="no">nil</span><span class="w">
 
-</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="p" data-group-id="1455552597-3">&lt;&lt;</span><span class="s">&quot;RIFF&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="1455552597-4">(</span><span class="mi">32</span><span class="p" data-group-id="1455552597-4">)</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;WEBPVP8L&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="1455552597-5">(</span><span class="mi">32</span><span class="p" data-group-id="1455552597-5">)</span><span class="p">,</span><span class="w"> </span><span class="mh">0x2F7AC07100358683B68D</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="1455552597-6">(</span><span class="mi">80</span><span class="p" data-group-id="1455552597-6">)</span><span class="p" data-group-id="1455552597-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:webp</span><span class="w">
-</span><span class="p" data-group-id="1455552597-7">{</span><span class="s">&quot;image/webp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;webpVP8L&quot;</span><span class="p" data-group-id="1455552597-7">}</span></code></pre>
-<p>The signature part of a png it is now enough to get the type (it check also the IHDR field, just before the width and height).</p>
-<p>Usually it is used as:</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="7706032646-1">(</span><span class="s">&quot;path/to/image.gif&quot;</span><span class="p" data-group-id="7706032646-1">)</span><span class="p">,</span><span class="w"> </span><span class="ss">:gif</span><span class="w">
-</span><span class="p" data-group-id="7706032646-2">{</span><span class="s">&quot;image/gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;GIF87a&quot;</span><span class="p" data-group-id="7706032646-2">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="p" data-group-id="6349080411-3">&lt;&lt;</span><span class="s">&quot;RIFF&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="6349080411-4">(</span><span class="mi">32</span><span class="p" data-group-id="6349080411-4">)</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;WEBPVP8L&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="6349080411-5">(</span><span class="mi">32</span><span class="p" data-group-id="6349080411-5">)</span><span class="p">,</span><span class="w"> </span><span class="mh">0x2F7AC07100358683B68D</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="6349080411-6">(</span><span class="mi">80</span><span class="p" data-group-id="6349080411-6">)</span><span class="p" data-group-id="6349080411-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:webp</span><span class="w">
+</span><span class="p" data-group-id="6349080411-7">{</span><span class="s">&quot;image/webp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;webpVP8L&quot;</span><span class="p" data-group-id="6349080411-7">}</span></code></pre><p>The signature part of a png it is now enough to get the type (it check also the IHDR field, just before the width and height).</p><p>Usually it is used as:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="5456747582-1">(</span><span class="s">&quot;path/to/image.gif&quot;</span><span class="p" data-group-id="5456747582-1">)</span><span class="p">,</span><span class="w"> </span><span class="ss">:gif</span><span class="w">
+</span><span class="p" data-group-id="5456747582-2">{</span><span class="s">&quot;image/gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;GIF87a&quot;</span><span class="p" data-group-id="5456747582-2">}</span><span class="w">
 
 </span><span class="gp unselectable">iex(2)&gt; </span><span class="n">maybe_png_binary</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="ss">:png</span><span class="w">
-</span><span class="no">nil</span></code></pre>
-<p>The <em>guessed</em> version.</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="p" data-group-id="2341115397-1">&lt;&lt;</span><span class="mh">0x38425053</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="2341115397-2">(</span><span class="mi">32</span><span class="p" data-group-id="2341115397-2">)</span><span class="p" data-group-id="2341115397-1">&gt;&gt;</span><span class="w">
-</span><span class="p" data-group-id="2341115397-3">{</span><span class="s">&quot;image/psd&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PSD&quot;</span><span class="p" data-group-id="2341115397-3">}</span><span class="w">
+</span><span class="no">nil</span></code></pre><p>The <em>guessed</em> version.</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="p" data-group-id="6833020998-1">&lt;&lt;</span><span class="mh">0x38425053</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="6833020998-2">(</span><span class="mi">32</span><span class="p" data-group-id="6833020998-2">)</span><span class="p" data-group-id="6833020998-1">&gt;&gt;</span><span class="w">
+</span><span class="p" data-group-id="6833020998-3">{</span><span class="s">&quot;image/psd&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PSD&quot;</span><span class="p" data-group-id="6833020998-3">}</span><span class="w">
 
-</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="p" data-group-id="2341115397-4">&lt;&lt;</span><span class="mh">0x384250</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="2341115397-5">(</span><span class="mi">24</span><span class="p" data-group-id="2341115397-5">)</span><span class="p" data-group-id="2341115397-4">&gt;&gt;</span><span class="w">
-</span><span class="no">nil</span></code></pre>
-<p>Usually it is used as:</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="0820317227-1">(</span><span class="s">&quot;path/to/image.unknown&quot;</span><span class="p" data-group-id="0820317227-1">)</span><span class="w">
-</span><span class="p" data-group-id="0820317227-2">{</span><span class="s">&quot;image/tiff&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;TIFFMM&quot;</span><span class="p" data-group-id="0820317227-2">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="p" data-group-id="6833020998-4">&lt;&lt;</span><span class="mh">0x384250</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="6833020998-5">(</span><span class="mi">24</span><span class="p" data-group-id="6833020998-5">)</span><span class="p" data-group-id="6833020998-4">&gt;&gt;</span><span class="w">
+</span><span class="no">nil</span></code></pre><p>Usually it is used as:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="5425525865-1">(</span><span class="s">&quot;path/to/image.unknown&quot;</span><span class="p" data-group-id="5425525865-1">)</span><span class="w">
+</span><span class="p" data-group-id="5425525865-2">{</span><span class="s">&quot;image/tiff&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;TIFFMM&quot;</span><span class="p" data-group-id="5425525865-2">}</span><span class="w">
 
 </span><span class="gp unselectable">iex(2)&gt; </span><span class="n">webp_full_binary</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">type</span><span class="w">
-</span><span class="p" data-group-id="0820317227-3">{</span><span class="s">&quot;image/webp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;webpVP8&quot;</span><span class="p" data-group-id="0820317227-3">}</span></code></pre>
-<h3 id="feature-info" class="section-heading">
-  <a href="#feature-info" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Feature <code class="inline">info</code>
+</span><span class="p" data-group-id="5425525865-3">{</span><span class="s">&quot;image/webp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;webpVP8&quot;</span><span class="p" data-group-id="5425525865-3">}</span></code></pre><h3 id="feature-info" class="section-heading">
+  <a href="#feature-info" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Feature <code class="inline">info</code></span>
 </h3>
-
-<p><code class="inline">89 50 4E 47 0D 0A 1A 0A</code> are the first 8 bytes in the <code class="inline">PNG</code> signature (<code class="inline">PNG\\r\\n0x1A\\n</code>).</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="p" data-group-id="8291644517-1">&lt;&lt;</span><span class="mh">0x89504E470D0A1A0A</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="8291644517-2">(</span><span class="mi">64</span><span class="p" data-group-id="8291644517-2">)</span><span class="p" data-group-id="8291644517-1">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:png</span><span class="w">
+<p><code class="inline">89 50 4E 47 0D 0A 1A 0A</code> are the first 8 bytes in the <code class="inline">PNG</code> signature (<code class="inline">PNG\\r\\n0x1A\\n</code>).</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="p" data-group-id="9268168253-1">&lt;&lt;</span><span class="mh">0x89504E470D0A1A0A</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="9268168253-2">(</span><span class="mi">64</span><span class="p" data-group-id="9268168253-2">)</span><span class="p" data-group-id="9268168253-1">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:png</span><span class="w">
 </span><span class="no">nil</span><span class="w">
 
-</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="p" data-group-id="8291644517-3">&lt;&lt;</span><span class="s">&quot;RIFF&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="8291644517-4">(</span><span class="mi">32</span><span class="p" data-group-id="8291644517-4">)</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;WEBPVP8L&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="8291644517-5">(</span><span class="mi">32</span><span class="p" data-group-id="8291644517-5">)</span><span class="p">,</span><span class="w"> </span><span class="mh">0x2F7AC07100358683B68D</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="8291644517-6">(</span><span class="mi">80</span><span class="p" data-group-id="8291644517-6">)</span><span class="p" data-group-id="8291644517-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:webp</span><span class="w">
-</span><span class="p" data-group-id="8291644517-7">{</span><span class="s">&quot;image/webp&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;webpVP8L&quot;</span><span class="p" data-group-id="8291644517-7">}</span></code></pre>
-<p>The signature part of a png it is now enough to get the type (it check also the IHDR field, just before the width and height).</p>
-<p>Usually it is used as:</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="0319263308-1">(</span><span class="s">&quot;path/to/image.gif&quot;</span><span class="p" data-group-id="0319263308-1">)</span><span class="p">,</span><span class="w"> </span><span class="ss">:gif</span><span class="w">
-</span><span class="p" data-group-id="0319263308-2">{</span><span class="s">&quot;image/gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;GIF87a&quot;</span><span class="p" data-group-id="0319263308-2">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="p" data-group-id="9268168253-3">&lt;&lt;</span><span class="s">&quot;RIFF&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="9268168253-4">(</span><span class="mi">32</span><span class="p" data-group-id="9268168253-4">)</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;WEBPVP8L&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="9268168253-5">(</span><span class="mi">32</span><span class="p" data-group-id="9268168253-5">)</span><span class="p">,</span><span class="w"> </span><span class="mh">0x2F7AC07100358683B68D</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="9268168253-6">(</span><span class="mi">80</span><span class="p" data-group-id="9268168253-6">)</span><span class="p" data-group-id="9268168253-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">:webp</span><span class="w">
+</span><span class="p" data-group-id="9268168253-7">{</span><span class="s">&quot;image/webp&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;webpVP8L&quot;</span><span class="p" data-group-id="9268168253-7">}</span></code></pre><p>The signature part of a png it is now enough to get the type (it check also the IHDR field, just before the width and height).</p><p>Usually it is used as:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="2274399958-1">(</span><span class="s">&quot;path/to/image.gif&quot;</span><span class="p" data-group-id="2274399958-1">)</span><span class="p">,</span><span class="w"> </span><span class="ss">:gif</span><span class="w">
+</span><span class="p" data-group-id="2274399958-2">{</span><span class="s">&quot;image/gif&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1920</span><span class="p">,</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;GIF87a&quot;</span><span class="p" data-group-id="2274399958-2">}</span><span class="w">
 
 </span><span class="gp unselectable">iex(2)&gt; </span><span class="n">maybe_png_binary</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="ss">:png</span><span class="w">
-</span><span class="no">nil</span></code></pre>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="p" data-group-id="7132267224-1">&lt;&lt;</span><span class="mh">0x38425053</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="7132267224-2">(</span><span class="mi">32</span><span class="p" data-group-id="7132267224-2">)</span><span class="p" data-group-id="7132267224-1">&gt;&gt;</span><span class="w">
+</span><span class="no">nil</span></code></pre><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="p" data-group-id="8986833904-1">&lt;&lt;</span><span class="mh">0x38425053</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="8986833904-2">(</span><span class="mi">32</span><span class="p" data-group-id="8986833904-2">)</span><span class="p" data-group-id="8986833904-1">&gt;&gt;</span><span class="w">
 </span><span class="no">nil</span><span class="w">
 
-</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="p" data-group-id="7132267224-3">&lt;&lt;</span><span class="mh">0x38425053</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="7132267224-4">(</span><span class="mi">32</span><span class="p" data-group-id="7132267224-4">)</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="7132267224-5">(</span><span class="mi">80</span><span class="p" data-group-id="7132267224-5">)</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="7132267224-6">(</span><span class="mi">32</span><span class="p" data-group-id="7132267224-6">)</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="7132267224-7">(</span><span class="mi">32</span><span class="p" data-group-id="7132267224-7">)</span><span class="p" data-group-id="7132267224-3">&gt;&gt;</span><span class="w">
-</span><span class="p" data-group-id="7132267224-8">{</span><span class="s">&quot;image/psd&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PSD&quot;</span><span class="p" data-group-id="7132267224-8">}</span></code></pre>
-<p>Usually it is used as:</p>
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="6449854053-1">(</span><span class="s">&quot;path/to/image.unknown&quot;</span><span class="p" data-group-id="6449854053-1">)</span><span class="w">
-</span><span class="p" data-group-id="6449854053-2">{</span><span class="s">&quot;image/tiff&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;TIFFMM&quot;</span><span class="p" data-group-id="6449854053-2">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="p" data-group-id="8986833904-3">&lt;&lt;</span><span class="mh">0x38425053</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="8986833904-4">(</span><span class="mi">32</span><span class="p" data-group-id="8986833904-4">)</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="8986833904-5">(</span><span class="mi">80</span><span class="p" data-group-id="8986833904-5">)</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="8986833904-6">(</span><span class="mi">32</span><span class="p" data-group-id="8986833904-6">)</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="o">::</span><span class="n">size</span><span class="p" data-group-id="8986833904-7">(</span><span class="mi">32</span><span class="p" data-group-id="8986833904-7">)</span><span class="p" data-group-id="8986833904-3">&gt;&gt;</span><span class="w">
+</span><span class="p" data-group-id="8986833904-8">{</span><span class="s">&quot;image/psd&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PSD&quot;</span><span class="p" data-group-id="8986833904-8">}</span></code></pre><p>Usually it is used as:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read!</span><span class="p" data-group-id="0731879144-1">(</span><span class="s">&quot;path/to/image.unknown&quot;</span><span class="p" data-group-id="0731879144-1">)</span><span class="w">
+</span><span class="p" data-group-id="0731879144-2">{</span><span class="s">&quot;image/tiff&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;TIFFMM&quot;</span><span class="p" data-group-id="0731879144-2">}</span><span class="w">
 
 </span><span class="gp unselectable">iex(2)&gt; </span><span class="n">webp_full_binary</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">ExImageInfo</span><span class="o">.</span><span class="n">info</span><span class="w">
-</span><span class="p" data-group-id="6449854053-3">{</span><span class="s">&quot;image/webp&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;webpVP8&quot;</span><span class="p" data-group-id="6449854053-3">}</span></code></pre>
-<h2 id="benchmarks" class="section-heading">
-  <a href="#benchmarks" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Benchmarks
+</span><span class="p" data-group-id="0731879144-3">{</span><span class="s">&quot;image/webp&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;webpVP8&quot;</span><span class="p" data-group-id="0731879144-3">}</span></code></pre><h2 id="benchmarks" class="section-heading">
+  <a href="#benchmarks" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Benchmarks</span>
 </h2>
-
-<p>Group4Layers developed the fastest elixir library to obtain the dimensions of the images (binary data parsed). Also, it excels supporting the maximum number of image formats. All without dependencies.</p>
-<p><img src="assets/ex_image_info_benchmarks.png" alt="ExImageInfo Benchmarks"/></p>
-<p>(The image wouldn’t be included in the package).</p>
-<h2 id="design-decisions" class="section-heading">
-  <a href="#design-decisions" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Design decisions
+<p>Group4Layers developed the fastest elixir library to obtain the dimensions of the images (binary data parsed). Also, it excels supporting the maximum number of image formats. All without dependencies.</p><p><img src="assets/ex_image_info_benchmarks.png" alt="ExImageInfo Benchmarks"/></p><p>(The image wouldn't be included in the package).</p><h2 id="design-decisions" class="section-heading">
+  <a href="#design-decisions" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Design decisions</span>
 </h2>
-
 <h3 id="why-seems-and-not-magic-or-signature" class="section-heading">
-  <a href="#why-seems-and-not-magic-or-signature" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Why <code class="inline">seems?</code> and not <code class="inline">magic?</code> or <code class="inline">signature?</code>?
+  <a href="#why-seems-and-not-magic-or-signature" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Why <code class="inline">seems?</code> and not <code class="inline">magic?</code> or <code class="inline">signature?</code>?</span>
 </h3>
-
 <p>Because for some formats it is enough with the <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)"><em>magic
 number</em></a> or the
-signature to get the type (image format that “starts” correctly), but in other
+signature to get the type (image format that &quot;starts&quot; correctly), but in other
 cases it is an algorithm a bit more complex to see if the binary seems
 correct. Therefore, <em>seems</em> it is more general (than getting the <em>magic
-number</em>) and it will provide a “quick overview” of the validity of the
-binary.</p>
-<h3 id="why-returning-the-mime-type-and-variant-type-when-getting-the-dimensions-info" class="section-heading">
-  <a href="#why-returning-the-mime-type-and-variant-type-when-getting-the-dimensions-info" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Why returning the mime-type and variant type when getting the dimensions (<code class="inline">info</code>)?
+number</em>) and it will provide a &quot;quick overview&quot; of the validity of the
+binary.</p><h3 id="why-returning-the-mime-type-and-variant-type-when-getting-the-dimensions-info" class="section-heading">
+  <a href="#why-returning-the-mime-type-and-variant-type-when-getting-the-dimensions-info" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Why returning the mime-type and variant type when getting the dimensions (<code class="inline">info</code>)?</span>
 </h3>
-
 <p>Because both types (variant if applicable) are necessary to obtain the width and height
-of the binary for a specific format. In case it is required both the type (and variant) and the dimensions it is not necessary to call two functions (and re-parse part or completely the binary). Therefore, to get the dimensions it is obtained the types and all the information is returned in one step.</p>
-<h3 id="renamed-from-eximagesize-to-eximageinfo" class="section-heading">
-  <a href="#renamed-from-eximagesize-to-eximageinfo" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Renamed from ExImageSize to ExImageInfo
+of the binary for a specific format. In case it is required both the type (and variant) and the dimensions it is not necessary to call two functions (and re-parse part or completely the binary). Therefore, to get the dimensions it is obtained the types and all the information is returned in one step.</p><h3 id="renamed-from-eximagesize-to-eximageinfo" class="section-heading">
+  <a href="#renamed-from-eximagesize-to-eximageinfo" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Renamed from ExImageSize to ExImageInfo</span>
 </h3>
-
 <p>Although it has been released since the very first version with the name ExImageInfo,
 this library was previously known as ExImageSize, but it is preferable to have a name
 less restricted. Nowadays it can get information about the type and the dimensions (size),
-but in a future it could increase the amount of info to extract from an image.</p>
-<h2 id="acknowledgments" class="section-heading">
-  <a href="#acknowledgments" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Acknowledgments
+but in a future it could increase the amount of info to extract from an image.</p><h2 id="acknowledgments" class="section-heading">
+  <a href="#acknowledgments" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Acknowledgments</span>
 </h2>
-
-<p>This idea comes from libraries that I have used in other platforms and/or languages. Algorithms and some concepts are picked and based on parts of the following:</p>
-<ul>
-<li>image-size (JavaScript) - <em>Aditya Yadav</em>
-</li>
-<li>imagesize (Ruby) - <em>Keisuke Minami</em>
-</li>
-<li>fastimage (Ruby) - <em>Stephen Sykes</em>
-</li>
-</ul>
-<p>Thanks to them.</p>
-<h2 id="author" class="section-heading">
-  <a href="#author" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Author
+<p>This idea comes from libraries that I have used in other platforms and/or languages. Algorithms and some concepts are picked and based on parts of the following:</p><ul><li>image-size (JavaScript) - <em>Aditya Yadav</em></li><li>imagesize (Ruby) - <em>Keisuke Minami</em></li><li>fastimage (Ruby) - <em>Stephen Sykes</em></li></ul><p>Thanks to them.</p><h2 id="author" class="section-heading">
+  <a href="#author" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Author</span>
 </h2>
-
-<p>nozalr <a href="mailto:nozalr@group4layers.com">nozalr@group4layers.com</a> (Group4Layers®).</p>
-<h2 id="contributors" class="section-heading">
-  <a href="#contributors" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Contributors
+<p>nozalr <a href="mailto:nozalr@group4layers.com">nozalr@group4layers.com</a> (Group4Layers®).</p><h2 id="contributors" class="section-heading">
+  <a href="#contributors" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Contributors</span>
 </h2>
-
-<p>See <a href="contributors.html">CONTRIBUTORS</a> for more information.</p>
-<p><em>GitHub readers (repo, no docs): <a href="CONTRIBUTORS.md">CONTRIBUTORS.md</a>.</em></p>
-<h2 id="changelog" class="section-heading">
-  <a href="#changelog" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  ChangeLog
+<p>See <a href="contributors.html">CONTRIBUTORS</a> for more information.</p><p><em>GitHub readers (repo, no docs): <a href="contributors.html">CONTRIBUTORS.md</a>.</em></p><h2 id="changelog" class="section-heading">
+  <a href="#changelog" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">ChangeLog</span>
 </h2>
-
-<p>See <a href="changelog.html">CHANGELOG</a> for more information.</p>
-<p><em>GitHub readers (repo, no docs): <a href="CHANGELOG.md">CHANGELOG.md</a>.</em></p>
-<h2 id="license" class="section-heading">
-  <a href="#license" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  License
+<p>See <a href="changelog.html">CHANGELOG</a> for more information.</p><p><em>GitHub readers (repo, no docs): <a href="changelog.html">CHANGELOG.md</a>.</em></p><h2 id="license" class="section-heading">
+  <a href="#license" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">License</span>
 </h2>
-
-<p>ExImageInfo source code is released under the MIT License.</p>
-<p>See <a href="license.html">LICENSE</a> for more information.</p>
-<p><em>GitHub readers (repo, no docs): <a href="LICENSE.md">LICENSE.md</a>.</em></p>
-      <footer class="footer">
-        <p>
-          <span class="line">
-            Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.1),
-          </span>
-          <span class="line">
-            designed by
-            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
-            </span>
-        </p>
-      </footer>
-    </div>
-  </div>
-</section>
+<p>ExImageInfo source code is released under the MIT License.</p><p>See <a href="license.html">LICENSE</a> for more information.</p><p><em>GitHub readers (repo, no docs): <a href="license.html">LICENSE.md</a>.</em></p>
 </div>
-  <script src="dist/app-a0c90688fa.js"></script>
-  
+
+<div class="bottom-actions" id="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="api-reference.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+API Reference
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+      <a href="license.html" class="bottom-actions-button" rel="next">
+        <span class="subheader">
+          Next Page →
+        </span>
+        <span class="title">
+LICENSE
+        </span>
+      </a>
+
+  </div>
+</div>
+    <footer class="footer">
+      <p>
+
+          <span class="line">
+            <a href="https://hex.pm/packages/ex_image_info/0.2.6" class="footer-hex-package">Hex Package</a>
+
+            <a href="https://preview.hex.pm/preview/ex_image_info/0.2.6">Hex Preview</a>
+
+              (<a href="https://preview.hex.pm/preview/ex_image_info/0.2.6/show/README.md">current file</a>)
+
+          </span>
+
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
+
+            <a href="ExImageInfo.epub" title="ePub version">
+              Download ePub version
+            </a>
+
+        </span>
+      </p>
+
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.36.1) for the
+
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+      </p>
+
+    </footer>
+  </div>
+</main>
+</div>
+
   </body>
 </html>
-
