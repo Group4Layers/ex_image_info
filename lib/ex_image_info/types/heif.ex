@@ -46,8 +46,21 @@ defmodule ExImageInfo.Types.HEIF do
     if length(ispe_boxes) > 0 do
       {width, height} =
         ispe_boxes
-        |> Enum.map(fn <<_::size(32), width::size(32), height::size(32), _rest::binary>> ->
-          {width, height}
+        |> Enum.map(fn <<_::size(32), width::size(32), height::size(32), rest::binary>> ->
+          [_ispe | clap] = String.split(rest, "clap")
+
+          if length(clap) > 0 do
+            <<clap_width_n::size(32), clap_width_d::size(32), clap_height_n::size(32),
+              clap_height_d::size(32), _horizontal_offset_n::size(32),
+              _horizontal_offset_d::size(32), _vertical_offset_n::size(32),
+              _vertical_offset_d::size(32), _rest::binary>> = List.first(clap)
+
+            clap_width = round(clap_width_n / clap_width_d)
+            clap_height = round(clap_height_n / clap_height_d)
+            {clap_width, clap_height}
+          else
+            {width, height}
+          end
         end)
         |> Enum.max_by(&elem(&1, 0))
 
