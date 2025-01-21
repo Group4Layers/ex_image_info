@@ -1,9 +1,9 @@
 defmodule ExImageInfo.Types.AVIF do
   @moduledoc false
 
-  alias ExImageInfo.Types.HEIF
-
   @behaviour ExImageInfo.Detector
+
+  alias ExImageInfo.Types.HEIF
 
   @mime "image/avif"
   @signature <<"ftypavif">>

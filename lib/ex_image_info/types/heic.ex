@@ -1,9 +1,9 @@
 defmodule ExImageInfo.Types.HEIC do
   @moduledoc false
 
-  alias ExImageInfo.Types.HEIF
-
   @behaviour ExImageInfo.Detector
+
+  alias ExImageInfo.Types.HEIF
 
   @mime_heic "image/heic"
   @mime_heic_sequence "image/heic-sequence"

@@ -65,8 +65,6 @@ defmodule ExImageInfo.Types.HEIF do
         |> Enum.max_by(&elem(&1, 0))
 
       {width, height}
-    else
-      nil
     end
   end
 end
