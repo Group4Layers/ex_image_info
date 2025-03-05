@@ -2,13 +2,13 @@
 
 # ExImageInfo
 
-[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/Group4Layers/ex_image_info/master/LICENSE.md) <a class="no-underline" href="https://github.com/Group4Layers/ex_image_info"><img src="https://img.shields.io/badge/coverage-98.4%25-green.svg" alt="Coverage"></a> <a class="no-underline" href="https://github.com/Group4Layers/ex_image_info"><img src="https://img.shields.io/badge/tests-58%2F58-green.svg" alt="Tests"></a>
+[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/Group4Layers/ex_image_info/master/LICENSE.md) [![Coverage](https://img.shields.io/badge/coverage-98.4%25-green.svg)](https://github.com/Group4Layers/ex_image_info) [![Tests](https://img.shields.io/badge/tests-58%2F58-green.svg)](https://github.com/Group4Layers/ex_image_info)
 
 ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.
 
 Status: [![Elixir 1.18 / OTP 27](https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_latest.yml/badge.svg)](https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_latest.yml) [![Elixir 1.16 / OTP 26](https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_recent.yml/badge.svg)](https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_recent.yml) [![Elixir 1.14 / OTP 25](https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_old.yml/badge.svg)](https://github.com/Group4Layers/ex_image_info/actions/workflows/build_elixir_old.yml) [![Coverage Status](https://coveralls.io/repos/github/Group4Layers/ex_image_info/badge.svg?branch=master)](https://coveralls.io/github/Group4Layers/ex_image_info?branch=master) [![Inline docs](http://inch-ci.org/github/Group4Layers/ex_image_info.svg)](http://inch-ci.org/github/Group4Layers/ex_image_info)
 
-### [GitHub repo](https://github.com/Group4Layers/ex_image_info) &nbsp;&nbsp; [Docs](https://group4layers.github.io/ex_image_info) &nbsp;&nbsp; [Hex.pm package](https://hex.pm/packages/ex_image_info)
+### [GitHub repo](https://github.com/Group4Layers/ex_image_info)  ·  [Docs](https://hexdocs.pm/ex_image_info/ExImageInfo.html)  ·  [Hex.pm package](https://hex.pm/packages/ex_image_info)
 
 ## Table of Contents
 
