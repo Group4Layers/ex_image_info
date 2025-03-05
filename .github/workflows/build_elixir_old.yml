@@ -1,5 +1,5 @@
 # ' ' suffix for the badge status
-name: "Build 1.13/24 "
+name: "Build 1.14/25 "
 
 on:
   push:
@@ -13,5 +13,5 @@ jobs:
   elixir_otp_latest:
     uses: ./.github/workflows/build_reusable.yml
     with:
-      elixir-version: 1.13
-      otp-version: 24
+      elixir-version: 1.14.5
+      otp-version: 25

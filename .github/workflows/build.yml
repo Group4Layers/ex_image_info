@@ -1,4 +1,4 @@
-name: CI
+name: Build CI
 
 on:
   push:
@@ -7,38 +7,12 @@ on:
     branches: ["*"]
 
 jobs:
-  lint:
+  build:
     runs-on: ${{ matrix.os }}
+    name: Build as in prod
     env:
-      MIX_ENV: dev
-    name: Lint
+      MIX_ENV: prod
     strategy:
-      matrix:
-        os: ["ubuntu-22.04"]
-        elixir: ["1.16", "1.18"]
-        otp: ["26"]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: erlef/setup-beam@v1
-        with:
-          otp-version: ${{ matrix.otp }}
-          elixir-version: ${{ matrix.elixir }}
-      - uses: actions/cache@v3
-        with:
-          path: deps
-          key: ${{ matrix.os }}-otp_${{ matrix.otp }}-elixir_${{ matrix.elixir }}-mix_${{ hashFiles('**/mix.lock') }}
-          restore-keys: ${{ matrix.os }}-otp_${{ matrix.otp }}-elixir_${{ matrix.elixir }}-mix_
-      - run: mix deps.get
-      - run: mix deps.compile
-      - run: mix lint
-
-  test:
-    runs-on: ${{ matrix.os }}
-    name: Test Elixir ${{ matrix.elixir }}, OTP ${{ matrix.otp }}, OS ${{ matrix.os }}
-    env:
-      MIX_ENV: test
-    strategy:
-      fail-fast: false
       matrix:
         os: ["ubuntu-22.04"]
         elixir: ["1.18", "1.16", "1.14.5"]
@@ -63,7 +37,5 @@ jobs:
           path: deps
           key: ${{ matrix.os }}-otp_${{ matrix.otp }}-elixir_${{ matrix.elixir }}-mix_${{ hashFiles('**/mix.lock') }}
           restore-keys: ${{ matrix.os }}-otp_${{ matrix.otp }}-elixir_${{ matrix.elixir }}-mix_
-      - run: mix deps.get --only test
-      - run: mix deps.compile
+      - run: mix deps.get
       - run: mix compile --warnings-as-errors
-      - run: mix test
