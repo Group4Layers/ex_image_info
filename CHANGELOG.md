@@ -13,6 +13,10 @@
 - Improving CI pipelines and fixing HTML-generated docs (badges).
 - Removing unneeded docs tasks.
 
+**Acknowledgments:**
+
+- Andrew Bruce (@camelpunch) for notifying about 1.18 warnings and starting as a reviewer.
+
 ## v0.2.6 (2024-01-18)
 
 **Enhancements:**
@@ -34,6 +38,10 @@
 **Types:**
 
 - Rest case for `seems?/2` returns a boolean (`false`) instead of `nil`.
+
+**Acknowledgments:**
+
+- Matthew Johnston (@warmwaffles) for all these changes and starting as a reviewer/contributor.
 
 ## v0.2.4 (2018-11-24)
 
