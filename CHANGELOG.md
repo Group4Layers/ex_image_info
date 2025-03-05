@@ -15,13 +15,13 @@
 
 ## v0.2.6 (2024-01-18)
 
-**News**
-
-- Adding `styler` to format and solve credo styling issues automatically.
-
 **Enhancements:**
 
 - Improving a parsing case for the PNM format. If its signature is not fully formed, it skips parsing the size.
+
+**News:**
+
+- Adding `styler` to format and solve credo styling issues automatically.
 
 ## v0.2.5 (2024-06-09)
 
