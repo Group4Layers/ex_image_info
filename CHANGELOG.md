@@ -1,8 +1,43 @@
 # CHANGELOG
 
+## v0.2.7 (2025-03-05)
+
+**Enhancements:**
+
+- Support for Elixir 1.18 (removing warnings).
+ 
+**News:**
+
+- Removed GitHub pages (/docs/) as hexdocs.pm is the official documentation site.
+- Bumping versions to all dev/test dependencies.
+- Improving CI pipelines and fixing HTML-generated docs (badges).
+- Removing unneeded docs tasks.
+
+## v0.2.6 (2024-01-18)
+
+**News**
+
+- Adding `styler` to format and solve credo styling issues automatically.
+
+**Enhancements:**
+
+- Improving a parsing case for the PNM format. If its signature is not fully formed, it skips parsing the size.
+
+## v0.2.5 (2024-06-09)
+
+**News:**
+
+- Added CI pipelines (test, lint, build).
+- Formatting code with `mix format`.
+- Bumping versions to all dev/test dependencies.
+
+**Types:**
+
+- Rest case for `seems?/2` returns a boolean (`false`) instead of `nil`.
+
 ## v0.2.4 (2018-11-24)
 
-**Enhancements**
+**Enhancements:**
 
 - By request of a GitHub user: support for another variant of webp
 - Studied and integrated the webpVP8X format (bitstream animated)
