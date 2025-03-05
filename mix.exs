@@ -7,7 +7,7 @@ defmodule ExImageInfo.Mixfile do
       description:
         "ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.",
       version: "VERSION" |> File.read!() |> String.trim(),
-      elixir: "~> 1.14",
+      elixir: "~> 1.13",
       name: "ExImageInfo",
       package: package(),
       build_embedded: Mix.env() == :prod,
