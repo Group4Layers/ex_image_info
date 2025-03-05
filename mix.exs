@@ -43,7 +43,6 @@ defmodule ExImageInfo.Mixfile do
   defp aliases do
     [
       test_wip: ["test --only wip"],
-      docs: ["docs", &copy_doc_to_docs/1],
       lint: [
         "format --check-formatted",
         "deps.unlock --check-unused",
@@ -55,15 +54,8 @@ defmodule ExImageInfo.Mixfile do
   defp docs do
     [
       extras: ["README.md", "LICENSE.md", "CHANGELOG.md", "CONTRIBUTORS.md"],
-      assets: "assets/"
+      assets: %{"assets/" => "assets"}
     ]
-  end
-
-  defp copy_doc_to_docs(_) do
-    # to be used in GitHub Pages (and keep doc for hexpm package)
-    File.rm_rf!("docs")
-    File.cp_r!("doc", "docs")
-    # File.rm_rf!("doc")
   end
 
   defp package do
@@ -81,7 +73,6 @@ defmodule ExImageInfo.Mixfile do
       licenses: ["MIT"],
       links: %{
         "GitHub" => "https://github.com/Group4Layers/ex_image_info",
-        "Docs" => "https://group4layers.github.io/ex_image_info",
         "Organization" => "https://www.group4layers.com"
       }
     ]
