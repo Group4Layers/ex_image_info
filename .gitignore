@@ -93,3 +93,5 @@ anaconda-mode/
 # for gh-pages
 !dist/
 /docs/all.json
+/docs/
+/.idea/
