@@ -265,7 +265,7 @@ defmodule ExImageInfo do
       # nil
   """
   @spec info(binary, format :: atom) ::
-          {mimetype :: String.t(), width :: Integer.t(), height :: Integer.t(),
+          {mimetype :: String.t(), width :: integer(), height :: integer(),
            variant :: String.t()}
           | nil
   def info(binary, format)
@@ -305,7 +305,7 @@ defmodule ExImageInfo do
       # {"image/webp", 20, 100, "webpVP8"}
   """
   @spec info(binary) ::
-          {mimetype :: String.t(), width :: Integer.t(), height :: Integer.t(),
+          {mimetype :: String.t(), width :: integer(), height :: integer(),
            variant :: String.t()}
           | nil
   def info(binary), do: try_info(binary, @types)

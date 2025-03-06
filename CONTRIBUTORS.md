@@ -1,3 +1,4 @@
 # CONTRIBUTORS
 
-nozalr <nozalr@group4layers.com>
+- Raúl (@rNoz) <nozalr@group4layers.com>
+- Matthew Johnston (@warmwaffles)
