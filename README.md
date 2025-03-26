@@ -57,9 +57,9 @@ Supported formats (image type to be parsed as):
 - `:psd`
 - `:tiff`
 - `:webp` (VP8X animated since `v0.2.4`)
-- `:avif` (since `v0.2.8`)
-- `:heic` (since `v0.2.8`)
-- `:heif` (since `v0.2.8`)
+- `:avif` (since `v1.0.0`)
+- `:heic` (since `v1.0.0`)
+- `:heif` (since `v1.0.0`)
 
 ## Mime-types and Variants
 
@@ -81,9 +81,9 @@ Each mime-type can be linked to at least one variant type:
 | `image/heif`              | `HEIF`      |                    |
 | `image/heif-sequence`     | `HEIFS`     |                    |
 | `image/x-icon`            | `ICO`       |                    |
+| `image/jp2`               | `JP2`       | JPEG2000           |
 | `image/jpeg`              | `baseJPEG`  | baseline JPEG      |
 | `image/jpeg`              | `progJPEG`  | progressive JPEG   |
-| `image/jp2`               | `JP2`       | JPEG2000           |
 | `image/png`               | `PNG`       |                    |
 | `image/x-portable-anymap` | `PNMpbm`    | Portable BitMap    |
 | `image/x-portable-anymap` | `PNMpgm`    | Portable GrayMap   |
@@ -100,8 +100,8 @@ for every image format (if applicable).
 
 *Note*: `:avif`, `:heic`, `:heif` and `:ico` return the dimensions of the primary (if available in that format) or the largest image contained (not the first found).
 
-The guessing functions try to detect the format of the binary by testing every available type based on its global usage (popularity, [usage of image file formats](https://w3techs.com/technologies/overview/image_format/all), but still keeping the `:png` as the first one):
-- `:png`, `:jpeg`, `:gif`, `:bmp`, `:ico`, `:tiff`, `:webp`, `:psd`, `:jp2`, `:pnm`, `:avif`, `:heic`, `:heif`
+The guessing functions try to detect the format of the binary by testing every available type based on its global usage and current trends (popularity, [usage of image file formats](https://w3techs.com/technologies/overview/image_format/all)):
+- `jpeg`, `png`, `webp`, `avif`, `gif`, `heic`, `heif`, `bmp`, `ico`, `tiff`, `psd`, `jp2`, `pnm`
 
 **Warnings:**
 
@@ -117,7 +117,7 @@ From Hex:
   def deps do
     [
       # ...
-      {:ex_image_info, "~> 0.2.8"},
+      {:ex_image_info, "~> 1.0.0"},
     ]
   end
 ```

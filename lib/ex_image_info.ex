@@ -89,38 +89,38 @@ defmodule ExImageInfo do
 
   # Guessing function ordered by global usage
   # https://w3techs.com/technologies/overview/image_format/all
-  # but still keeping :png as the first
+  # Balancing speed of detection and frequency of encounters in real-world scenarios (popularity)
   @types [
-    :png,
     :jpeg,
+    :png,
+    :webp,
+    :avif,
     :gif,
+    :heic,
+    :heif,
     :bmp,
     :ico,
     :tiff,
-    :webp,
     :psd,
     :jp2,
-    :pnm,
-    :avif,
-    :heic,
-    :heif
+    :pnm
   ]
 
   @typedoc "The supported image formats"
   @type image_format ::
-          :png
-          | :jpeg
+          :jpeg
+          | :png
+          | :webp
+          | :avif
           | :gif
+          | :heic
+          | :heif
           | :bmp
           | :ico
           | :tiff
-          | :webp
           | :psd
           | :jp2
           | :pnm
-          | :avif
-          | :heic
-          | :heif
 
   ## Public API
 
