@@ -41,9 +41,15 @@ defmodule ExImageInfo do
 
   | mime-type                 | variant type | description        |
   | ------------------------- | ------------ | ------------------ |
+  | `image/avif`              | `AVIF`       |                    |
+  | `image/avif-sequence      | `AVIFS`      |                    |
   | `image/bmp`               | `BMP`        |                    |
   | `image/gif`               | `GIF87a`     | 87a gif spec       |
   | `image/gif`               | `GIF89a`     | 89a gif spec       |
+  | `image/heic`              | `HEIC`       |                    |
+  | `image/heic-sequence`     | `HEICS`      |                    |
+  | `image/heif`              | `HEIF`       |                    |
+  | `image/heif-sequence`     | `HEIFS`      |                    |
   | `image/x-icon`            | `ICO`        |                    |
   | `image/jpeg`              | `baseJPEG`   | baseline JPEG      |
   | `image/jpeg`              | `progJPEG`   | progressive JPEG   |
@@ -65,10 +71,13 @@ defmodule ExImageInfo do
   *Note*: `:ico` returns the dimensions of the largest image contained (not the first found).
 
   The guessing functions try to detect the format of the binary by testing every available type based on its global usage (popularity, [usage of image file formats](https://w3techs.com/technologies/overview/image_format/all), but still keeping the `:png` as the first one):
-  - `:png`, `:jpeg`, `:gif`, `:bmp`, `:ico`, `:tiff`, `:webp`, `:psd`, `:jp2`, `:pnm`
+  - `:png`, `:jpeg`, `:gif`, `:bmp`, `:ico`, `:tiff`, `:webp`, `:psd`, `:jp2`, `:pnm`, `:avif`, `:heic`, `:heif`
   """
+  alias ExImageInfo.Types.AVIF
   alias ExImageInfo.Types.BMP
   alias ExImageInfo.Types.GIF
+  alias ExImageInfo.Types.HEIC
+  alias ExImageInfo.Types.HEIF
   alias ExImageInfo.Types.ICO
   alias ExImageInfo.Types.JP2
   alias ExImageInfo.Types.JPEG
@@ -81,7 +90,21 @@ defmodule ExImageInfo do
   # Guessing function ordered by global usage
   # https://w3techs.com/technologies/overview/image_format/all
   # but still keeping :png as the first
-  @types [:png, :jpeg, :gif, :bmp, :ico, :tiff, :webp, :psd, :jp2, :pnm]
+  @types [
+    :png,
+    :jpeg,
+    :gif,
+    :bmp,
+    :ico,
+    :tiff,
+    :webp,
+    :psd,
+    :jp2,
+    :pnm,
+    :avif,
+    :heic,
+    :heif
+  ]
 
   @typedoc "The supported image formats"
   @type image_format ::
@@ -95,6 +118,9 @@ defmodule ExImageInfo do
           | :psd
           | :jp2
           | :pnm
+          | :avif
+          | :heic
+          | :heif
 
   ## Public API
 
@@ -138,6 +164,9 @@ defmodule ExImageInfo do
   def seems?(binary, :jp2), do: JP2.seems?(binary)
   def seems?(binary, :pnm), do: PNM.seems?(binary)
   def seems?(binary, :ico), do: ICO.seems?(binary)
+  def seems?(binary, :avif), do: AVIF.seems?(binary)
+  def seems?(binary, :heic), do: HEIC.seems?(binary)
+  def seems?(binary, :heif), do: HEIF.seems?(binary)
   def seems?(_, _), do: nil
 
   @doc """
@@ -209,6 +238,9 @@ defmodule ExImageInfo do
   def type(binary, :jp2), do: JP2.type(binary)
   def type(binary, :pnm), do: PNM.type(binary)
   def type(binary, :ico), do: ICO.type(binary)
+  def type(binary, :avif), do: AVIF.type(binary)
+  def type(binary, :heic), do: HEIC.type(binary)
+  def type(binary, :heif), do: HEIF.type(binary)
   def type(_, _), do: nil
 
   @doc """
@@ -263,6 +295,11 @@ defmodule ExImageInfo do
 
       maybe_png_binary |> ExImageInfo.info :png
       # nil
+
+  If a binary is malformed, it returns `nil`, even if other calls like `type` or `seems?` return valid types.
+
+      {ExImageInfo.type(malformed_heif_binary), ExImageInfo.info(malformed_heif_binary)}
+      # {{"image/heif", "HEIF"}, nil}
   """
   @spec info(binary, format :: atom) ::
           {mimetype :: String.t(), width :: integer(), height :: integer(),
@@ -280,6 +317,9 @@ defmodule ExImageInfo do
   def info(binary, :jp2), do: JP2.info(binary)
   def info(binary, :pnm), do: PNM.info(binary)
   def info(binary, :ico), do: ICO.info(binary)
+  def info(binary, :avif), do: AVIF.info(binary)
+  def info(binary, :heic), do: HEIC.info(binary)
+  def info(binary, :heif), do: HEIF.info(binary)
   def info(_, _), do: nil
 
   @doc """
