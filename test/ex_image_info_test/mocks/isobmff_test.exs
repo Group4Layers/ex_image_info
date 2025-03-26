@@ -150,13 +150,9 @@ defmodule ExImageInfoTest.Mocks.ISOBMFFTest do
         0x0C9A2036::32, 0x2FA20851::32, 0xD36E::32
       >>,
       "heic-hdlr-1" => <<
-        # tried using extended size for the first box, and it does not work
-        # because the size(64) overlaps with the "brand" in the first 4 bytes
         0x00000018::32,
         "ftyp", #0x66747970::32
         "heic", # 0x68656963::32,
-        # it seems it cannot be here the extended size
-        # 0x0000000000000018::size(64),
         0x00000000::32,
         0x68656963::32, 0x6D696631::32,
         # first box done (ftyp)
@@ -177,13 +173,9 @@ defmodule ExImageInfoTest.Mocks.ISOBMFFTest do
         # 0x00::8, 0x00003869::32, 0x696E6600::32, ...
       >>,
       "heic-hdlr-2" => <<
-        # tried using extended size for the first box, and it does not work
-        # because the size(64) overlaps with the "brand" in the first 4 bytes
         0x00000018::32,
         "ftyp", #0x66747970::32
         "heic", # 0x68656963::32,
-        # it seems it cannot be here the extended size
-        # 0x0000000000000018::size(64),
         0x00000000::32,
         0x68656963::32, 0x6D696631::32,
         # first box done (ftyp)
@@ -203,13 +195,9 @@ defmodule ExImageInfoTest.Mocks.ISOBMFFTest do
         # 0x00::8, 0x00003869::32, 0x696E6600::32, ...
       >>,
       "heic-jxlc" => <<
-        # tried using extended size for the first box, and it does not work
-        # because the size(64) overlaps with the "brand" in the first 4 bytes
         0x00000018::32,
         "ftyp", #0x66747970::32
         "heic", # 0x68656963::32,
-        # it seems it cannot be here the extended size
-        # 0x0000000000000018::size(64),
         0x00000000::32,
         0x68656963::32, 0x6D696631::32,
         # first box done (ftyp)
@@ -217,13 +205,9 @@ defmodule ExImageInfoTest.Mocks.ISOBMFFTest do
         0x00000000::32, 0x00000009::32, "jxlc", 0x00000000::32
       >>,
       "heic-meta" => <<
-        # tried using extended size for the first box, and it does not work
-        # because the size(64) overlaps with the "brand" in the first 4 bytes
         0x00000018::32,
         "ftyp", #0x66747970::32
         "heic", # 0x68656963::32,
-        # it seems it cannot be here the extended size
-        # 0x0000000000000018::size(64),
         0x00000000::32,
         0x68656963::32, 0x6D696631::32,
         # first box done (ftyp)
@@ -308,15 +292,6 @@ defmodule ExImageInfoTest.Mocks.ISOBMFFTest do
     }
 
     {:ok, images}
-  end
-
-  test "force - xx heif/heic binary mock - #seems? #type #info (unimplemented regions)",
-       images do
-    # hdlr box w/o pict
-    image = images["truncated-not-readable"]
-    # assert seems?(image, :heic) == true
-    # assert type(image, :heic) == {"image/heic", "HEIC"}
-    assert info(image, :avif) == nil
   end
 
   test "force - heif/heic binary mock - #seems? #type #info (unimplemented regions)",
