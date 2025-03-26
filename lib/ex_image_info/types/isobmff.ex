@@ -1,5 +1,5 @@
 defmodule ExImageInfo.Types.ISOBMFF do
-  @moduledoc false
+  @moduledoc "HEIF, HEIC and AVIF image format parser"
 
   # There are code regions that cannot be tested as no fixtures/images to be validated against.
   # Returning nil to avoid failing, but ideally this format should have more image files.
