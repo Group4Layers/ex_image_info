@@ -124,8 +124,8 @@ defmodule ExImageInfo.Types.ISOBMFF do
          false <- is_nil(pbox) do
       primary_indices =
         state.ipma_boxes
-        |> Enum.filter(fn {id, _} -> id == pbox end)
-        |> Enum.map(&elem(&1, 1))
+        |> Stream.filter(fn {id, _} -> id == pbox end)
+        |> Stream.map(&elem(&1, 1))
         |> Enum.reverse()
 
       ispe_box =
