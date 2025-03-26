@@ -441,20 +441,3 @@ defmodule ExImageInfoTest.Mocks.ISOBMFFTest do
     end
   end
 end
-
-defmodule HexConverter do
-  def convert(hex_string) do
-    hex_string
-    |> String.split(" ", trim: true)
-    |> Enum.chunk_every(4)
-    |> Enum.map(fn chunk ->
-      chunk
-      |> Enum.join("")
-      |> then(&("0x" <> &1 <> "::32"))
-    end)
-    |> Enum.chunk_every(4)
-    |> Enum.map(&Enum.join(&1, ", "))
-    |> Enum.join(",\n")
-    |> then(&"<<\n#{&1}\n>>")
-  end
-end

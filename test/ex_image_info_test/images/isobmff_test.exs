@@ -242,7 +242,7 @@ defmodule ExImageInfoTest.Images.ISOBMFFTest do
   end
 
   defp fetch_binary(url, tmp_dir, debug? \\ false) do
-    Enum.all?([:inets, :ssl], &(:ok = Application.ensure_started(&1)))
+    true = Enum.all?([:inets, :ssl], &Application.ensure_started/1)
 
     filename = Path.basename(url)
     tmp_file = Path.join([tmp_dir, filename])
