@@ -2,7 +2,7 @@
 
 # ExImageInfo
 
-[![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg?style=flat-square)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/Group4Layers/ex_image_info/master/LICENSE.md) [![Coverage](https://img.shields.io/badge/coverage-98.4%25-green.svg)](https://github.com/Group4Layers/ex_image_info) [![Tests](https://img.shields.io/badge/tests-79%2F79-green.svg)](https://github.com/Group4Layers/ex_image_info)
+[![v1.0.0](https://img.shields.io/badge/version-1.0.0-a1c43c.svg)](https://hex.pm/packages/ex_image_info) [![Elixir](https://img.shields.io/badge/made_in-elixir-9900cc.svg)](http://elixir-lang.org) [![Elixir ≥1.13](https://img.shields.io/badge/-≥1.13-9900cc.svg?logo=Elixir)](http://elixir-lang.org) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Group4Layers/ex_image_info/master/LICENSE.md) [![Coverage](https://img.shields.io/badge/coverage-98.4%25-green.svg)](https://github.com/Group4Layers/ex_image_info) [![Tests](https://img.shields.io/badge/tests-79%2F79-green.svg)](https://github.com/Group4Layers/ex_image_info)
 
 ExImageInfo is an Elixir library to parse images (binaries) and get the dimensions (size), detected mime-type and overall validity for a set of image formats. It is the fastest and supports multiple formats.
 
@@ -48,18 +48,17 @@ supported by the library.
 Supported formats (image type to be parsed as):
 - `:bmp`
 - `:gif`
-- `:ico` (since `v0.2.0`)
-- `:jpeg`
-- `:jpg` (alias of `jpeg` since `v0.2.3`)
-- `:jp2` (since `v0.2.0`)
+- `:ico`
+- `:jpeg` (`:jpg` alias since `v0.2.3`)
+- `:jp2`
 - `:png`
-- `:pnm` (since `v0.2.0`)
+- `:pnm`
 - `:psd`
 - `:tiff`
-- `:webp` (VP8X animated since `v0.2.4`)
-- `:avif` (since `v1.0.0`)
-- `:heic` (since `v1.0.0`)
-- `:heif` (since `v1.0.0`)
+- `:webp`
+- `:avif`
+- `:heic`
+- `:heif`
 
 ## Mime-types and Variants
 
@@ -69,43 +68,54 @@ mime-type).
 
 Each mime-type can be linked to at least one variant type:
 
-| mime-type                 | variant type | description        |
-|---------------------------|-------------| ------------------ |
-| `image/avif`              | `AVIF`      |                    |
-| `image/avif-sequence`     | `AVIFS`     |                    |
-| `image/bmp`               | `BMP`       |                    |
-| `image/gif`               | `GIF87a`    | 87a gif spec       |
-| `image/gif`               | `GIF89a`    | 89a gif spec       |
-| `image/heic`              | `HEIC`      |                    |
-| `image/heic-sequence`     | `HEICS`     |                    |
-| `image/heif`              | `HEIF`      |                    |
-| `image/heif-sequence`     | `HEIFS`     |                    |
-| `image/x-icon`            | `ICO`       |                    |
-| `image/jp2`               | `JP2`       | JPEG2000           |
-| `image/jpeg`              | `baseJPEG`  | baseline JPEG      |
-| `image/jpeg`              | `progJPEG`  | progressive JPEG   |
-| `image/png`               | `PNG`       |                    |
-| `image/x-portable-anymap` | `PNMpbm`    | Portable BitMap    |
-| `image/x-portable-anymap` | `PNMpgm`    | Portable GrayMap   |
-| `image/x-portable-anymap` | `PNMppm`    | Portable PixMap    |
-| `image/psd`               | `PSD`       |                    |
-| `image/tiff`              | `TIFFII`    | II variant         |
-| `image/tiff`              | `TIFFMM`    | MM variant         |
-| `image/webp`              | `webpVP8`   | lossy              |
-| `image/webp`              | `webpVP8L`  | lossless           |
-| `image/webp`              | `webpVP8X`  | animated           |
+| mime-type                 | variant type | description        | since version |
+|---------------------------|--------------|--------------------|---------------|
+| `image/avif`              | `AVIF`       |                    | v1.0.0        |
+| `image/avif-sequence`     | `AVIFS`      |                    | v1.0.0        |
+| `image/bmp`               | `BMP`        |                    |               |
+| `image/gif`               | `GIF87a`     | 87a gif spec       |               |
+| `image/gif`               | `GIF89a`     | 89a gif spec       |               |
+| `image/heic`              | `HEIC`       |                    | v1.0.0        |
+| `image/heic-sequence`     | `HEICS`      |                    | v1.0.0        |
+| `image/heif`              | `HEIF`       |                    | v1.0.0        |
+| `image/heif-sequence`     | `HEIFS`      |                    | v1.0.0        |
+| `image/x-icon`            | `ICO`        |                    | v0.2.0        |
+| `image/jp2`               | `JP2`        | JPEG2000           | v0.2.0        |
+| `image/jpeg`              | `baseJPEG`   | baseline JPEG      |               |
+| `image/jpeg`              | `progJPEG`   | progressive JPEG   |               |
+| `image/png`               | `PNG`        |                    |               |
+| `image/x-portable-anymap` | `PNMpbm`     | Portable BitMap    | v0.2.0        |
+| `image/x-portable-anymap` | `PNMpgm`     | Portable GrayMap   | v0.2.0        |
+| `image/x-portable-anymap` | `PNMppm`     | Portable PixMap    | v0.2.0        |
+| `image/psd`               | `PSD`        |                    |               |
+| `image/tiff`              | `TIFFII`     | II variant         |               |
+| `image/tiff`              | `TIFFMM`     | MM variant         |               |
+| `image/webp`              | `webpVP8`    | lossy              |               |
+| `image/webp`              | `webpVP8L`   | lossless           |               |
+| `image/webp`              | `webpVP8X`   | animated           | v0.2.4        |
 
-The variant type is created just to provide a bit more of information
-for every image format (if applicable).
+The variant type is created just to provide a bit more of information for every image format (if applicable). 
+If version is empty, it means that it was supported since the initial release.
 
-*Note*: `:avif`, `:heic`, `:heif` and `:ico` return the dimensions of the primary (if available in that format) or the largest image contained (not the first found).
+Formats (maybe) containing multiple images:
+- `:ico` returns the dimensions of the largest image found.
+- `:heif`, `:heic` and `:avif` return the dimensions of the main image being selected (`primary_box`).
 
-The guessing functions try to detect the format of the binary by testing every available type based on its global usage and current trends (popularity, [usage of image file formats](https://w3techs.com/technologies/overview/image_format/all)):
+The guessing functions try to detect the format of the binary by testing every available type based on its 
+global usage and current trends (popularity, [usage of image file formats](https://w3techs.com/technologies/overview/image_format/all)):
 - `jpeg`, `png`, `webp`, `avif`, `gif`, `heic`, `heif`, `bmp`, `ico`, `tiff`, `psd`, `jp2`, `pnm`
 
 **Warnings:**
 
-- Use with caution the formats *ico*, *jp2* and the family *pnm*. They are implemented without following other libraries (just reading the specs - sometimes working with old drafts like *jp2*). You can support this library by providing more tests and image *fixtures* or requesting other variants to be tested.
+- Use with caution the formats *ico*, *jp2* and the family *pnm*. They are implemented without following 
+  other libraries (just reading the specs - sometimes working with old drafts like *jp2*). 
+- ISOBMFF format (*heif*, *heic* and *avif*) is the most complex format being supported, with most parts 
+  being implemented following the specs and testing against binary streams manually produced.
+  Please, use with caution and report any issue found.
+ 
+**Contributions:** you can support this library by providing more tests, image *fixtures* (like `image/heic-sequence`),
+increasing code coverage or extending support for other variants.
+
 
 ## Installation
 

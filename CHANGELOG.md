@@ -1,5 +1,30 @@
 # CHANGELOG
 
+## v1.0.0 (2025-03-27)
+
+**Enhancements:**
+
+- Full support for ISOBMFF image formats (box-type): HEIF, HEIC and AVIF.
+- Reordering types being checked in guessing functions (`{seems?,type,info}/1`), focusing on recent trends.
+- Docs and testing improvements.
+
+**News:**
+
+- First major release of ExImageInfo, after years working without issues and really stable.
+ 
+**Statistics:**
+
+- 79 TDD Tests:
+  - including 32 images being tested, also fetching external images on-the-fly.
+  - supporting partial streams and including many binary mocks/fixtures (up to 50 tests to verify edge cases).
+- Code coverage of 98.3%.
+- Supports 13 image formats and 23 variants.
+- No dependencies.
+
+**Acknowledgments:**
+
+- @bu6n for the first attempts about heic/heif/avif support and starting as a reviewer.
+
 ## v0.2.7 (2025-03-05)
 
 **Enhancements:**
@@ -47,9 +72,9 @@
 
 **Enhancements:**
 
-- By request of a GitHub user: support for another variant of webp
-- Studied and integrated the webpVP8X format (bitstream animated)
-- Added 2 new tests for animated photos: gif and webp vp8x
+- By request of a GitHub user: support for another variant of webp.
+- Studied and integrated the webpVP8X format (bitstream animated).
+- Added 2 new tests for animated photos: gif and webp vp8x.
 
 ## v0.2.3 (2018-05-21)
 
@@ -94,14 +119,14 @@
 **Enhancements:**
 
 - The guessing function is ordered by global usage [usage of image file formats](https://w3techs.com/technologies/overview/image_format/all), but still keeping *png* as the first one.
-- Added support for *ico*, *jp2* (*jpeg 2000*) and the collection of *pnm* (*pbm*, *pgm* and *ppm*)
-- *ico* gets the dimensions of the largest image contained (not the first found)
+- Added support for *ico*, *jp2* (*jpeg 2000*) and the collection of *pnm* (*pbm*, *pgm* and *ppm*).
+- *ico* gets the dimensions of the largest image contained (not the first found).
 
 **Statistics:**
 
-- 54 TDD Tests
-- Code coverage of 98.3%
-- 10 image formats supported
+- 54 TDD Tests.
+- Code coverage of 98.3%.
+- 10 image formats supported.
 
 **News:**
 
@@ -111,20 +136,20 @@
 
 **Enhancements:**
 
-- Warnings corrected (compiling)
+- Warnings corrected (compiling).
 
 **Statistics:**
 
-- 34 TDD Tests
-- Code coverage of 97.6%
-- 7 image formats supported
+- 34 TDD Tests.
+- Code coverage of 97.6%.
+- 7 image formats supported.
 
 **News:**
 
-- Initial release (published) + Docs (gh-pages)
+- Initial release (published) + Docs (gh-pages).
 
 ## v0.1.0 (2016-08-11)
 
 **News:**
 
-- Initial release (pre-publish)
+- Initial release (pre-publish).
