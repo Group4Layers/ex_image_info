@@ -1,4 +1,4 @@
-defmodule ExImageInfo.Types.ISOBMFF do
+defmodule ExImageInfo.Parsers.ISOBMFF do
   @moduledoc "HEIF, HEIC and AVIF image format parser"
 
   # There are code regions that cannot be tested as no fixtures/images to be validated against.

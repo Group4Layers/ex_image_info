@@ -3,7 +3,7 @@ defmodule ExImageInfo.Types.HEIC do
 
   @behaviour ExImageInfo.Detector
 
-  alias ExImageInfo.Types.ISOBMFF
+  alias ExImageInfo.Parsers.ISOBMFF
 
   @signature_base "ftyp"
 
