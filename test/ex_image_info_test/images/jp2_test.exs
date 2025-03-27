@@ -1,11 +1,11 @@
 defmodule ExImageInfoTest.Images.JP2Test do
-  use ExUnit.Case, async: true
+  use ImageTestCase
 
   import ExImageInfo
 
   setup_all do
     images = %{
-      "jp2" => TestHelper.read_image("valid/jp2/layers.jp2")
+      "jp2" => read_image("valid/jp2/layers.jp2")
     }
 
     {:ok, images}

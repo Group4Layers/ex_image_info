@@ -1,5 +1,5 @@
 defmodule ExImageInfoTest.Images.GIFTest do
-  use ExUnit.Case, async: true
+  use ImageTestCase
 
   import ExImageInfo
 
@@ -7,9 +7,9 @@ defmodule ExImageInfoTest.Images.GIFTest do
     images = %{
       # Comments: GIMP options to export the original images
       # interlace
-      "gif87a" => TestHelper.read_image("valid/gif/layers-87a.gif"),
-      "gif89a" => TestHelper.read_image("valid/gif/layers.gif"),
-      "gif-anim" => TestHelper.read_image("valid/gif/layers-anim.gif")
+      "gif87a" => read_image("valid/gif/layers-87a.gif"),
+      "gif89a" => read_image("valid/gif/layers.gif"),
+      "gif-anim" => read_image("valid/gif/layers-anim.gif")
     }
 
     {:ok, images}

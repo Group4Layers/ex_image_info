@@ -1,12 +1,12 @@
 defmodule ExImageInfoTest.Images.PSDTest do
-  use ExUnit.Case, async: true
+  use ImageTestCase
 
   import ExImageInfo
 
   setup_all do
     images = %{
       # Comments: GIMP options to export the original images
-      "psd" => TestHelper.read_image("valid/psd/layers.psd")
+      "psd" => read_image("valid/psd/layers.psd")
     }
 
     {:ok, images}

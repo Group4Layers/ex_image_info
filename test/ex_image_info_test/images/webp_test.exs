@@ -1,14 +1,14 @@
 defmodule ExImageInfoTest.Images.WEBPTest do
-  use ExUnit.Case, async: true
+  use ImageTestCase
 
   import ExImageInfo
 
   setup_all do
     images = %{
       # Comments: GIMP options to export the original images
-      "webpVP8" => TestHelper.read_image("valid/webp/layers-lossy.webp"),
-      "webpVP8L" => TestHelper.read_image("valid/webp/layers-lossless.webp"),
-      "webpVP8X" => TestHelper.read_image("valid/webp/layers-anim.webp")
+      "webpVP8" => read_image("valid/webp/layers-lossy.webp"),
+      "webpVP8L" => read_image("valid/webp/layers-lossless.webp"),
+      "webpVP8X" => read_image("valid/webp/layers-anim.webp")
     }
 
     {:ok, images}

@@ -1,12 +1,12 @@
 defmodule ExImageInfoTest.Images.ICOTest do
-  use ExUnit.Case, async: true
+  use ImageTestCase
 
   import ExImageInfo
 
   setup_all do
     images = %{
-      "ico" => TestHelper.read_image("valid/ico/wikipedia.ico"),
-      "ico-256" => TestHelper.read_image("valid/ico/w.ico")
+      "ico" => read_image("valid/ico/wikipedia.ico"),
+      "ico-256" => read_image("valid/ico/w.ico")
     }
 
     {:ok, images}

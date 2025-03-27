@@ -1,18 +1,18 @@
 defmodule ExImageInfoTest.Images.TIFFTest do
-  use ExUnit.Case, async: true
+  use ImageTestCase
 
   import ExImageInfo
 
   setup_all do
     images = %{
       # Comments: GIMP options to export the original images
-      "tiff" => TestHelper.read_image("valid/tiff/layers.tiff"),
+      "tiff" => read_image("valid/tiff/layers.tiff"),
       # i-s: image-size
-      "i-s-big-endian" => TestHelper.read_image("valid/tiff/i-s-big-endian.tiff"),
-      "tiff-deflate" => TestHelper.read_image("valid/tiff/layers-deflate.tiff"),
-      "tiff-jpeg" => TestHelper.read_image("valid/tiff/layers-jpeg.tiff"),
-      "tiff-lzw" => TestHelper.read_image("valid/tiff/layers-lzw.tiff"),
-      "tiff-packbits" => TestHelper.read_image("valid/tiff/layers-packbits.tiff")
+      "i-s-big-endian" => read_image("valid/tiff/i-s-big-endian.tiff"),
+      "tiff-deflate" => read_image("valid/tiff/layers-deflate.tiff"),
+      "tiff-jpeg" => read_image("valid/tiff/layers-jpeg.tiff"),
+      "tiff-lzw" => read_image("valid/tiff/layers-lzw.tiff"),
+      "tiff-packbits" => read_image("valid/tiff/layers-packbits.tiff")
     }
 
     {:ok, images}

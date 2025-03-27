@@ -1,16 +1,16 @@
 defmodule ExImageInfoTest.Images.ISOBMFFTest do
   @moduledoc "HEIF, HEIC and AVIF tests using image files"
-  use ExUnit.Case, async: true
+  use ImageTestCase
 
   import ExImageInfo
 
   setup_all do
     images = %{
-      "heic" => TestHelper.read_image("valid/isobmff/layers.heic"),
-      "heif" => TestHelper.read_image("valid/isobmff/layers.heif"),
-      "heic-min" => TestHelper.read_image("valid/isobmff/layers-min.heic"),
-      "heic-rotated" => TestHelper.read_image("valid/isobmff/layers-rotated.heic"),
-      "avif" => TestHelper.read_image("valid/isobmff/layers.avif")
+      "heic" => read_image("valid/isobmff/layers.heic"),
+      "heif" => read_image("valid/isobmff/layers.heif"),
+      "heic-min" => read_image("valid/isobmff/layers-min.heic"),
+      "heic-rotated" => read_image("valid/isobmff/layers-rotated.heic"),
+      "avif" => read_image("valid/isobmff/layers.avif")
     }
 
     {:ok, images}
