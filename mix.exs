@@ -17,6 +17,7 @@ defmodule ExImageInfo.Mixfile do
       docs: docs(),
       source_url: "https://github.com/Group4Layers/ex_image_info",
       homepage_url: "https://www.group4layers.com",
+      elixirc_paths: elixirc_paths(Mix.env()),
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
         coveralls: :test,
@@ -29,6 +30,10 @@ defmodule ExImageInfo.Mixfile do
       ]
     ]
   end
+
+  defp elixirc_paths(:test), do: ["lib", "test", "test/fixtures/mocks/isobmff.exs"]
+
+  defp elixirc_paths(_), do: ["lib"]
 
   def application do
     []
@@ -62,7 +67,8 @@ defmodule ExImageInfo.Mixfile do
   defp docs do
     [
       extras: ["README.md", "LICENSE.md", "CHANGELOG.md", "CONTRIBUTORS.md"],
-      assets: %{"assets/" => "assets"}
+      assets: %{"assets/" => "assets"},
+      filter_modules: ~r/ExImageInfo$/
     ]
   end
 

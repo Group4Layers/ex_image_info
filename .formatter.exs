@@ -6,7 +6,9 @@
     "{lib,bench}/**/*.{ex,exs}"
     | ["test/**/*.{ex,exs}"]
       |> Enum.flat_map(&Path.wildcard(&1, match_dot: true))
-      |> Kernel.--(["test/ex_image_info_test/mocks/isobmff_test.exs"])
+      |> Kernel.--([
+        "test/fixtures/mocks/isobmff.exs"
+      ])
   ],
   line_length: 88
 ]
