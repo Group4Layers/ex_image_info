@@ -125,9 +125,10 @@ defmodule ExImageInfo do
     :pnm
   ]
 
-  @typedoc "The supported image formats."
+  @typedoc "Supported image format types."
   @type image_format ::
           :jpeg
+          | :jpg
           | :png
           | :webp
           | :avif
@@ -140,8 +141,6 @@ defmodule ExImageInfo do
           | :psd
           | :jp2
           | :pnm
-
-  ## Public API
 
   @doc """
   Detects if the given binary seems to be in the given image format.
@@ -171,7 +170,7 @@ defmodule ExImageInfo do
       maybe_png_binary |> ExImageInfo.seems? :png
       # false
   """
-  @spec seems?(binary, format :: atom) :: boolean | nil
+  @spec seems?(binary, format :: image_format()) :: boolean
   def seems?(binary, format)
   def seems?(binary, :png), do: PNG.seems?(binary)
   def seems?(binary, :gif), do: GIF.seems?(binary)
@@ -187,7 +186,6 @@ defmodule ExImageInfo do
   def seems?(binary, :avif), do: AVIF.seems?(binary)
   def seems?(binary, :heic), do: HEIC.seems?(binary)
   def seems?(binary, :heif), do: HEIF.seems?(binary)
-  def seems?(_, _), do: nil
 
   @doc """
   Detects the image format that seems to be the given binary (*guessed* version of `ExImageInfo.seems?/2`).
@@ -245,7 +243,7 @@ defmodule ExImageInfo do
       maybe_png_binary |> ExImageInfo.type :png
       # nil
   """
-  @spec type(binary, format :: atom) ::
+  @spec type(binary, format :: image_format()) ::
           {mimetype :: String.t(), variant :: String.t()} | nil
   def type(binary, format)
   def type(binary, :png), do: PNG.type(binary)
@@ -262,7 +260,6 @@ defmodule ExImageInfo do
   def type(binary, :avif), do: AVIF.type(binary)
   def type(binary, :heic), do: HEIC.type(binary)
   def type(binary, :heif), do: HEIF.type(binary)
-  def type(_, _), do: nil
 
   @doc """
   Gets the mime-type and variant type for the given image binary (*guessed* version of `ExImageInfo.type/2`).
@@ -322,7 +319,7 @@ defmodule ExImageInfo do
       {ExImageInfo.type(malformed_heif_binary, :heif), ExImageInfo.info(malformed_heif_binary, :heif)}
       # {{"image/heif", "HEIF"}, nil}
   """
-  @spec info(binary, format :: atom) ::
+  @spec info(binary, format :: image_format()) ::
           {mimetype :: String.t(), width :: integer(), height :: integer(),
            variant :: String.t()}
           | nil
@@ -341,7 +338,6 @@ defmodule ExImageInfo do
   def info(binary, :avif), do: AVIF.info(binary)
   def info(binary, :heic), do: HEIC.info(binary)
   def info(binary, :heif), do: HEIF.info(binary)
-  def info(_, _), do: nil
 
   @doc """
   Gets the mime-type, variant-type and dimensions (width, height) for the given image binary
@@ -372,16 +368,12 @@ defmodule ExImageInfo do
           | nil
   def info(binary), do: try_info(binary, @types)
 
-  ## Private
-
-  @doc false
   defp try_seems?(_binary, []), do: nil
 
   defp try_seems?(binary, [type | types]) do
     if seems?(binary, type), do: type, else: try_seems?(binary, types)
   end
 
-  @doc false
   defp try_type(_binary, []), do: nil
 
   defp try_type(binary, [type | types]) do
@@ -391,7 +383,6 @@ defmodule ExImageInfo do
     end
   end
 
-  @doc false
   defp try_info(_binary, []), do: nil
 
   defp try_info(binary, [type | types]) do
