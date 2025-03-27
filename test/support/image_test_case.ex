@@ -1,6 +1,6 @@
 defmodule ImageTestCase do
   @moduledoc false
-  use ExUnit.CaseTemplate, async: true
+  use ExUnit.CaseTemplate
 
   @doc "Reads an image giving a relative path to test/fixtures/images"
   def read_image(rel_path) do
