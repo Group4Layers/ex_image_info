@@ -2,12 +2,12 @@ defmodule ImageTestCase do
   @moduledoc false
 
   defmacro __using__(opts) do
-    quote do
+    async? = Keyword.get(opts, :async, true)
+
+    quote bind_quoted: [async?: async?] do
       use ExUnit.Case, async: async?
 
       import ImageTestCase
-
-      async? = Keyword.get(unquote(opts), :async, true)
     end
   end
 
