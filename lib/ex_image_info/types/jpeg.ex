@@ -10,8 +10,6 @@ defmodule ExImageInfo.Types.JPEG do
 
   @signature <<0xFFD8::size(16)>>
 
-  ## Public API
-
   def seems?(<<@signature, _rest::binary>>), do: true
   def seems?(_), do: false
 
@@ -24,8 +22,6 @@ defmodule ExImageInfo.Types.JPEG do
       _ -> nil
     end
   end
-
-  ## Private
 
   defp parse_jpeg(<<block_len::size(16), rest::binary>>) do
     parse_jpeg_block(block_len, rest)

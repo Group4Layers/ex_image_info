@@ -15,8 +15,6 @@ defmodule ExImageInfo.Types.AVIF do
   @ftype_seq "AVIFS"
   @brand_seq "avis"
 
-  ## Public API
-
   def seems?(<<_::size(32), @signature_base, @brand, _::binary>>), do: true
   def seems?(<<_::size(32), @signature_base, @brand_seq, _::binary>>), do: true
   def seems?(_), do: false

@@ -15,8 +15,6 @@ defmodule ExImageInfo.Types.HEIC do
   @ftype_seq "HEICS"
   @brands_seq ["hevc", "hevx", "hevm", "hevs"]
 
-  ## Public API
-
   def seems?(<<_::size(32), @signature_base, brand::binary-size(4), _::binary>>)
       when brand in @brands,
       do: true

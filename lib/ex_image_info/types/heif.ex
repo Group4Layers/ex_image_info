@@ -15,8 +15,6 @@ defmodule ExImageInfo.Types.HEIF do
   @ftype_seq "HEIFS"
   @brand_seq "msf1"
 
-  ## Public API
-
   def seems?(<<_::size(32), @signature_base, @brand, _::binary>>), do: true
   def seems?(<<_::size(32), @signature_base, @brand_seq, _::binary>>), do: true
   def seems?(_), do: false

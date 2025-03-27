@@ -14,8 +14,6 @@ defmodule ExImageInfo.Types.WEBP do
   @signature_webp <<"WEBP">>
   @signature_vp8 <<"VP8">>
 
-  ## Public API
-
   def seems?(
         <<@signature_riff, _skip::bytes-size(4), @signature_webp, @signature_vp8,
           _rest::binary>>
@@ -54,8 +52,6 @@ defmodule ExImageInfo.Types.WEBP do
   end
 
   def type(_), do: nil
-
-  ## Private
 
   defp parse_lossy(
          <<_skip::bytes-size(5), w::little-size(16), h::little-size(16), _rest::binary>>
