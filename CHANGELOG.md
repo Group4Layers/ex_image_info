@@ -1,12 +1,19 @@
 # CHANGELOG
 
-## v1.0.0 (2025-03-27)
+## v1.0.0 (2025-03-28)
 
 **Enhancements:**
 
 - Full support for ISOBMFF image formats (box-type): HEIF, HEIC and AVIF.
 - Reordering types being checked in guessing functions (`{seems?,type,info}/1`), focusing on recent trends.
-- Docs and testing improvements.
+- Documentation and testing improvements.
+
+**API status and breaking changes:**
+
+- `seems?/1`: returns the image type found (e.g., `:bmp`, `:tiff`), or `nil` if it is not recognized.
+  For JPEG images, it returns `:jpeg` instead of the alias `:jpg`. However, the alias `:jpg` can be used in `{seems?,type,info}/2` functions.
+- `seems?/2`, `type/2`, and `info/2`: these functions will **raise an error if an unsupported image type is provided**.
+- `seems?/2`: **fully boolean**.
 
 **News:**
 
