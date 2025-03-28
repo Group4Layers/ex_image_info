@@ -8,8 +8,6 @@ defmodule ExImageInfo.Types.PSD do
 
   @signature <<"8BPS">>
 
-  ## Public API
-
   def seems?(<<@signature, _::binary>>), do: true
   def seems?(_), do: false
 

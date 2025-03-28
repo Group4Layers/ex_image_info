@@ -1,12 +1,12 @@
 defmodule ExImageInfoTest.Images.BMPTest do
-  use ExUnit.Case, async: true
+  use ImageTestCase
 
   import ExImageInfo
 
   setup_all do
     images = %{
       # Comments: GIMP options to export the original images
-      "bmp" => TestHelper.read_image("valid/bmp/layers.bmp")
+      "bmp" => read_image("valid/bmp/layers.bmp")
     }
 
     {:ok, images}

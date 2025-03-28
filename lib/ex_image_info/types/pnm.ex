@@ -17,8 +17,6 @@ defmodule ExImageInfo.Types.PNM do
   @nl 0x0A
   @space 0x20
 
-  ## Public API
-
   def seems?(<<@signature, char::size(8), split, _rest::binary>>)
       when split in [@nl, @space, @sharp] do
     if signature_pnm(char), do: true, else: false
@@ -47,8 +45,6 @@ defmodule ExImageInfo.Types.PNM do
   end
 
   def type(_), do: nil
-
-  ## Private
 
   defp signature_pnm(char) do
     case char do

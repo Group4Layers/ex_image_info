@@ -13,8 +13,6 @@ defmodule ExImageInfo.Types.TIFF do
   @signature_ii <<"II", 0x2A00::size(16)>>
   @signature_mm <<"MM", 0x002A::size(16)>>
 
-  ## Public API
-
   def seems?(<<@signature_ii, _rest::binary>>), do: true
   def seems?(<<@signature_mm, _rest::binary>>), do: true
   def seems?(_), do: false
@@ -30,8 +28,6 @@ defmodule ExImageInfo.Types.TIFF do
   def type(<<@signature_ii, _rest::binary>>), do: {@mime, @ftype_ii}
   def type(<<@signature_mm, _rest::binary>>), do: {@mime, @ftype_mm}
   def type(_), do: nil
-
-  ## Private
 
   defp parse_tiff(false = b_e, <<idf_off::little-size(32), rest::binary>>, fsize) do
     parse_tiff_block(b_e, idf_off, rest, fsize)

@@ -1,16 +1,16 @@
 defmodule ExImageInfoTest.Images.PNMTest do
-  use ExUnit.Case, async: true
+  use ImageTestCase
 
   import ExImageInfo
 
   setup_all do
     images = %{
-      "pbm" => TestHelper.read_image("valid/pnm/layers.pbm"),
-      "pbm-plain" => TestHelper.read_image("valid/pnm/plain.pbm"),
-      "pgm" => TestHelper.read_image("valid/pnm/layers.pgm"),
-      "pgm-plain" => TestHelper.read_image("valid/pnm/plain.pgm"),
-      "ppm" => TestHelper.read_image("valid/pnm/layers.ppm"),
-      "ppm-plain" => TestHelper.read_image("valid/pnm/plain.ppm")
+      "pbm" => read_image("valid/pnm/layers.pbm"),
+      "pbm-plain" => read_image("valid/pnm/plain.pbm"),
+      "pgm" => read_image("valid/pnm/layers.pgm"),
+      "pgm-plain" => read_image("valid/pnm/plain.pgm"),
+      "ppm" => read_image("valid/pnm/layers.ppm"),
+      "ppm-plain" => read_image("valid/pnm/plain.ppm")
     }
 
     {:ok, images}

@@ -10,8 +10,6 @@ defmodule ExImageInfo.Types.ICO do
   # 0x0100 -> little endian -> 1 (.ICO), 2 (.CUR)
   @signature <<0::size(16), 0x01, 0x00>>
 
-  ## Public API
-
   def seems?(<<@signature, _rest::binary>>), do: true
   def seems?(_), do: false
 
@@ -26,8 +24,6 @@ defmodule ExImageInfo.Types.ICO do
 
   def type(<<@signature, _rest::binary>>), do: {@mime, @ftype}
   def type(_), do: nil
-
-  ## Private
 
   defp parse(binary, num), do: parse(binary, num, {0, 0})
 

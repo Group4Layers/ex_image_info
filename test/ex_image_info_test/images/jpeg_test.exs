@@ -1,14 +1,14 @@
 defmodule ExImageInfoTest.Images.JPEGTest do
-  use ExUnit.Case, async: true
+  use ImageTestCase
 
   import ExImageInfo
 
   setup_all do
     images = %{
       # Comments: GIMP options to export the original images
-      "jpegBase" => TestHelper.read_image("valid/jpeg/layers.jpeg"),
+      "jpegBase" => read_image("valid/jpeg/layers.jpeg"),
       # optimize, progressive
-      "jpegProg" => TestHelper.read_image("valid/jpeg/layers-progressive.jpeg")
+      "jpegProg" => read_image("valid/jpeg/layers-progressive.jpeg")
     }
 
     {:ok, images}

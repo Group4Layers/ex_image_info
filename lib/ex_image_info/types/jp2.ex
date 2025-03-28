@@ -11,8 +11,6 @@ defmodule ExImageInfo.Types.JP2 do
   @signature <<0::size(24), 0x0C6A5020200D0A870A::size(72)>>
   @signature_ihdr <<"ihdr">>
 
-  ## Public API
-
   def seems?(<<@signature, _rest::binary>>), do: true
   def seems?(_), do: false
 

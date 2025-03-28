@@ -95,3 +95,6 @@ anaconda-mode/
 /docs/all.json
 /docs/
 /.idea/
+
+.DS_Store
+/tmp/

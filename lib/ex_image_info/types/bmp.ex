@@ -8,8 +8,6 @@ defmodule ExImageInfo.Types.BMP do
 
   @signature <<"BM">>
 
-  ## Public API
-
   def seems?(<<@signature, _rest::binary>>), do: true
   def seems?(_), do: false
 

@@ -1,12 +1,12 @@
 defmodule ExImageInfoTest.Images.PNGTest do
-  use ExUnit.Case, async: true
+  use ImageTestCase
 
   import ExImageInfo
 
   setup_all do
     images = %{
       # Comments: GIMP options to export the original images
-      "png" => TestHelper.read_image("valid/png/layers.png")
+      "png" => read_image("valid/png/layers.png")
     }
 
     {:ok, images}
